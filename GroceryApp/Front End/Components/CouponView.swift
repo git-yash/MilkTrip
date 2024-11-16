@@ -57,5 +57,5 @@ struct CouponView: View {
 }
 
 #Preview {
-    CouponView(coupon: Coupon(id: 1, store: Store(image: Image("walmartLogo"), name: "Walmart"), description: "15% off of all eligible items if you use the code BUY24.", url: "https://www.walmart.com/"))
+    CouponView(coupon: Coupon(id: 1, store: Store(image: Image("walmartLogo"), name: "Walmart", products: []), description: "15% off of all eligible items if you use the code BUY24.", url: "https://www.walmart.com/"))
 }

@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-let walmartStore = Store(id: UUID(), image: Image("walmartLogo"), name: "Walmart")
-let cvsStore = Store(id: UUID(), image: Image("cvsLogo"), name: "CVS")
-let randallsStore = Store(id: UUID(), image: Image("randallsLogo"), name: "Randalls")
-let HEBStore = Store(id: UUID(), image: Image("HEBLogo"), name: "H-E-B")
+let walmartStore = Store(id: UUID(), image: Image("walmartLogo"), name: "Walmart", products: [])
+let cvsStore = Store(id: UUID(), image: Image("cvsLogo"), name: "CVS", products: [])
+let randallsStore = Store(id: UUID(), image: Image("randallsLogo"), name: "Randalls", products: [])
+let HEBStore = Store(id: UUID(), image: Image("HEBLogo"), name: "H-E-B", products: [])
 
 let sampleCoupons: [Coupon] = [
     Coupon(id: 1, store: walmartStore, description: "Get 20% off on electronics!", url: "https://www.walmart.com"),
