@@ -6,24 +6,28 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Store: Identifiable, Hashable {
+    var id: UUID
+    var image: Image
+    var name: String
+    var products: [Product]
+    
+    // Initializer to set up 'Store' object with an image
+    init(id: UUID = UUID(), image: Image, name: String, products: [Product]) {
+        self.id = id
+        self.image = image
+        self.name = name
+        self.products = products
+    }
+    
     static func == (lhs: Store, rhs: Store) -> Bool {
         return lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-    }
-    
-    var id: Int
-    var name: String
-    var products: [Product]
-    
-    init(id: Int, name: String, products: [Product]) {
-        self.id = id
-        self.name = name
-        self.products = products
     }
     
     func getCurrentPrice() -> Double {
