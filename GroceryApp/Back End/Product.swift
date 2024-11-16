@@ -61,6 +61,17 @@ class Product: Identifiable, Hashable {
     }
     
     func getBrand() -> String {
-        return "HEB"
+        switch self.store{
+        case 1: return "HEB"
+        case 2: return "Randalls"
+        case 3: return "CVS"
+        case 4: return "Walmart"
+        default:
+            return "HEB"
+        }
+    }
+    
+    func getSubstitutes() -> [Product] {
+        return [Product(), Product(), Product()]
     }
 }

@@ -58,7 +58,7 @@ func generatePriceIncrements(base_price: Double) -> [PriceIncrement] {
             
             // prices slightly increase over time, so we multiply by a random double, but it is
             // slightly more likely to be greater than 1 than less than 1
-            let this_price = prev_price * Double.random(in: 0.985...1.02)
+            let this_price = prev_price * Double.random(in: 0.98...1.01)
             
             increments.append(PriceIncrement(timestamp: this_date, price: this_price))
             prices.append(this_price)

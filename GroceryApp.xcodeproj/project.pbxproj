@@ -19,6 +19,7 @@
 		17C4B3182CE9398200216661 /* PriceIncrement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3172CE9398200216661 /* PriceIncrement.swift */; };
 		17C4B31E2CE94BFA00216661 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B31D2CE94BFA00216661 /* SampleData.swift */; };
 		17C4B3202CE94C2200216661 /* SampleData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 17C4B31F2CE94C2200216661 /* SampleData.csv */; };
+		17C4B3232CE9560900216661 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3222CE9560900216661 /* ProductView.swift */; };
 		C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */; };
 		C4A496132CE92CC70012CB69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496122CE92CC70012CB69 /* ContentView.swift */; };
 		C4A496152CE92CC80012CB69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A496142CE92CC80012CB69 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		17C4B3172CE9398200216661 /* PriceIncrement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceIncrement.swift; sourceTree = "<group>"; };
 		17C4B31D2CE94BFA00216661 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		17C4B31F2CE94C2200216661 /* SampleData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleData.csv; sourceTree = "<group>"; };
+		17C4B3222CE9560900216661 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		C4A4960D2CE92CC70012CB69 /* GroceryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryAppApp.swift; sourceTree = "<group>"; };
 		C4A496122CE92CC70012CB69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				17C4B2FF2CE92E2A00216661 /* ProfileView.swift */,
 				17C4B3012CE92E3300216661 /* SearchView.swift */,
 				17C4B3032CE92E3A00216661 /* TrendsView.swift */,
+				17C4B3222CE9560900216661 /* ProductView.swift */,
 			);
 			path = "Front End";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				17C4B30B2CE9300C00216661 /* Store.swift in Sources */,
 				C4A4963B2CE93FF50012CB69 /* Util.swift in Sources */,
 				17C4B3002CE92E2A00216661 /* ProfileView.swift in Sources */,
+				17C4B3232CE9560900216661 /* ProductView.swift in Sources */,
 				C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */,
 				17C4B3072CE92F0C00216661 /* Product.swift in Sources */,
 				17C4B3092CE92F1400216661 /* User.swift in Sources */,
