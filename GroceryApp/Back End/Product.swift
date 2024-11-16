@@ -16,15 +16,19 @@ class Product: Identifiable, Hashable {
         hasher.combine(id)
     }
     
-    var id: UUID = UUID()
+    var id: Int
     var name: String
-    var store: UUID
+    var brand: String
+    var category: String
+    var store: Int
     
     var priceData: [PriceIncrement]
     
-    init(id: UUID, name: String, store: UUID, priceData: [PriceIncrement]) {
+    init(id: Int, name: String, brand: String, category: String, store: Int, priceData: [PriceIncrement]) {
         self.id = id
         self.name = name
+        self.brand = brand
+        self.category = category
         self.store = store
         self.priceData = priceData
     }
