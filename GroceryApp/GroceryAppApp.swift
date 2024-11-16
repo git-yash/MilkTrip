@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct GroceryAppApp: App {
+    @StateObject var viewModel = ViewModel()
+
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -27,6 +29,7 @@ struct GroceryAppApp: App {
                         Label("Trends", systemImage: "chart.line.uptrend.xyaxis")
                     }
             }
+            .environmentObject(viewModel)
         }
     }
 }
