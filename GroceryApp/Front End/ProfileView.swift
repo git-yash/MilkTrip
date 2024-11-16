@@ -28,7 +28,7 @@ struct ProfileView: View {
                             .bold()
                         
                         ForEach(1...3, id: \.self) { _ in
-                            ProductListView()
+                            ProductListView(product: viewModel.productData.randomElement() ?? Product())
                         }
                     }
                 }

@@ -27,6 +27,7 @@ func readSampleData() -> [Product]? {
                                           brand: String(columns[2]),
                                           category: String(columns[3]),
                                           store: i,
+                                          image_url: String(columns[5]),
                                           priceData: generatePriceIncrements(base_price: Double(columns[4]) ?? 5.0))
                     
                     products.append(product)
