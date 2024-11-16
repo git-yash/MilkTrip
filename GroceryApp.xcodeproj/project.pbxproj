@@ -24,6 +24,7 @@
 		C4A496222CE92CC90012CB69 /* GroceryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496212CE92CC90012CB69 /* GroceryAppTests.swift */; };
 		C4A4962C2CE92CC90012CB69 /* GroceryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4962B2CE92CC90012CB69 /* GroceryAppUITests.swift */; };
 		C4A4962E2CE92CC90012CB69 /* GroceryAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4962D2CE92CC90012CB69 /* GroceryAppUITestsLaunchTests.swift */; };
+		C4A4963B2CE93FF50012CB69 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4963A2CE93FF50012CB69 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		C4A496272CE92CC90012CB69 /* GroceryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroceryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A4962B2CE92CC90012CB69 /* GroceryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryAppUITests.swift; sourceTree = "<group>"; };
 		C4A4962D2CE92CC90012CB69 /* GroceryAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C4A4963A2CE93FF50012CB69 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				C4A496122CE92CC70012CB69 /* ContentView.swift */,
 				C4A496142CE92CC80012CB69 /* Assets.xcassets */,
 				C4A496162CE92CC80012CB69 /* Preview Content */,
+				C4A4963A2CE93FF50012CB69 /* Util.swift */,
 			);
 			path = GroceryApp;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				C4A496132CE92CC70012CB69 /* ContentView.swift in Sources */,
 				17C4B3102CE9324600216661 /* ChartView.swift in Sources */,
 				17C4B30B2CE9300C00216661 /* Store.swift in Sources */,
+				C4A4963B2CE93FF50012CB69 /* Util.swift in Sources */,
 				17C4B3002CE92E2A00216661 /* ProfileView.swift in Sources */,
 				C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */,
 				17C4B3072CE92F0C00216661 /* Product.swift in Sources */,
