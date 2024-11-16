@@ -14,7 +14,13 @@ struct TrendsView: View {
         NavigationStack{
             ScrollView{
                 VStack(alignment: .leading, spacing: 20){
-                    Text("Hello, World!")
+                    ForEach(viewModel.stores, id: \.self){ store in
+                        VStack(alignment: .leading, spacing: 10){
+                            Text(store.name)
+                            ChartView(allData: store.getPriceIncrementData())
+                        }
+                        .background(.gray)
+                    }
                 }
                 .padding()
             }

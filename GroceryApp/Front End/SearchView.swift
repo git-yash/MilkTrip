@@ -54,11 +54,9 @@ struct SearchView: View {
                             .bold()
                         
                         ForEach(1...3, id: \.self) { _ in
-                            ProductListView(product: viewModel.productData.randomElement() ?? Product())
+                            ProductListView(product: Product())
                         }
-
                     }
-
                 }
                 .padding()
             }

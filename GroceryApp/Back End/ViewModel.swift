@@ -9,24 +9,27 @@ import Foundation
 
 public class ViewModel: ObservableObject {
     @Published var localUser: User
-    @Published var productData: [Product]
-    
+    @Published var products: [Product]
+    @Published var stores: [Store]
+
     init() {
-        if let products = readSampleData(){
-            self.productData = products
-            self.localUser = User(id: 1, grocery_list: Array(products.shuffled().prefix(5)))
+        if let product_data = readSampleData(){
+            self.products = product_data
+            self.localUser = User(id: 1, grocery_list: Array(product_data.shuffled().prefix(5)))
         } else {
-            self.productData = []
+            self.products = []
             self.localUser = User(id: 1, grocery_list: [])
         }
+        self.stores = []
     }
 
     init(localUser: User) {
         self.localUser = localUser
-        if let products = readSampleData(){
-            self.productData = products
+        if let product_data = readSampleData(){
+            self.products = product_data
         }else{
-            self.productData = []
+            self.products = []
         }
-    }    
+        self.stores = []
+    }
 }
