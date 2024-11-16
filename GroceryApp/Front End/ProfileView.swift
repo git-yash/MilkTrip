@@ -15,11 +15,11 @@ struct ProfileView: View {
             ScrollView{
                 VStack(alignment: .leading, spacing: 50){
                     VStack(alignment: .leading){
-                        Text("$123.45")
+                        Text("$"+String(format: "%.2f", viewModel.localUser.getCurrentPrice()))
                             .font(.system(size: 32))
                             .bold()
                         
-                        ChartView()
+                        ChartView(allData: viewModel.localUser.getPriceIncrementData())
                     }
                     
                     VStack(alignment: .leading){
@@ -27,8 +27,13 @@ struct ProfileView: View {
                             .font(.system(size: 24))
                             .bold()
                         
-                        ForEach(1...3, id: \.self) { _ in
-                            ProductListView()
+                        ForEach(viewModel.localUser.grocery_list, id: \.self) { product in
+                            NavigationLink {
+                                ProductView(product: product)
+                            } label: {
+                                ProductListView(product: product)
+                            }
+                            .buttonStyle(.plain)
                         }
                     }
                 }

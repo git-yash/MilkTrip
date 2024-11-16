@@ -9,30 +9,31 @@ import SwiftUI
 import Charts
 
 struct ChartView: View {
-    @State private var selectedRange: String = "1W"
-    @State private var data: [(String, Double)] = []
-    @State private var selectedDataPoint: (index: Int, value: Double)? = nil
+    @State var selectedRange: String = "1M"
+    @State var allData: [PriceIncrement]
+    @State var data: [PriceIncrement] = []
+    @State var selectedDataPoint: (index: Int, value: Double)? = nil
+    @State var lowerBound: Int = 0
+    @State var upperBound: Int = 10
     
     var screenWidth = UIScreen.main.bounds.width
-    
-    let ranges = ["1W", "1M", "6M", "YTD", "1Y", "All"]
-    
+    let ranges = ["1M", "6M", "YTD", "1Y", "All"]
+        
     var body: some View {
         VStack {
-            // Line Chart with Drag Gesture
             ZStack {
                 Chart {
                     ForEach(data.indices, id: \.self) { index in
-                        let (label, value) = data[index]
+                        let priceIncrement = data[index]
                         LineMark(
-                            x: .value("Date", label),
-                            y: .value("Price", value)
+                            x: .value("Date", priceIncrement.timestamp),
+                            y: .value("Price", priceIncrement.price)
                         )
                         .lineStyle(StrokeStyle(lineWidth: 2))
                         .foregroundStyle(Color(hex: "#387f7b"))
                     }
                 }
-                .chartYScale(domain: 0...100)
+                .chartYScale(domain: lowerBound...upperBound)
                 .frame(height: screenWidth * 0.50)
                 .padding()
                 .cornerRadius(10)
@@ -46,30 +47,26 @@ struct ChartView: View {
                         }
                 )
                 
-                // Overlay for Selected Price
                 if let selected = selectedDataPoint {
+                    let priceIncrement = data[selected.index]
                     let xOffset = CGFloat(selected.index) * (screenWidth - 40) / CGFloat(data.count - 1)
                     VStack {
-                        // Price Display
-                        Text("$\(String(format: "%.2f", selected.value))")
+                        Text("$\(String(format: "%.2f", priceIncrement.price))")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding(8)
                             .background(Color.black.opacity(0.8))
                             .cornerRadius(8)
-                            .offset(x: xOffset - screenWidth / 2 + 20, y: -30) // Adjusted vertical offset
+                            .offset(x: xOffset - screenWidth / 2 + 20, y: -30)
 
-                        // Vertical Line (adjusted height)
                         Rectangle()
                             .fill(Color.gray)
-                            .frame(width: 1, height: screenWidth * 0.50) // Adjusted to match chart height
-                            .offset(x: xOffset - screenWidth / 2 + 20, y: -screenWidth * 0.1) // Adjusted position
+                            .frame(width: 1, height: screenWidth * 0.50)
+                            .offset(x: xOffset - screenWidth / 2 + 20, y: -screenWidth * 0.1)
                     }
                 }
-
             }
             
-            // Selector
             HStack {
                 ForEach(ranges, id: \.self) { range in
                     Button(action: {
@@ -83,6 +80,7 @@ struct ChartView: View {
                             .cornerRadius(5)
                     }
                 }
+                Spacer()
             }
             .padding(.vertical)
         }
@@ -94,50 +92,50 @@ struct ChartView: View {
     private func updateData(for range: String) {
         let calendar = Calendar.current
         let formatter = DateFormatter()
+
+        var days = 0
         
         switch range {
-        case "1W":
-            formatter.dateFormat = "EEE" // Short day names, e.g., Mon, Tue
-            data = (0..<7).map { i in
-                let date = calendar.date(byAdding: .day, value: -i, to: Date())!
-                return (formatter.string(from: date), Double.random(in: 20...80))
-            }
         case "1M":
             formatter.dateFormat = "MMM dd" // Short month names with day, e.g., Oct 18
-            data = stride(from: 0, through: 28, by: 7).map { i in
-                let date = calendar.date(byAdding: .day, value: -i, to: Date())!
-                return (formatter.string(from: date), Double.random(in: 20...80))
-            }
+            days = 30
         case "6M":
             formatter.dateFormat = "MMM" // Short month names, e.g., Jan
-            data = (0..<6).map { i in
-                let date = calendar.date(byAdding: .month, value: -i, to: Date())!
-                return (formatter.string(from: date), Double.random(in: 20...80))
-            }
+            days = 182
         case "YTD":
-            formatter.dateFormat = "MMM" // Short month names, Jan, Feb
-            let monthsElapsed = calendar.component(.month, from: Date())
-            data = (0..<monthsElapsed).map { i in
-                let date = calendar.date(byAdding: .month, value: -i, to: Date())!
-                return (formatter.string(from: date), Double.random(in: 20...80))
-            }
+            let startOfYear = calendar.date(from: calendar.dateComponents([.year], from: Date()))!
+            days = calendar.dateComponents([.day], from: startOfYear, to: Date()).day!
         case "1Y":
             formatter.dateFormat = "MMM" // Short month names, Jan, Feb
-            data = (0..<12).map { i in
-                let date = calendar.date(byAdding: .month, value: -i, to: Date())!
-                return (formatter.string(from: date), Double.random(in: 20...80))
-            }
+            days = 365
         case "All":
             formatter.dateFormat = "yyyy" // Year format
-            data = (0..<10).map { i in
-                let date = calendar.date(byAdding: .year, value: -i, to: Date())!
-                return (formatter.string(from: date), Double.random(in: 20...80))
-            }
+            days = 100000
         default:
-            data = []
+            data = [] // If an unrecognized range is passed, clear data.
+            return
         }
+
+        let now = Date()
+        
+        // Filter data based on the calculated range
+        data = allData.filter { price_increment in
+            let date = price_increment.timestamp
+            // Compare if the date is within the specified range
+            return date > calendar.date(byAdding: .day, value: -days, to: now)!
+        }
+        
+        if let minPrice = data.min(by: { $0.price < $1.price }) {
+            lowerBound = Int(minPrice.price) - 2
+        }
+        
+        if let maxPrice = data.max(by: { $0.price < $1.price }) {
+            upperBound = Int(maxPrice.price) + 2
+        }
+
         data.reverse() // To show the data in chronological order
     }
+
     
     private func handleDragGesture(value: DragGesture.Value) {
         let location = value.location
@@ -146,12 +144,12 @@ struct ChartView: View {
         
         let index = Int((location.x - 20) / spacing) // Adjust for padding
         if index >= 0 && index < data.count {
-            selectedDataPoint = (index: index, value: data[index].1)
+            selectedDataPoint = (index: index, value: data[index].price)
         } else {
             selectedDataPoint = nil
         }
     }
 }
 #Preview {
-    ChartView()
+    ChartView(allData: [])
 }

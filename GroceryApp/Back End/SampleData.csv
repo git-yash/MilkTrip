@@ -1,83 +1,83 @@
-﻿ID,Name,Brand,Category,Base Price
-1,Potato Chips,Lay's,Snacks,3.5
-2,Chocolate Bars,Hershey's,Snacks,1
-3,Popcorn,Orville Redenbacher's,Snacks,4
-4,Trail Mix,Planters,Snacks,5.5
-5,Fuji Apples,Sunkist,Produce,2.99
-6,Bananas,Chiquita,Produce,1.2
-7,Strawberries,Driscoll's,Produce,3.99
-8,Artichoke,Ocean Mist,Produce,2.5
-9,Carrots,Bunny-Luv,Produce,1.99
-10,Lettuce,Dole,Produce,2.5
-11,Oranges,Halos,Produce,4
-12,Broccoli,Green Giant,Produce,2.49
-13,Grapes,Welch's,Produce,3.99
-14,Peaches,Del Monte,Produce,2.99
-15,Spinach,Earthbound Farm,Produce,3.49
-16,Potatoes,Idahoan,Produce,3.99
-17,Celery,Pascal,Produce,1.99
-18,Watermelon,Sugar Baby,Produce,5
-19,Dog Food,Purina,Pet Supplies,10
-20,Cat Litter,Arm & Hammer,Pet Supplies,8
-21,Bird Seed,Kaytee,Pet Supplies,5.99
-22,Fish Food,Tetra,Pet Supplies,7.5
-23,Shampoo,Head & Shoulders,Personal Care,4.99
-24,Toothpaste,Colgate,Personal Care,2.5
-25,Soap,Dove,Personal Care,3.5
-26,Lotion,Jergens,Personal Care,5
-27,Conditioner,Pantene,Personal Care,4.5
-28,Facial Cleanser,CeraVe,Personal Care,9
-29,Deodorant,Old Spice,Personal Care,3
-30,Shaving Cream,Barbasol,Personal Care,2.5
-31,Chicken Breast,Perdue,Meat,6.99
-32,Ground Beef,Laura's Lean Beef,Meat,5.5
-33,Pork Chops,Smithfield,Meat,7
-34,Salmon Filets,Sea Cuisine,Meat,9.99
-35,Turkey,Butterball,Meat,12
-36,Bacon,Oscar Mayer,Meat,5.99
-37,Sausages,Jimmy Dean,Meat,4.99
-38,Lamb Chops,Australian Lamb,Meat,15
-39,Dish Soap,Dawn,Household Items,2
-40,Laundry Detergent,Tide,Household Items,8
-41,Trash Bags,Hefty,Household Items,6
-42,Paper Towels,Bounty,Household Items,6.5
-43,Light Bulbs,GE,Hardware,4
-44,Batteries,Duracell,Hardware,5
-45,Duct Tape,3M,Hardware,3
-46,Extension Cords,Stanley,Hardware,7
-47,Rice,Uncle Ben's,Grains,2.5
-48,Pasta,Barilla,Grains,1.5
-49,Oatmeal,Quaker,Grains,3
-50,Quinoa,Bob's Red Mill,Grains,4.99
-51,Cornmeal,Arrowhead Mills,Grains,3.5
-52,Couscous,RiceSelect,Grains,3.99
-53,Barley,Pearl's,Grains,3
-54,Tortillas,Mission,Grains,2.5
-55,Cheddar Cheese,Tillamook,Dairy,5.5
-56,Milk,Horizon,Dairy,3
-57,Yogurt,Chobani,Dairy,1.25
-58,Butter,Land O'Lakes,Dairy,4.5
-59,Cottage Cheese,Daisy,Dairy,2.99
-60,Heavy Cream,Horizon Organic,Dairy,4
-61,Ice Cream,Ben & Jerry's,Dairy,5.99
-62,Eggs,Eggland's Best,Dairy,3
-63,Apple Juice,Mott's,Beverage,2.5
-64,Prime,Prime,Beverage,4
-65,Red Bull,Red Bull,Beverage,2.5
-66,Monster,Monster Energy,Beverage,2
-67,Orange Juice,Tropicana,Beverage,3.5
-68,Coca-Cola,Coca-Cola,Beverage,1.5
-69,Pepsi,Pepsi,Beverage,1.5
-70,Gatorade,Gatorade,Beverage,1.25
-71,Coconut Water,Vita Coco,Beverage,2.99
-72,Sparkling Water,LaCroix,Beverage,3.5
-73,Iced Tea,Lipton,Beverage,2
-74,Energy Shots,5-hour Energy,Beverage,3
-75,Bread,Wonder Bread,Bakery,2
-76,Bagels,Thomas',Bakery,3
-77,Muffins,Hostess,Bakery,2.5
-78,Croissants,La Boulangerie,Bakery,3.99
-79,Croissant Sandwich,Panera Bread,Bakery,5.99
-80,Donuts,Krispy Kreme,Bakery,5
-81,Focaccia,Schiacciata,Bakery,4.5
-82,Pretzels,Snyder's of Hanover,Bakery,2.5
+﻿ID,Name,Brand,Category,Base Price,Image URL
+1,Potato Chips,Lay's,Snacks,3.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+2,Chocolate Bars,Hershey's,Snacks,1,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+3,Popcorn,Orville Redenbacher's,Snacks,4,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+4,Trail Mix,Planters,Snacks,5.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+5,Fuji Apples,Sunkist,Produce,2.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+6,Bananas,Chiquita,Produce,1.2,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+7,Strawberries,Driscoll's,Produce,3.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+8,Artichoke,Ocean Mist,Produce,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+9,Carrots,Bunny-Luv,Produce,1.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+10,Lettuce,Dole,Produce,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+11,Oranges,Halos,Produce,4,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+12,Broccoli,Green Giant,Produce,2.49,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+13,Grapes,Welch's,Produce,3.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+14,Peaches,Del Monte,Produce,2.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+15,Spinach,Earthbound Farm,Produce,3.49,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+16,Potatoes,Idahoan,Produce,3.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+17,Celery,Pascal,Produce,1.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+18,Watermelon,Sugar Baby,Produce,5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+19,Dog Food,Purina,Pet Supplies,10,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+20,Cat Litter,Arm & Hammer,Pet Supplies,8,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+21,Bird Seed,Kaytee,Pet Supplies,5.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+22,Fish Food,Tetra,Pet Supplies,7.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+23,Shampoo,Head & Shoulders,Personal Care,4.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+24,Toothpaste,Colgate,Personal Care,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+25,Soap,Dove,Personal Care,3.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+26,Lotion,Jergens,Personal Care,5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+27,Conditioner,Pantene,Personal Care,4.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+28,Facial Cleanser,CeraVe,Personal Care,9,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+29,Deodorant,Old Spice,Personal Care,3,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+30,Shaving Cream,Barbasol,Personal Care,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+31,Chicken Breast,Perdue,Meat,6.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+32,Ground Beef,Laura's Lean Beef,Meat,5.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+33,Pork Chops,Smithfield,Meat,7,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+34,Salmon Filets,Sea Cuisine,Meat,9.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+35,Turkey,Butterball,Meat,12,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+36,Bacon,Oscar Mayer,Meat,5.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+37,Sausages,Jimmy Dean,Meat,4.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+38,Lamb Chops,Australian Lamb,Meat,15,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+39,Dish Soap,Dawn,Household Items,2,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+40,Laundry Detergent,Tide,Household Items,8,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+41,Trash Bags,Hefty,Household Items,6,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+42,Paper Towels,Bounty,Household Items,6.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+43,Light Bulbs,GE,Hardware,4,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+44,Batteries,Duracell,Hardware,5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+45,Duct Tape,3M,Hardware,3,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+46,Extension Cords,Stanley,Hardware,7,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+47,Rice,Uncle Ben's,Grains,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+48,Pasta,Barilla,Grains,1.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+49,Oatmeal,Quaker,Grains,3,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+50,Quinoa,Bob's Red Mill,Grains,4.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+51,Cornmeal,Arrowhead Mills,Grains,3.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+52,Couscous,RiceSelect,Grains,3.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+53,Barley,Pearl's,Grains,3,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+54,Tortillas,Mission,Grains,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+55,Cheddar Cheese,Tillamook,Dairy,5.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+56,Milk,Horizon,Dairy,3,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+57,Yogurt,Chobani,Dairy,1.25,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+58,Butter,Land O'Lakes,Dairy,4.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+59,Cottage Cheese,Daisy,Dairy,2.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+60,Heavy Cream,Horizon Organic,Dairy,4,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+61,Ice Cream,Ben & Jerry's,Dairy,5.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+62,Eggs,Eggland's Best,Dairy,3,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+63,Apple Juice,Mott's,Beverage,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+64,Prime,Prime,Beverage,4,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+65,Red Bull,Red Bull,Beverage,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+66,Monster,Monster Energy,Beverage,2,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+67,Orange Juice,Tropicana,Beverage,3.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+68,Coca-Cola,Coca-Cola,Beverage,1.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+69,Pepsi,Pepsi,Beverage,1.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+70,Gatorade,Gatorade,Beverage,1.25,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+71,Coconut Water,Vita Coco,Beverage,2.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+72,Sparkling Water,LaCroix,Beverage,3.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+73,Iced Tea,Lipton,Beverage,2,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+74,Energy Shots,5-hour Energy,Beverage,3,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+75,Bread,Wonder Bread,Bakery,2,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+76,Bagels,Thomas',Bakery,3,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+77,Muffins,Hostess,Bakery,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+78,Croissants,La Boulangerie,Bakery,3.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+79,Croissant Sandwich,Panera Bread,Bakery,5.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+80,Donuts,Krispy Kreme,Bakery,5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+81,Focaccia,Schiacciata,Bakery,4.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+82,Pretzels,Snyder's of Hanover,Bakery,2.5,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
