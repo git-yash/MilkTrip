@@ -17,6 +17,8 @@
 		17C4B3102CE9324600216661 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B30F2CE9324600216661 /* ChartView.swift */; };
 		17C4B3122CE932F700216661 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3112CE932F700216661 /* ProductListView.swift */; };
 		17C4B3182CE9398200216661 /* PriceIncrement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3172CE9398200216661 /* PriceIncrement.swift */; };
+		17C4B31A2CE93CDA00216661 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3192CE93CDA00216661 /* SampleData.swift */; };
+		17C4B31C2CE9417900216661 /* SampleData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 17C4B31B2CE9417900216661 /* SampleData.csv */; };
 		C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */; };
 		C4A496132CE92CC70012CB69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496122CE92CC70012CB69 /* ContentView.swift */; };
 		C4A496152CE92CC80012CB69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A496142CE92CC80012CB69 /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		17C4B30F2CE9324600216661 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		17C4B3112CE932F700216661 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		17C4B3172CE9398200216661 /* PriceIncrement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceIncrement.swift; sourceTree = "<group>"; };
+		17C4B3192CE93CDA00216661 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		17C4B31B2CE9417900216661 /* SampleData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SampleData.csv; path = "/Users/aidenseibel/Desktop/GroceryApp/GroceryApp/Back End/SampleData.csv"; sourceTree = "<absolute>"; };
 		C4A4960D2CE92CC70012CB69 /* GroceryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryAppApp.swift; sourceTree = "<group>"; };
 		C4A496122CE92CC70012CB69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				17C4B3062CE92F0C00216661 /* Product.swift */,
+				17C4B3192CE93CDA00216661 /* SampleData.swift */,
+				17C4B31B2CE9417900216661 /* SampleData.csv */,
 				17C4B3172CE9398200216661 /* PriceIncrement.swift */,
 				17C4B3082CE92F1400216661 /* User.swift */,
 				17C4B30A2CE9300C00216661 /* Store.swift */,
@@ -289,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A496182CE92CC80012CB69 /* Preview Assets.xcassets in Resources */,
+				17C4B31C2CE9417900216661 /* SampleData.csv in Resources */,
 				C4A496152CE92CC80012CB69 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +329,7 @@
 				17C4B3102CE9324600216661 /* ChartView.swift in Sources */,
 				17C4B30B2CE9300C00216661 /* Store.swift in Sources */,
 				C4A4963B2CE93FF50012CB69 /* Util.swift in Sources */,
+				17C4B31A2CE93CDA00216661 /* SampleData.swift in Sources */,
 				17C4B3002CE92E2A00216661 /* ProfileView.swift in Sources */,
 				C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */,
 				17C4B3072CE92F0C00216661 /* Product.swift in Sources */,
