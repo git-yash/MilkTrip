@@ -11,7 +11,22 @@ import SwiftUI
 struct GroceryAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person.circle")
+                    }
+                
+                SearchView()
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                    }
+                
+                TrendsView()
+                    .tabItem {
+                        Label("Trends", systemImage: "chart.line.uptrend.xyaxis")
+                    }
+            }
         }
     }
 }
