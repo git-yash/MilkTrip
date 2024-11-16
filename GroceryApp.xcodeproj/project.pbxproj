@@ -14,8 +14,9 @@
 		17C4B3092CE92F1400216661 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3082CE92F1400216661 /* User.swift */; };
 		17C4B30B2CE9300C00216661 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B30A2CE9300C00216661 /* Store.swift */; };
 		17C4B30D2CE9301700216661 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B30C2CE9301700216661 /* ViewModel.swift */; };
-		17C4B3102CE9324600216661 /* UserGroceriesChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B30F2CE9324600216661 /* UserGroceriesChartView.swift */; };
+		17C4B3102CE9324600216661 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B30F2CE9324600216661 /* ChartView.swift */; };
 		17C4B3122CE932F700216661 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3112CE932F700216661 /* ProductListView.swift */; };
+		17C4B3182CE9398200216661 /* PriceIncrement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3172CE9398200216661 /* PriceIncrement.swift */; };
 		C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */; };
 		C4A496132CE92CC70012CB69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496122CE92CC70012CB69 /* ContentView.swift */; };
 		C4A496152CE92CC80012CB69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A496142CE92CC80012CB69 /* Assets.xcassets */; };
@@ -50,8 +51,9 @@
 		17C4B3082CE92F1400216661 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		17C4B30A2CE9300C00216661 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		17C4B30C2CE9301700216661 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		17C4B30F2CE9324600216661 /* UserGroceriesChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroceriesChartView.swift; sourceTree = "<group>"; };
+		17C4B30F2CE9324600216661 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		17C4B3112CE932F700216661 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		17C4B3172CE9398200216661 /* PriceIncrement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceIncrement.swift; sourceTree = "<group>"; };
 		C4A4960D2CE92CC70012CB69 /* GroceryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryAppApp.swift; sourceTree = "<group>"; };
 		C4A496122CE92CC70012CB69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				17C4B3062CE92F0C00216661 /* Product.swift */,
+				17C4B3172CE9398200216661 /* PriceIncrement.swift */,
 				17C4B3082CE92F1400216661 /* User.swift */,
 				17C4B30A2CE9300C00216661 /* Store.swift */,
 				17C4B30C2CE9301700216661 /* ViewModel.swift */,
@@ -114,7 +117,7 @@
 		17C4B30E2CE9322700216661 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				17C4B30F2CE9324600216661 /* UserGroceriesChartView.swift */,
+				17C4B30F2CE9324600216661 /* ChartView.swift */,
 				17C4B3112CE932F700216661 /* ProductListView.swift */,
 			);
 			path = Components;
@@ -313,12 +316,13 @@
 				17C4B30D2CE9301700216661 /* ViewModel.swift in Sources */,
 				17C4B3022CE92E3300216661 /* SearchView.swift in Sources */,
 				C4A496132CE92CC70012CB69 /* ContentView.swift in Sources */,
-				17C4B3102CE9324600216661 /* UserGroceriesChartView.swift in Sources */,
+				17C4B3102CE9324600216661 /* ChartView.swift in Sources */,
 				17C4B30B2CE9300C00216661 /* Store.swift in Sources */,
 				17C4B3002CE92E2A00216661 /* ProfileView.swift in Sources */,
 				C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */,
 				17C4B3072CE92F0C00216661 /* Product.swift in Sources */,
 				17C4B3092CE92F1400216661 /* User.swift in Sources */,
+				17C4B3182CE9398200216661 /* PriceIncrement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,4 +17,15 @@ class Product: Identifiable, Hashable {
     }
     
     var id: UUID = UUID()
+    var name: String
+    var store: UUID
+    
+    var priceData: [PriceIncrement]
+    
+    init(id: UUID, name: String, store: UUID, priceData: [PriceIncrement]) {
+        self.id = id
+        self.name = name
+        self.store = store
+        self.priceData = priceData
+    }
 }

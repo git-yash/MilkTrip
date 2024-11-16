@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-//    @EnvironmentObject var viewModel: ViewModel
+    @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
         NavigationStack{
@@ -19,7 +19,7 @@ struct ProfileView: View {
                             .font(.system(size: 32))
                             .bold()
                         
-                        UserGroceriesChartView()
+                        ChartView()
                     }
                     
                     VStack(alignment: .leading){
