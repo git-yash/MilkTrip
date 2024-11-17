@@ -65,7 +65,6 @@ func generatePriceIncrements(base_price: Double, store_index: Int) -> [PriceIncr
             }
             
             increments.append(PriceIncrement(timestamp: this_date, price: this_price))
-            prices.append(this_price)
             
             prev_price = this_price
         }
