@@ -29,6 +29,7 @@ struct GroceryAppApp: App {
                         Label("Trends", systemImage: "chart.line.uptrend.xyaxis")
                     }
             }
+            .accentColor(Color(hex: "#a3f7bf")) // Set custom accent color
             .environmentObject(viewModel)
         }
     }

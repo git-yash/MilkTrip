@@ -76,7 +76,7 @@ struct ChartView: View {
                         Text(range)
                             .fontWeight(selectedRange == range ? .bold : .regular)
                             .padding(10)
-                            .background(selectedRange == range ? Color.blue.opacity(0.2) : Color.clear)
+                            .background(selectedRange == range ? .accentColor.opacity(0.2) : Color.clear)
                             .cornerRadius(5)
                     }
                 }
