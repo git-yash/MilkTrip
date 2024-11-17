@@ -11,6 +11,8 @@ struct ProfileView: View {
     @EnvironmentObject var viewModel: ViewModel
     @State private var watchlist: [Product] = []
     @State private var sortOption = SortOption.none
+    @State private var isShowingScanner = false
+    @State private var scannedBarcode = ""
     @ObservedObject var reloadViewHelper = ReloadViewHelper()
 
     enum SortOption {
@@ -22,22 +24,56 @@ struct ProfileView: View {
     @State var sortedWatchList: [Product] = []
 
     var body: some View {
-        NavigationStack{
-            ScrollView{
-                VStack(alignment: .leading, spacing: 50){
-                    VStack(alignment: .leading){
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 50) {
+                    // Barcode Scanner Section
+                    VStack(spacing: 20) {
+                        Button {
+                            isShowingScanner = true
+                        } label: {
+                            Text("Scan Barcode")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                        }
+                    }
+                    .sheet(isPresented: $isShowingScanner) {
+                        BarcodeScannerView { barcode in
+                            isShowingScanner = false
+                            fetchBarcodeProductDetails(for: barcode) { result in
+                                switch result {
+                                case .success(let product):
+                                    print("Product Details:")
+                                    print("Name: \(product.name)")
+                                    print("Brand: \(product.brand)")
+                                    print("Description: \(product.description)")
+                                    if let imageURL = product.imageURL {
+                                        print("Image URL: \(imageURL)")
+                                    }
+                                case .failure(let error):
+                                    print("Error fetching product: \(error.localizedDescription)")
+                                }
+                            }
+                        }
+                    }
+
+                    // Chart Section
+                    VStack(alignment: .leading) {
                         ChartView(
                             topText: String(format: "$%.2f", viewModel.localUser.getCurrentPrice()),
                             allData: viewModel.localUser.getPriceIncrementData()
                         )
                     }
-                    
-                    VStack(alignment: .leading){
+
+                    // Products Section
+                    VStack(alignment: .leading) {
                         Text("Products")
                             .font(.system(size: 24))
                             .bold()
-                        
-                        HStack{
+
+                        HStack {
                             Menu {
                                 Button("Default") {
                                     sortOption = .none
@@ -51,8 +87,8 @@ struct ProfileView: View {
                             } label: {
                                 HStack {
                                     Text(sortOption == .none ? "Default" :
-                                            sortOption == .amountHighToLow ? "Highest Amount" : "Lowest Amount")
-                                    .fontWeight(.semibold)
+                                         sortOption == .amountHighToLow ? "Highest Amount" : "Lowest Amount")
+                                        .fontWeight(.semibold)
                                     Image(systemName: "chevron.down")
                                 }
                                 .foregroundColor(.primary)
@@ -66,11 +102,10 @@ struct ProfileView: View {
                             Spacer()
                         }
 
-                        
                         ForEach(sortedWatchList, id: \.self) { product in
                             NavigationLink {
                                 ProductView(product: product)
-                                    .onDisappear{
+                                    .onDisappear {
                                         reloadViewHelper.reloadView()
                                     }
                             } label: {
@@ -85,7 +120,7 @@ struct ProfileView: View {
             .navigationTitle("My Watchlist")
             .navigationBarTitleDisplayMode(.large)
             .withScreenBackground()
-            .onAppear{
+            .onAppear {
                 watchlist = viewModel.localUser.grocery_list
                 updateWatchList()
             }
@@ -98,14 +133,14 @@ struct ProfileView: View {
             sortedWatchList = watchlist
         case .amountHighToLow:
             sortedWatchList = watchlist.sorted {
-                if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice(){
+                if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice() {
                     return price_one > price_two
                 }
                 return false
             }
         case .amountLowToHigh:
             sortedWatchList = watchlist.sorted {
-                if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice(){
+                if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice() {
                     return price_one < price_two
                 }
                 return false
