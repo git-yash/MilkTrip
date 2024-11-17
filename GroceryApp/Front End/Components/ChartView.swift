@@ -89,6 +89,7 @@ struct ChartView: View {
             }
 
             HStack {
+                Spacer()
                 ForEach(ranges, id: \.self) { range in
                     Button(action: {
                         selectedRange = range
@@ -101,8 +102,8 @@ struct ChartView: View {
                             .background(selectedRange == range ? .accentColor.opacity(0.2) : Color.clear)
                             .cornerRadius(5)
                     }
+                    Spacer()
                 }
-                Spacer()
             }
         }
         .onAppear {
