@@ -85,16 +85,15 @@ struct CompareStoresView: View {
                         .font(.system(size: 12))
                 }
                 
-                VStack{
+                VStack {
                     ForEach(sortedGroups, id: \.self) { product in
-                        Button {
-                            print("hello")
-                        } label: {
+                        NavigationLink(destination: ProductView(product: product)) {
                             StoreProductView(product: product)
                         }
                         .buttonStyle(.plain)
                     }
                 }
+
             }
             .padding()
             .navigationTitle("Compare Stores")

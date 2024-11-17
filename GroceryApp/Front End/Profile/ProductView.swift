@@ -150,7 +150,7 @@ struct ProductView: View {
                 }
 
                 VStack(alignment: .leading){
-                    Text("Analysis")
+                    Text("Compare")
                         .font(.system(size: 24))
                         .bold()
                     
