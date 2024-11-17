@@ -17,8 +17,8 @@ struct TrendsView: View {
             ScrollView{
                 VStack(alignment: .leading, spacing: 50){
                     VStack(alignment: .leading){
-                        Text("Stores Nearby")
-                            .font(.system(size: 24))
+                        Text("Historical Inflation, Nearby Stores")
+                            .font(.system(size: 18))
                             .bold()
                         
                         MultiLineChartView(topText: "", allData: viewModel.getMultiLineChartData())

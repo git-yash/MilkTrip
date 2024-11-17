@@ -37,7 +37,7 @@ class User {
             var current_price: Double = 0
             
             for product in grocery_list {
-                current_price += product.priceData[i_week].price
+                current_price += product.priceData[99-i_week].price
             }
             
             let i_date = calendar.date(byAdding: .day, value: -7 * i_week, to: now)!

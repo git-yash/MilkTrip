@@ -40,7 +40,7 @@ struct ChartView: View {
                                     y: .value("Price", priceIncrement.price)
                                 )
                                 .lineStyle(StrokeStyle(lineWidth: 2))
-                                .foregroundStyle(Color(hex: "#387f7b"))
+                                .foregroundStyle(Color(hex: "#96fff9"))
                             }
                         }
                         .chartYScale(domain: lowerBound...upperBound)
@@ -89,6 +89,7 @@ struct ChartView: View {
             }
 
             HStack {
+                Spacer()
                 ForEach(ranges, id: \.self) { range in
                     Button(action: {
                         selectedRange = range
@@ -101,8 +102,8 @@ struct ChartView: View {
                             .background(selectedRange == range ? .accentColor.opacity(0.2) : Color.clear)
                             .cornerRadius(5)
                     }
+                    Spacer()
                 }
-                Spacer()
             }
         }
         .onAppear {
@@ -123,6 +124,7 @@ struct ChartView: View {
     }
     
     private func updatePercentageChange() -> Void {
+        if data.isEmpty { return }
         let final = data[data.count - 1].price
         let initial = data[0].price
         

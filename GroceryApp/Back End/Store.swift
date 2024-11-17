@@ -49,7 +49,7 @@ class Store: Identifiable, Hashable {
             var current_price: Double = 0
             
             for product in products {
-                current_price += product.priceData[i_week].price
+                current_price += product.priceData[99-i_week].price
             }
             
             let i_date = calendar.date(byAdding: .day, value: -7 * i_week, to: now)!
