@@ -32,8 +32,17 @@ private func getProductIDsString() -> String {
 }
 
 public func generateAnalysisPrompt() -> String {
-    // prompt contains entire csv and user shopping cart products
-    return "(Talk in 1st person) Provide a brief analysis report on what stores the user should be going to based on prices of the products in their cart with IDs: \(getProductIDsString()) Only provide analysis which should be 2-3 sentences, no other details \(getDataAsString(pathName: "/Users/yashshah/Desktop/GroceryApp/GroceryApp/Back End/SampleData.csv"))"
+    if let filePath = Bundle.main.path(forResource: "SampleData", ofType: "csv"){
+        do {
+            let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
+            
+            return "(Talk in 1st person) Provide a brief analysis report on what stores the user should be going to based on prices of the products in their cart with IDs: \(getProductIDsString()) Only provide analysis which should be 2-3 sentences, no other details \(fileContents))"
+        }
+        catch{
+            print("error")
+        }
+    }
+    return "Error"
 }
 
 extension String {
