@@ -53,7 +53,7 @@ class Product: Identifiable, Hashable {
         
         // Find the priceDatum with the most recent timestamp
         let mostRecentPriceDatum = priceData.max { (first, second) in
-            first.timestamp < second.timestamp
+            first.timestamp > second.timestamp
         }
         
         // Return the price of the most recent priceDatum
