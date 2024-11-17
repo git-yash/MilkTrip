@@ -29,10 +29,14 @@ struct TrendsView: View {
                             .font(.system(size: 24))
                             .bold()
                         
-                        HStack{
+                        VStack{
                             Text(analysis)
                                 .font(.system(size: 14))
-                            Spacer()
+                            
+                            Text("Powered by OpenAI")
+                                .font(.system(size: 14))
+                                .bold()
+                                .padding()
                         }
                         .padding(EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))
                         .background(Color(hex: "#494C52"))
@@ -46,7 +50,7 @@ struct TrendsView: View {
             .withScreenBackground()
             .onAppear {
                 analysisService.sendTextToOpenAI(prompt: generateAnalysisPrompt()) { result, error in
-                    if let error = error {
+                    if error != nil {
                         analysis = "Failed to fetch analysis."
                     } else if let result = result {
                         analysis = result
