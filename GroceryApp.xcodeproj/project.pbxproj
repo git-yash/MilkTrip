@@ -45,6 +45,7 @@
 		C4D6BEAC2CE9F35A006FD460 /* AnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6BEAB2CE9F35A006FD460 /* AnalysisService.swift */; };
 		C4D6BEAF2CE9F37E006FD460 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = C4D6BEAE2CE9F37E006FD460 /* OpenAI */; };
 		C4D6BEB32CEA26D6006FD460 /* Keys.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4D6BEB22CEA26D6006FD460 /* Keys.txt */; };
+		C4D6BEB92CEA5267006FD460 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6BEB82CEA5267006FD460 /* BarcodeScannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		C4D6BEAA2CE9C385006FD460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C4D6BEAB2CE9F35A006FD460 /* AnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisService.swift; sourceTree = "<group>"; };
 		C4D6BEB22CEA26D6006FD460 /* Keys.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Keys.txt; sourceTree = "<group>"; };
+		C4D6BEB82CEA5267006FD460 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */,
 				173F47A12CE9AE0400A0A295 /* StoreProductView.swift */,
 				179D4EF22CEA26E10016E0DD /* StoreSubView.swift */,
+				C4D6BEB82CEA5267006FD460 /* BarcodeScannerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				179D4EF32CEA26E10016E0DD /* StoreSubView.swift in Sources */,
 				173F47A02CE9ABB100A0A295 /* CompareStoresView.swift in Sources */,
 				17C4B3072CE92F0C00216661 /* Product.swift in Sources */,
+				C4D6BEB92CEA5267006FD460 /* BarcodeScannerView.swift in Sources */,
 				C4D6BEAC2CE9F35A006FD460 /* AnalysisService.swift in Sources */,
 				17C4B3092CE92F1400216661 /* User.swift in Sources */,
 				17C4B3182CE9398200216661 /* PriceIncrement.swift in Sources */,
@@ -608,7 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GroceryApp/Preview Content\"";
-				DEVELOPMENT_TEAM = C72D493DTH;
+				DEVELOPMENT_TEAM = 5JV988A46C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GroceryApp/Info.plist;
@@ -639,7 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GroceryApp/Preview Content\"";
-				DEVELOPMENT_TEAM = C72D493DTH;
+				DEVELOPMENT_TEAM = 5JV988A46C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GroceryApp/Info.plist;

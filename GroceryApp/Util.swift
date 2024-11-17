@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import Vision
+import UIKit
 
 public func getDataAsString(pathName: String) -> String {
     let fileURL = URL(fileURLWithPath: pathName)
@@ -36,6 +38,39 @@ public func generateAnalysisPrompt(shoppingCart: String, insights: String) -> St
     
     return prompt
 }
+
+
+func detectBarcode(in image: UIImage) {
+    guard let cgImage = image.cgImage else { return }
+    
+    // Create a request to detect barcodes
+    let barcodeRequest = VNDetectBarcodesRequest { (request, error) in
+        if let error = error {
+            print("Barcode detection error: \(error)")
+            return
+        }
+        
+        // Process the results
+        for observation in request.results as? [VNBarcodeObservation] ?? [] {
+            if let payload = observation.payloadStringValue {
+                print("Detected barcode payload: \(payload)")
+                print("Symbology: \(observation.symbology.rawValue)")
+                print("Bounding box: \(observation.boundingBox)")
+            }
+        }
+    }
+    
+    // Create a request handler
+    let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+    
+    // Perform the request
+    do {
+        try handler.perform([barcodeRequest])
+    } catch {
+        print("Failed to perform barcode request: \(error)")
+    }
+}
+
 
 extension String {
     public func formatDayAndMonthStrings() -> String {
