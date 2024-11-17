@@ -11,6 +11,7 @@ struct ProfileView: View {
     @EnvironmentObject var viewModel: ViewModel
     @State private var watchlist: [Product] = []
     @State private var sortOption = SortOption.none
+    @ObservedObject var reloadViewHelper = ReloadViewHelper()
 
     enum SortOption {
         case none
@@ -48,7 +49,6 @@ struct ProfileView: View {
                             topText: String(format: "$%.2f", viewModel.localUser.getCurrentPrice()),
                             allData: viewModel.localUser.getPriceIncrementData()
                         )
-
                     }
                     
                     VStack(alignment: .leading){
@@ -89,6 +89,9 @@ struct ProfileView: View {
                         ForEach(sortedGroups, id: \.self) { product in
                             NavigationLink {
                                 ProductView(product: product)
+                                    .onDisappear{
+                                        reloadViewHelper.reloadView()
+                                    }
                             } label: {
                                 ProductListView(product: product)
                             }
@@ -103,6 +106,7 @@ struct ProfileView: View {
             .withScreenBackground()
             .onAppear{
                 watchlist = viewModel.localUser.grocery_list
+                reloadViewHelper.reloadView()
             }
         }
     }

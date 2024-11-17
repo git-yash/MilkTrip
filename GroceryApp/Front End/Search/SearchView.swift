@@ -59,9 +59,15 @@ struct SearchView: View {
                             
                             let recent_searches = viewModel.localUser.recent_searches
                             if recent_searches.isEmpty {
-                                Text("No recent searches")
-                                    .font(.system(size: 18))
-                                    .padding(.top)
+                                HStack{
+                                    Text("No recent searches")
+                                        .font(.system(size: 14))
+                                        .padding()
+                                    Spacer()
+                                }
+                                    .background(Color(hex: "#393e46"))
+                                    .cornerRadius(5)
+
                             } else {
                                 ForEach(recent_searches, id: \.self) { search in
                                     HStack {
@@ -93,22 +99,39 @@ struct SearchView: View {
                             }
                         }
                     } else {
-                        VStack {
-                            // Display search results with custom navigation handling
-                            ForEach(getSearchResults(searchText: searchText), id: \.self) { product in
-                                NavigationLink {
-                                    ProductView(product: product)
-                                        .onDisappear {
-                                            // Append the search text and trigger navigation
-                                            if (!viewModel.localUser.recent_searches.contains(product.name)) {
-                                                viewModel.localUser.recent_searches.append(product.name)
-                                            }
-                                            isNavigationActive = true  // Trigger the navigation
-                                        }
-                                } label: {
-                                    ProductListView(product: product)
+                        VStack(alignment: .leading) {
+                            Text("Search Results")
+                                .font(.system(size: 24))
+                                .bold()
+                            
+                            let results = getSearchResults(searchText: searchText)
+                            
+                            if results.isEmpty {
+                                HStack{
+                                    Text("No search results.")
+                                        .font(.system(size: 14))
+                                        .padding()
+                                    Spacer()
                                 }
-                                .buttonStyle(.plain)
+                                    .background(Color(hex: "#393e46"))
+                                    .cornerRadius(5)
+                            } else {
+                            // Display search results with custom navigation handling
+                                ForEach(results, id: \.self) { product in
+                                    NavigationLink {
+                                        ProductView(product: product)
+                                            .onDisappear {
+                                                // Append the search text and trigger navigation
+                                                if (!viewModel.localUser.recent_searches.contains(product.name)) {
+                                                    viewModel.localUser.recent_searches.append(product.name)
+                                                }
+                                                isNavigationActive = true  // Trigger the navigation
+                                            }
+                                    } label: {
+                                        ProductListView(product: product)
+                                    }
+                                    .buttonStyle(.plain)
+                                }
                             }
                         }
                     }

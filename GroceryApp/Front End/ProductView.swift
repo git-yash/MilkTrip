@@ -11,66 +11,133 @@ import Shimmer
 struct ProductView: View {
     @EnvironmentObject var viewModel: ViewModel
     var product: Product
+    @ObservedObject var reloadViewHelper = ReloadViewHelper()
+    
+    // State variables for showing the alert
+    @State private var showAlert = false
+    @State private var isRemoving = false
     
     var body: some View {
-        ScrollView{
-            VStack(alignment: .leading, spacing: 50){
+        ScrollView {
+            VStack(alignment: .leading, spacing: 50) {
+                // Product Image and Info Section (same as before)
                 HStack(alignment: .center, spacing: 20){
+                    Spacer()
                     if let url = URL(string: product.image_url) {
                         AsyncImage(url: url) { phase in
                             switch phase {
                             case .empty:
-                                // Placeholder: Gray square with shimmer effect
                                 Color.gray
-                                    .frame(width: 100, height: 100)
-                                    .cornerRadius(50)
+                                    .frame(width: 200, height: 200)
+                                    .cornerRadius(100)
                                     .shimmering()
                             case .success(let image):
-                                // Loaded image
                                 image
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 100, height: 100)
-                                    .cornerRadius(50)
+                                    .frame(width: 200, height: 200)
+                                    .cornerRadius(100)
                             case .failure:
-                                // Placeholder for failure case (optional) with shimmer
                                 Color.gray
-                                    .frame(width: 100, height: 100)
-                                    .cornerRadius(50)
+                                    .frame(width: 200, height: 200)
+                                    .cornerRadius(100)
                                     .shimmering()
                             @unknown default:
                                 Color.gray
-                                    .frame(width: 100, height: 100)
-                                    .cornerRadius(50)
+                                    .frame(width: 200, height: 200)
+                                    .cornerRadius(100)
                                     .shimmering()
                             }
                         }
                     } else {
-                        // If the URL is invalid, show a placeholder with shimmer
                         Color.gray
                             .frame(width: 100, height: 100)
                             .cornerRadius(50)
                             .shimmering()
                     }
-                    
-                    VStack(alignment: .leading){
-                        Text("Category: \(product.category)")
-                            .font(.system(size: 14))
-                        Text("Distributed by: \(product.brand)")
-                            .font(.system(size: 14))
-                        Text("Store: \(product.getStore())")
-                            .font(.system(size: 14))
+                    Spacer()
+                }
+
+                // Product Details Section (same as before)
+                VStack(spacing: 20){
+                    HStack{
+                        Spacer()
+                        VStack(alignment: .center){
+                            Text("Category")
+                                .font(.system(size: 14))
+                                .opacity(0.70)
+                            Text("\(product.category)")
+                                .font(.system(size: 16))
+                                .bold()
+                        }
+                        Spacer()
+                        VStack(alignment: .center){
+                            Text("Distributed by")
+                                .font(.system(size: 14))
+                                .opacity(0.70)
+                            Text("\(product.brand)")
+                                .font(.system(size: 16))
+                                .bold()
+                        }
+                        Spacer()
+                        VStack(alignment: .center){
+                            Text("Store")
+                                .font(.system(size: 14))
+                                .opacity(0.70)
+                            Text("\(product.getStore())")
+                                .font(.system(size: 16))
+                                .bold()
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                    .background(Color(hex: "#494C52"))
+                    .cornerRadius(10)
+
+                    // Watchlist Button with Alert
+                    if viewModel.localUser.isWatchingProduct(product: product) {
+                        Button {
+                            // Set state to show the alert for removing
+                            isRemoving = true
+                            showAlert = true
+                        } label: {
+                            HStack {
+                                Spacer()
+                                Text("Remove from your watchlist")
+                                Spacer()
+                            }
+                            .padding()
+                            .background(.red)
+                            .cornerRadius(10)
+                        }
+                        .buttonStyle(.plain)
+                    } else {
+                        Button {
+                            // Set state to show the alert for adding
+                            isRemoving = false
+                            showAlert = true
+                        } label: {
+                            HStack {
+                                Spacer()
+                                Text("Add to your watchlist")
+                                Spacer()
+                            }
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(10)
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
                 
+                // Price and Analysis Sections (same as before)
                 VStack(alignment: .leading){
-                    Text("Current Price: $"+String(format: "%.2f", product.getMostRecentPrice() ?? 0.00))
+                    Text("Price Trends")
                         .font(.system(size: 24))
                         .bold()
-                    
-                    ChartView(topText: "Trends across time", allData: product.priceData)
+                    ChartView(topText: "$"+String(format: "%.2f", product.getMostRecentPrice() ?? 0.00), allData: product.priceData)
                 }
-                
+
                 VStack(alignment: .leading){
                     Text("Analysis")
                         .font(.system(size: 24))
@@ -96,7 +163,6 @@ struct ProductView: View {
                                     
                                     Text("Tap to analyze this product")
                                         .font(.system(size: 12))
-                                    
                                 }
                                 Spacer()
                             }
@@ -119,7 +185,6 @@ struct ProductView: View {
 
                                     Text("Tap to analyze this product")
                                         .font(.system(size: 12))
-
                                 }
                                 Spacer()
                             }
@@ -131,14 +196,15 @@ struct ProductView: View {
                     .buttonStyle(.plain)
                 }
                 
+                // Substitutes Section (same as before)
                 VStack(alignment: .leading){
                     Text("Substitutes from \(product.getStore())")
                         .font(.system(size: 24))
                         .bold()
                     
                     let subs = viewModel.getSubstitutes(product: product)
-                    if subs.isEmpty{
-                        HStack{
+                    if subs.isEmpty {
+                        HStack {
                             Text("We couldn't find any substitutes for this product.")
                                 .font(.system(size: 14))
                             Spacer()
@@ -159,6 +225,22 @@ struct ProductView: View {
         .navigationTitle(product.name)
         .navigationBarTitleDisplayMode(.large)
         .withScreenBackground()
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text(isRemoving ? "Remove from Watchlist" : "Add to Watchlist"),
+                message: Text(isRemoving ? "Are you sure you want to remove this product from your watchlist?" : "Are you sure you want to add this product to your watchlist?"),
+                primaryButton: .destructive(Text(isRemoving ? "Remove" : "Add")) {
+                    // Perform the action based on whether it's removing or adding
+                    if isRemoving {
+                        viewModel.localUser.removeProduct(product: product)
+                    } else {
+                        viewModel.localUser.addProduct(product: product)
+                    }
+                    reloadViewHelper.reloadView()
+                },
+                secondaryButton: .cancel()
+            )
+        }
     }
 }
 

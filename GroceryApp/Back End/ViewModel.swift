@@ -22,7 +22,7 @@ public class ViewModel: ObservableObject {
         
         if let product_data = readSampleData(){
             self.products = product_data
-            self.localUser = User(id: 1, grocery_list: Array(product_data.shuffled().prefix(5)), recent_searches: [])
+            self.localUser = User(id: 1, grocery_list: Array(product_data.shuffled().prefix(20)), recent_searches: [])
             
             for product in product_data {
                 switch product.store {
@@ -49,9 +49,9 @@ public class ViewModel: ObservableObject {
         
         self.coupons = [
             Coupon(id: 1, store: walmartStore, description: "Get 20% off on electronics!", url: "https://www.walmart.com"),
-            Coupon(id: 2, store: cvsStore, description: "Save $10 on your first order!", url: "https://www.walmart.com"),
-            Coupon(id: 3, store: randallsStore, description: "Buy one, get one free on toys!", url: "https://www.walmart.com"),
-            Coupon(id: 4, store: HEBStore, description: "Free shipping on orders over $50!", url: "https://www.walmart.com")
+            Coupon(id: 2, store: cvsStore, description: "Save $10 on your first order!", url: "https://www.cvs.com"),
+            Coupon(id: 3, store: randallsStore, description: "Buy one, get one free on toys!", url: "https://www.randalls.com"),
+            Coupon(id: 4, store: HEBStore, description: "Free shipping on orders over $50!", url: "https://www.heb.com")
         ]
     }
     

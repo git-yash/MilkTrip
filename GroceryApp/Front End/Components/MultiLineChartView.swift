@@ -138,7 +138,7 @@ struct MultiLineChartView: View {
                 tmp_upper_bound = max(tmp_upper_bound, Int(maxPrice.price) + 2)
             }
 
-            displayedData[key] = filtered?.reversed()
+            displayedData[key] = filtered?.sorted { $0.timestamp < $1.timestamp }
         }
         
         lowerBound = tmp_lower_bound

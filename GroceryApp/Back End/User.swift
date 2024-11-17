@@ -9,7 +9,7 @@ import Foundation
 
 class User {
     var id: Int
-    var grocery_list: [Product] = []
+    @Published var grocery_list: [Product] = []
     @Published var recent_searches: [String] = []
     
     init(id: Int, grocery_list: [Product], recent_searches: [String]) {
@@ -24,7 +24,7 @@ class User {
         for product in grocery_list {
             current_price += product.getMostRecentPrice() ?? 0.0
         }
-
+        
         return current_price
     }
     
@@ -45,5 +45,28 @@ class User {
         }
         
         return increments
+    }
+    
+    func isWatchingProduct(product: Product) -> Bool {
+        for item in self.grocery_list {
+            if item.id == product.id{
+                return true
+            }
+        }
+        return false
+    }
+    
+    // Method to remove a product from the grocery list
+    func removeProduct(product: Product) {
+        if let index = grocery_list.firstIndex(where: { $0.id == product.id }) {
+            grocery_list.remove(at: index)
+        }
+    }
+    
+    // Method to add a product to the grocery list
+    func addProduct(product: Product) {
+        if !isWatchingProduct(product: product) {
+            grocery_list.append(product)
+        }
     }
 }
