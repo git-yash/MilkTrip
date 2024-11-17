@@ -6,6 +6,7 @@ struct ChartView: View {
     @State var selectedRange: String = "1M"
     @State var allData: [PriceIncrement]
     @State var data: [PriceIncrement] = []
+    @State var displayedData: [PriceIncrement] = [] // For animation
     @State var selectedDataPoint: (index: Int, value: Double)? = nil
     @State var lowerBound: Int = 0
     @State var upperBound: Int = 10
@@ -20,8 +21,8 @@ struct ChartView: View {
                     .fill(Color(hex: "#494C52"))
                     .overlay(
                         Chart {
-                            ForEach(data.indices, id: \.self) { index in
-                                let priceIncrement = data[index]
+                            ForEach(displayedData.indices, id: \.self) { index in
+                                let priceIncrement = displayedData[index]
                                 LineMark(
                                     x: .value("Date", priceIncrement.timestamp),
                                     y: .value("Price", priceIncrement.price)
@@ -93,6 +94,7 @@ struct ChartView: View {
         }
         .onAppear {
             updateData(for: selectedRange)
+            animateChartDrawing()
         }
         .padding()
         .background(
@@ -144,6 +146,20 @@ struct ChartView: View {
         }
 
         data.reverse()
+    }
+
+    private func animateChartDrawing() {
+        displayedData = []
+        var currentIndex = 0
+
+        Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { timer in
+            if currentIndex < data.count {
+                displayedData.append(data[currentIndex])
+                currentIndex += 1
+            } else {
+                timer.invalidate()
+            }
+        }
     }
 
     private func handleDragGesture(value: DragGesture.Value) {
