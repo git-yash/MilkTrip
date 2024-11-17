@@ -1,10 +1,3 @@
-//
-//  UserGroceriesChartView.swift
-//  GroceryApp
-//
-//  Created by Aiden Seibel on 11/16/24.
-//
-
 import SwiftUI
 import Charts
 
@@ -39,7 +32,7 @@ struct ChartView: View {
                         }
                         .chartYScale(domain: lowerBound...upperBound)
                         .padding()
-                        .cornerRadius(15) // Round the edges of the chart
+                        .cornerRadius(15)
                     )
                     .gesture(
                         DragGesture()
@@ -52,22 +45,25 @@ struct ChartView: View {
                     )
                     .frame(height: screenWidth * 0.55)
 
+                // Overlay price text above the chart
                 if let selected = selectedDataPoint {
                     let priceIncrement = data[selected.index]
                     let xOffset = CGFloat(selected.index) * (screenWidth - 40) / CGFloat(data.count - 1)
-                    VStack {
+                    ZStack {
+                        // Price label
                         Text("$\(String(format: "%.2f", priceIncrement.price))")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding(8)
                             .background(Color.black.opacity(0.8))
                             .cornerRadius(8)
-                            .offset(x: xOffset - screenWidth / 2 + 20, y: -30)
+                            .offset(x: xOffset - screenWidth / 2 + 20, y: -screenWidth * 0.25) // Position text above the chart
 
+                        // Vertical line
                         Rectangle()
-                            .fill(Color.gray)
-                            .frame(width: 1, height: screenWidth * 0.50)
-                            .offset(x: xOffset - screenWidth / 2 + 20, y: -screenWidth * 0.1)
+                            .fill(Color.white.opacity(0.6))
+                            .frame(width: 1, height: screenWidth * 0.40)
+                            .offset(x: xOffset - screenWidth / 2 + 20)
                     }
                 }
             }
@@ -106,31 +102,29 @@ struct ChartView: View {
 
         switch range {
         case "1M":
-            formatter.dateFormat = "MMM dd" // Short month names with day, e.g., Oct 18
+            formatter.dateFormat = "MMM dd"
             days = 30
         case "6M":
-            formatter.dateFormat = "MMM" // Short month names, e.g., Jan
+            formatter.dateFormat = "MMM"
             days = 182
         case "YTD":
             let startOfYear = calendar.date(from: calendar.dateComponents([.year], from: Date()))!
             days = calendar.dateComponents([.day], from: startOfYear, to: Date()).day!
         case "1Y":
-            formatter.dateFormat = "MMM" // Short month names, Jan, Feb
+            formatter.dateFormat = "MMM"
             days = 365
         case "All":
-            formatter.dateFormat = "yyyy" // Year format
+            formatter.dateFormat = "yyyy"
             days = 100000
         default:
-            data = [] // If an unrecognized range is passed, clear data.
+            data = []
             return
         }
 
         let now = Date()
 
-        // Filter data based on the calculated range
         data = allData.filter { price_increment in
             let date = price_increment.timestamp
-            // Compare if the date is within the specified range
             return date > calendar.date(byAdding: .day, value: -days, to: now)!
         }
 
@@ -142,15 +136,15 @@ struct ChartView: View {
             upperBound = Int(maxPrice.price) + 2
         }
 
-        data.reverse() // To show the data in chronological order
+        data.reverse()
     }
 
     private func handleDragGesture(value: DragGesture.Value) {
         let location = value.location
-        let chartWidth = screenWidth - 40 // Adjust for padding
+        let chartWidth = screenWidth - 40
         let spacing = chartWidth / CGFloat(data.count - 1)
 
-        let index = Int((location.x - 20) / spacing) // Adjust for padding
+        let index = Int((location.x - 20) / spacing)
         if index >= 0 && index < data.count {
             selectedDataPoint = (index: index, value: data[index].price)
         } else {
