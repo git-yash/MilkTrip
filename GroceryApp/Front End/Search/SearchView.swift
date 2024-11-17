@@ -1,3 +1,11 @@
+//
+//  SearchView.swift
+//  GroceryApp
+//
+//  Created by Aiden Seibel on 11/16/24.
+//
+
+
 import SwiftUI
 
 struct SearchView: View {
@@ -7,11 +15,15 @@ struct SearchView: View {
     @State private var isNavigationActive = false
     @ObservedObject var reloadViewHelper = ReloadViewHelper()
     @State var suggestedProducts: [Product] = []
+    @State private var isShowingScanner = false
+    @State private var scannedBarcode = ""
+    @State var navigateToProductView: Bool = false
+
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 50) {
+                VStack(alignment: .leading, spacing: 30) {
                     // Search Bar
                     TextField("Search Products...", text: $searchText)
                         .padding(8)
@@ -37,6 +49,31 @@ struct SearchView: View {
                                 }
                             }
                         )
+                
+                    // Barcode Scanner Section
+                    Button {
+                        isShowingScanner = true
+                    } label: {
+                        HStack{
+                            Image(systemName: "camera.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundColor(.gray)
+                                .frame(width: 50, height: 50)
+                            VStack(alignment: .leading, spacing: 2){
+                                Text("Scan a barcode")
+                                    .bold()
+                                Text("Take a picture, view a product's details")
+                                    .font(.system(size: 12))
+                                    .lineLimit(1)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(.gray, lineWidth: 1))
+                    }
+                    .buttonStyle(.plain)
                     
                     // Show Coupons when search bar is NOT focused and search text is empty
                     if !searchFieldIsFocused && searchText.isEmpty {
@@ -147,6 +184,11 @@ struct SearchView: View {
                     }
                 }
                 .padding()
+                
+                NavigationLink(destination: ProductView(product: Product(id: 1000, name: "Nutri Grain Bar", brand: "Kellogs", category: "Snacks", store: 2, image_url: "https://s7d6.scene7.com/is/image/bjs/12332", priceData: generatePriceIncrements(base_price: 4.50, store_index: 2))), isActive: $navigateToProductView) {
+                    EmptyView() // This link is not shown in the UI
+                }
+
             }
             .navigationTitle("Search Products")
             .navigationBarTitleDisplayMode(.large)
@@ -155,6 +197,30 @@ struct SearchView: View {
                 generateSuggestedProducts()  // Generate random products when view appears
             }
             .withScreenBackground()
+            .sheet(isPresented: $isShowingScanner) {
+                BarcodeScannerView { barcode in
+                    isShowingScanner = false
+                    fetchBarcodeProductDetails(for: barcode) { result in
+                        switch result {
+                        case .success(let product):
+                            print("Product Details:")
+                            print("Name: \(product.name)")
+                            print("Brand: \(product.brand)")
+                            print("Description: \(product.description)")
+                            if let imageURL = product.imageURL {
+                                print("Image URL: \(imageURL)")
+                            }
+                            navigateToProductView = true
+
+                        case .failure(let error):
+                            print("Error fetching product: \(error.localizedDescription)")
+                            navigateToProductView = true
+
+                        }
+                    }
+                }
+            }
+
         }
     }
     func getSearchResults(searchText: String) -> [Product] {
@@ -195,6 +261,7 @@ struct SearchView: View {
                 break
             }
         }
+        
         
         suggestedProducts = products
     }

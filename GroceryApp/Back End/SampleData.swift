@@ -113,6 +113,7 @@ func generatePriceIncrements(base_price: Double, store_index: Int) -> [PriceIncr
 }
 
 
+
 func readInflationData() -> [PriceIncrement] {
     if let filePath = Bundle.main.path(forResource: "InflationData", ofType: "csv"){
         do {

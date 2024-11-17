@@ -24,7 +24,7 @@ struct TrendsView: View {
                     }
                     
                     VStack(alignment: .leading){
-                        Text("Ranked by Price")
+                        Text("Monthly Overall Changes")
                             .font(.system(size: 24))
                             .bold()
 
@@ -39,7 +39,7 @@ struct TrendsView: View {
                     .buttonStyle(.plain)
                     
                     VStack(alignment: .leading){
-                        Text("Analysis")
+                        Text("AI Analysis")
                             .font(.system(size: 24))
                             .bold()
                         

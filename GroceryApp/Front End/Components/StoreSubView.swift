@@ -29,14 +29,12 @@ struct StoreSubView: View {
 
             // Price Section
             VStack(alignment: .leading) {
-                Text("$" + String(format: "%.2f", 1.2 ?? 0.00))
+                Text(String(format: "%.2f", store.getOneMonthPriceChangePercent())+"%")
                     .font(.system(size: 18))
+                    .foregroundStyle(store.getOneMonthPriceChangePercent() > 0 ? .red : .green)
                     .bold()
             }
             .frame(width: screenWidth * 0.20)
-
-            
-            Spacer()
         }
         .frame(height: screenWidth * 0.10)
         .padding(EdgeInsets(top: 12, leading: 10, bottom: 12, trailing: 10))

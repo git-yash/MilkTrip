@@ -28,9 +28,10 @@ func fetchBarcodeProductDetails(for barcode: String, completion: @escaping (Resu
 
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
-    request.addValue("ad4407684665bcaef89ac4c169ba5ee4", forHTTPHeaderField: "Authorization") // Add API key if required
+    request.setValue("Bearer ad4407684665bcaef89ac4c169ba5ee4", forHTTPHeaderField: "Authorization") // Add API key if required
 
     URLSession.shared.dataTask(with: request) { data, response, error in
+                
         if let error = error {
             completion(.failure(error))
             return

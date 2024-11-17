@@ -58,4 +58,31 @@ class Store: Identifiable, Hashable {
         
         return increments
     }
+    
+    func getPriceOneMonthAgo() -> Double {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let oneMonthAgo = calendar.date(byAdding: .month, value: -1, to: currentDate)!
+        
+        var price: Double = 0.0
+        
+        for product in products {
+            let filtered = product.priceData.filter { $0.timestamp >= oneMonthAgo }
+            let relevant = filtered.sorted { $0.timestamp < $1.timestamp }
+            
+            price += relevant[0].price
+        }
+
+        
+        return price
+
+    }
+    
+    func getOneMonthPriceChangePercent() -> Double {
+        let final: Double = getCurrentPrice()
+        let initial: Double = getPriceOneMonthAgo()
+
+        return ((final - initial) / initial) * 100
+    }
+
 }

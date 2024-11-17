@@ -231,7 +231,7 @@ struct ProductView: View {
                     }
                 }
             }
-            .padding(15)
+            .padding(20)
         }
         .navigationTitle(product.name)
         .navigationBarTitleDisplayMode(.large)
