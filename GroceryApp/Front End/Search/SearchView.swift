@@ -100,7 +100,9 @@ struct SearchView: View {
                                     ProductView(product: product)
                                         .onDisappear {
                                             // Append the search text and trigger navigation
-                                            viewModel.localUser.recent_searches.append(product.name)
+                                            if (!viewModel.localUser.recent_searches.contains(product.name)) {
+                                                viewModel.localUser.recent_searches.append(product.name)
+                                            }
                                             isNavigationActive = true  // Trigger the navigation
                                         }
                                 } label: {
