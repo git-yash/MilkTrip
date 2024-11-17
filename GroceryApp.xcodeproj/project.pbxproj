@@ -32,6 +32,7 @@
 		C4A4963F2CE956CC0012CB69 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4963E2CE956CC0012CB69 /* CouponView.swift */; };
 		C4A496412CE95FA20012CB69 /* CouponCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496402CE95FA20012CB69 /* CouponCarousel.swift */; };
 		C4A496492CE982890012CB69 /* CustomBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */; };
+		C4A4964C2CE9AF290012CB69 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4964B2CE9AF290012CB69 /* Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		C4A4963E2CE956CC0012CB69 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		C4A496402CE95FA20012CB69 /* CouponCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCarousel.swift; sourceTree = "<group>"; };
 		C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundModifier.swift; sourceTree = "<group>"; };
+		C4A4964B2CE9AF290012CB69 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +112,9 @@
 		17C4B2FE2CE92E1500216661 /* Front End */ = {
 			isa = PBXGroup;
 			children = (
+				C4A4964A2CE9AF130012CB69 /* Search */,
 				17C4B30E2CE9322700216661 /* Components */,
 				17C4B2FF2CE92E2A00216661 /* ProfileView.swift */,
-				17C4B3012CE92E3300216661 /* SearchView.swift */,
 				17C4B3032CE92E3A00216661 /* TrendsView.swift */,
 				17C4B3222CE9560900216661 /* ProductView.swift */,
 			);
@@ -203,6 +205,15 @@
 				C4A4962D2CE92CC90012CB69 /* GroceryAppUITestsLaunchTests.swift */,
 			);
 			path = GroceryAppUITests;
+			sourceTree = "<group>";
+		};
+		C4A4964A2CE9AF130012CB69 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				17C4B3012CE92E3300216661 /* SearchView.swift */,
+				C4A4964B2CE9AF290012CB69 /* Search.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +364,7 @@
 				17C4B3232CE9560900216661 /* ProductView.swift in Sources */,
 				C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */,
 				17C4B3072CE92F0C00216661 /* Product.swift in Sources */,
+				C4A4964C2CE9AF290012CB69 /* Search.swift in Sources */,
 				17C4B3092CE92F1400216661 /* User.swift in Sources */,
 				17C4B3182CE9398200216661 /* PriceIncrement.swift in Sources */,
 			);

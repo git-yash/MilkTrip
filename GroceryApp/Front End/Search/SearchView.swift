@@ -60,6 +60,7 @@ struct SearchView: View {
                             if recent_searches.isEmpty {
                                 Text("No recent searches")
                                     .font(.system(size: 12))
+                                    .padding()
                             } else {
                                 ForEach(recent_searches, id: \.self) { search in
                                     HStack {
@@ -91,9 +92,23 @@ struct SearchView: View {
                             }
                         }
                     } else {
-                        Text("Search Results")
-                            .font(.system(size: 24))
-                            .bold()
+//                        Text("Search Results")
+//                            .font(.system(size: 24))
+//                            .bold()
+                        ForEach(getSearchResults(searchText: searchText), id: \.self) { product in
+                            NavigationLink {
+                                ProductView(product: product)
+                            } label: {
+                                ProductListView(product: product)
+                                    .simultaneousGesture(
+                                        TapGesture().onEnded {
+                                            viewModel.localUser.recent_searches.append(searchText)
+                                        }
+                                    )
+                            }
+                            .buttonStyle(.plain)
+                        }
+
                     }
                 }
                 .padding()
