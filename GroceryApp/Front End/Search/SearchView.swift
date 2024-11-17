@@ -6,6 +6,7 @@ struct SearchView: View {
     @FocusState private var searchFieldIsFocused: Bool
     @State private var isNavigationActive = false
     @ObservedObject var reloadViewHelper = ReloadViewHelper()
+    @State var suggestedProducts: [Product] = []
 
     var body: some View {
         NavigationStack {
@@ -37,6 +38,7 @@ struct SearchView: View {
                             }
                         )
                     
+                    // Show Coupons when search bar is NOT focused and search text is empty
                     if !searchFieldIsFocused && searchText.isEmpty {
                         VStack(alignment: .leading) {
                             Text("Coupons")
@@ -44,8 +46,29 @@ struct SearchView: View {
                                 .bold()
                             
                             CouponCarousel(coupons: viewModel.coupons)
+                            
+                            Text("Suggested Products")
+                                .font(.system(size: 24))
+                                .bold()
+                                .padding(.top, 10)
+                            
+                            // Display suggested products
+                            ForEach(suggestedProducts, id: \.self) { product in
+                                NavigationLink {
+                                    ProductView(product: product)
+                                        .onDisappear{
+                                            reloadViewHelper.reloadView()
+                                        }
+                                } label: {
+                                    ProductListView(product: product)
+                                }
+                                .buttonStyle(.plain)
+                            }
                         }
-                        
+                    }
+                    
+                    // Show Previous Searches when search bar is focused and search text is empty
+                    if searchFieldIsFocused && searchText.isEmpty {
                         VStack(alignment: .leading) {
                             Text("Previous Searches")
                                 .font(.system(size: 24))
@@ -61,7 +84,6 @@ struct SearchView: View {
                                 }
                                     .background(Color(hex: "#393e46"))
                                     .cornerRadius(5)
-
                             } else {
                                 ForEach(recent_searches, id: \.self) { search in
                                     HStack {
@@ -94,7 +116,10 @@ struct SearchView: View {
                                 }
                             }
                         }
-                    } else {
+                    }
+                    
+                    // Show Search Results when search bar is focused and search text is NOT empty
+                    if searchFieldIsFocused && !searchText.isEmpty {
                         VStack(alignment: .leading) {
                             Text("Search Results")
                                 .font(.system(size: 24))
@@ -102,32 +127,21 @@ struct SearchView: View {
                             
                             let results = getSearchResults(searchText: searchText)
                             
-                            if results.isEmpty {
-                                HStack {
-                                    Text("No search results.")
-                                        .font(.system(size: 14))
-                                        .padding()
-                                    Spacer()
-                                }
-                                    .background(Color(hex: "#393e46"))
-                                    .cornerRadius(5)
-                            } else {
-                                // Display search results with custom navigation handling
-                                ForEach(results, id: \.self) { product in
-                                    NavigationLink {
-                                        ProductView(product: product)
-                                            .onDisappear {
-                                                // Append the search text and trigger navigation
-                                                if !viewModel.localUser.recent_searches.contains(product.name) {
-                                                    viewModel.localUser.recent_searches.append(product.name)
-                                                }
-                                                isNavigationActive = true  // Trigger the navigation
+                            // Display search results with custom navigation handling
+                            ForEach(results, id: \.self) { product in
+                                NavigationLink {
+                                    ProductView(product: product)
+                                        .onDisappear {
+                                            // Append the search text and trigger navigation
+                                            if !viewModel.localUser.recent_searches.contains(product.name) {
+                                                viewModel.localUser.recent_searches.append(product.name)
                                             }
-                                    } label: {
-                                        ProductListView(product: product)
-                                    }
-                                    .buttonStyle(.plain)
+                                            isNavigationActive = true  // Trigger the navigation
+                                        }
+                                } label: {
+                                    ProductListView(product: product)
                                 }
+                                .buttonStyle(.plain)
                             }
                         }
                     }
@@ -136,9 +150,41 @@ struct SearchView: View {
             }
             .navigationTitle("Search Products")
             .navigationBarTitleDisplayMode(.large)
+            .onAppear {
+                searchFieldIsFocused = true
+                generateSuggestedProducts()  // Generate random products when view appears
+            }
             .withScreenBackground()
         }
     }
+
+    func generateSuggestedProducts() -> Void {
+        let groceryList: [Product] = viewModel.localUser.grocery_list
+        var products: [Product] = []
+        
+        for product in groceryList {
+            if products.count >= 10 {
+                break
+            }
+            
+            let substitutes: [Product] = viewModel.getSubstitutes(product: product)
+            
+            for substitute in substitutes {
+                if products.count < 10 {
+                    products.append(substitute)
+                } else {
+                    break
+                }
+            }
+            
+            if products.count >= 10 {
+                break
+            }
+        }
+        
+        suggestedProducts = products
+    }
+
 }
 
 class ReloadViewHelper: ObservableObject {
@@ -150,3 +196,4 @@ class ReloadViewHelper: ObservableObject {
 #Preview {
     SearchView()
 }
+
