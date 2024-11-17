@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TrendsView: View {
     @EnvironmentObject var viewModel: ViewModel
+    @State var analysis: String = ""
+    var analysisService = AnalysisService()
 
     var body: some View {
         NavigationStack{
@@ -28,7 +30,7 @@ struct TrendsView: View {
                             .bold()
                         
                         HStack{
-                            Text("Analysis failed to load")
+                            Text(analysis)
                                 .font(.system(size: 14))
                             Spacer()
                         }
@@ -42,6 +44,15 @@ struct TrendsView: View {
             .navigationTitle("Price Trends")
             .navigationBarTitleDisplayMode(.large)
             .withScreenBackground()
+            .onAppear {
+                analysisService.sendTextToOpenAI(prompt: generateAnalysisPrompt()) { result, error in
+                    if let error = error {
+                        analysis = "Failed to fetch analysis."
+                    } else if let result = result {
+                        analysis = result
+                    }
+                }
+            }
         }
     }
 }

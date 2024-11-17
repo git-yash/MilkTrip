@@ -107,6 +107,7 @@ struct ProfileView: View {
             .onAppear{
                 watchlist = viewModel.localUser.grocery_list
                 reloadViewHelper.reloadView()
+
             }
         }
     }

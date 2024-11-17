@@ -1,9 +1,18 @@
 {
   "pins" : [
     {
+      "identity" : "openai",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MacPaw/OpenAI.git",
+      "state" : {
+        "revision" : "843e087929aa806adb611dbca93f9a4a7f28be04",
+        "version" : "0.3.0"
+      }
+    },
+    {
       "identity" : "swiftui-shimmer",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/markiv/SwiftUI-Shimmer",
+      "location" : "https://github.com/markiv/SwiftUI-Shimmer.git",
       "state" : {
         "revision" : "0226e21f9bf355d40e07e5f5e1c33679d50e167f",
         "version" : "1.5.1"
