@@ -89,6 +89,7 @@
 		C4A496402CE95FA20012CB69 /* CouponCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCarousel.swift; sourceTree = "<group>"; };
 		C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundModifier.swift; sourceTree = "<group>"; };
 		C4A4964B2CE9AF290012CB69 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		C4D6BEAA2CE9C385006FD460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +183,7 @@
 		C4A4960F2CE92CC70012CB69 /* GroceryApp */ = {
 			isa = PBXGroup;
 			children = (
+				C4D6BEAA2CE9C385006FD460 /* Info.plist */,
 				17C4B3052CE92F0400216661 /* Back End */,
 				C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */,
 				17C4B2FE2CE92E1500216661 /* Front End */,
@@ -553,6 +555,7 @@
 				DEVELOPMENT_TEAM = C72D493DTH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GroceryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,6 +586,7 @@
 				DEVELOPMENT_TEAM = C72D493DTH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GroceryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
