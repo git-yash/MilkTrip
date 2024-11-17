@@ -1,10 +1,3 @@
-//
-//  SearchView.swift
-//  GroceryApp
-//
-//  Created by Aiden Seibel on 11/16/24.
-//
-
 import SwiftUI
 
 struct SearchView: View {
@@ -18,6 +11,7 @@ struct SearchView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 50) {
+                    // Search Bar
                     TextField("Search Products...", text: $searchText)
                         .padding(8)
                         .padding(.horizontal, 24)
@@ -59,7 +53,7 @@ struct SearchView: View {
                             
                             let recent_searches = viewModel.localUser.recent_searches
                             if recent_searches.isEmpty {
-                                HStack{
+                                HStack {
                                     Text("No recent searches")
                                         .font(.system(size: 14))
                                         .padding()
@@ -73,18 +67,20 @@ struct SearchView: View {
                                     HStack {
                                         Text(search)
                                             .font(.system(size: 14))
+                                            .onTapGesture {
+                                                // Set search text and focus the search bar
+                                                searchText = search
+                                                searchFieldIsFocused = true
+                                            }
                                         
                                         Spacer()
                                         
                                         Button(action: {
                                             // Remove the search from the list of recent searches
-                                            print(viewModel.localUser.recent_searches)
                                             if let index = viewModel.localUser.recent_searches.firstIndex(of: search) {
                                                 viewModel.localUser.recent_searches.remove(at: index)
                                             }
                                             reloadViewHelper.reloadView()
-                                            print("removed:")
-                                            print(viewModel.localUser.recent_searches)
                                         }) {
                                             Image(systemName: "xmark")
                                                 .resizable()
@@ -107,7 +103,7 @@ struct SearchView: View {
                             let results = getSearchResults(searchText: searchText)
                             
                             if results.isEmpty {
-                                HStack{
+                                HStack {
                                     Text("No search results.")
                                         .font(.system(size: 14))
                                         .padding()
@@ -116,13 +112,13 @@ struct SearchView: View {
                                     .background(Color(hex: "#393e46"))
                                     .cornerRadius(5)
                             } else {
-                            // Display search results with custom navigation handling
+                                // Display search results with custom navigation handling
                                 ForEach(results, id: \.self) { product in
                                     NavigationLink {
                                         ProductView(product: product)
                                             .onDisappear {
                                                 // Append the search text and trigger navigation
-                                                if (!viewModel.localUser.recent_searches.contains(product.name)) {
+                                                if !viewModel.localUser.recent_searches.contains(product.name) {
                                                     viewModel.localUser.recent_searches.append(product.name)
                                                 }
                                                 isNavigationActive = true  // Trigger the navigation
@@ -145,12 +141,10 @@ struct SearchView: View {
     }
 }
 
-
 class ReloadViewHelper: ObservableObject {
     func reloadView() {
         objectWillChange.send()
     }
-    
 }
 
 #Preview {
