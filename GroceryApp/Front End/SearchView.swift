@@ -68,9 +68,9 @@ struct SearchView: View {
                                         
                                         Spacer()
                                         
-//                                        Image("xmark")
-//                                            .resizable()
-//                                            .frame(width: 15, height: 15)
+                                        Image(systemName: "xmark")
+                                            .resizable()
+                                            .frame(width: 10, height: 10)
                                     }
                                     .padding()
                                     .background(Color(hex: "#393e46"))
