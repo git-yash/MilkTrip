@@ -41,7 +41,7 @@ struct SearchView: View {
                             }
                         )
                     
-                    if !searchFieldIsFocused {
+                    if !searchFieldIsFocused && searchText.isEmpty {
                         VStack(alignment: .leading){
                             Text("Coupons")
                                 .font(.system(size: 24))
@@ -71,6 +71,7 @@ struct SearchView: View {
             }
             .navigationTitle("Search Products")
             .navigationBarTitleDisplayMode(.large)
+            .withScreenBackground()
         }
     }
 }

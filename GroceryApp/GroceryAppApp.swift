@@ -30,6 +30,8 @@ struct GroceryAppApp: App {
                     }
             }
             .accentColor(Color(hex: "#a3f7bf")) // Set custom accent color
+            .background(Color(hex: "#222831"))
+            .ignoresSafeArea()
             .environmentObject(viewModel)
         }
     }

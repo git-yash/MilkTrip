@@ -31,6 +31,7 @@
 		C4A4963D2CE9549E0012CB69 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4963C2CE9549E0012CB69 /* Coupon.swift */; };
 		C4A4963F2CE956CC0012CB69 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4963E2CE956CC0012CB69 /* CouponView.swift */; };
 		C4A496412CE95FA20012CB69 /* CouponCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496402CE95FA20012CB69 /* CouponCarousel.swift */; };
+		C4A496492CE982890012CB69 /* CustomBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		C4A4963C2CE9549E0012CB69 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		C4A4963E2CE956CC0012CB69 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		C4A496402CE95FA20012CB69 /* CouponCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCarousel.swift; sourceTree = "<group>"; };
+		C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				17C4B3112CE932F700216661 /* ProductListView.swift */,
 				C4A4963E2CE956CC0012CB69 /* CouponView.swift */,
 				C4A496402CE95FA20012CB69 /* CouponCarousel.swift */,
+				C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				17C4B3102CE9324600216661 /* ChartView.swift in Sources */,
 				17C4B30B2CE9300C00216661 /* Store.swift in Sources */,
 				C4A4963B2CE93FF50012CB69 /* Util.swift in Sources */,
+				C4A496492CE982890012CB69 /* CustomBackgroundModifier.swift in Sources */,
 				C4A4963F2CE956CC0012CB69 /* CouponView.swift in Sources */,
 				C4A496412CE95FA20012CB69 /* CouponCarousel.swift in Sources */,
 				17C4B3002CE92E2A00216661 /* ProfileView.swift in Sources */,

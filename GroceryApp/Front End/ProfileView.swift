@@ -41,6 +41,7 @@ struct ProfileView: View {
             }
             .navigationTitle("My Profile")
             .navigationBarTitleDisplayMode(.large)
+            .withScreenBackground()
         }
     }
 }

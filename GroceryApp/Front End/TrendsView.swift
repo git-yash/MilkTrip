@@ -27,6 +27,7 @@ struct TrendsView: View {
             }
             .navigationTitle("Price Trends")
             .navigationBarTitleDisplayMode(.large)
+            .withScreenBackground()
         }
     }
 }
