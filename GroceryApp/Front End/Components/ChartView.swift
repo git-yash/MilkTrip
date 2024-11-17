@@ -10,9 +10,11 @@ struct ChartView: View {
     @State var selectedDataPoint: (index: Int, value: Double)? = nil
     @State var lowerBound: Int = 0
     @State var upperBound: Int = 10
+    @State var percentageChange: Double = 0.0;
 
     var screenWidth = UIScreen.main.bounds.width
     let ranges = ["1M", "6M", "YTD", "1Y", "All"]
+    
 
     var body: some View {
         VStack {
@@ -21,6 +23,10 @@ struct ChartView: View {
                     .padding(.leading, 5)
                     .font(.system(size: 28)).bold()
                 Spacer()
+                Text(formattedPercentageChange)
+                    .foregroundColor(percentageChange >= 0 ? .red : .green)
+                    .font(.system(size: 18))
+                    .padding(.trailing, 5)
             }
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
@@ -101,12 +107,25 @@ struct ChartView: View {
         .onAppear {
             updateData(for: selectedRange)
             animateChartDrawing()
+            updatePercentageChange()
         }
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color(hex: "#393E46"))
         )
+    }
+    
+    private var formattedPercentageChange: String {
+        let sign = percentageChange >= 0 ? "+" : "" // Add + only for positive numbers
+        return String(format: "\(sign)%.2f%%", percentageChange)
+    }
+    
+    private func updatePercentageChange() -> Void {
+        let final = data[data.count - 1].price
+        let initial = data[0].price
+        
+        percentageChange = ((final - initial) / initial) * 100
     }
 
     private func updateData(for range: String) {

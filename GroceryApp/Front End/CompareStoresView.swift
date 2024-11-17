@@ -102,7 +102,7 @@ struct CompareStoresView: View {
             .onAppear{
                 allProducts = viewModel.getProductsAcrossStores(product: product)
             }
-        }
+        }.withScreenBackground()
     }
 }
 
