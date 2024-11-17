@@ -151,7 +151,7 @@ struct ChartView: View {
             upperBound = Int(maxPrice.price) + 2
         }
 
-        data.reverse()
+        data.sort { $0.timestamp < $1.timestamp }
         
         animateChartDrawing()
     }
