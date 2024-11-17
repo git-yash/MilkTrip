@@ -25,7 +25,6 @@
 		17C4B31E2CE94BFA00216661 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B31D2CE94BFA00216661 /* SampleData.swift */; };
 		17C4B3202CE94C2200216661 /* SampleData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 17C4B31F2CE94C2200216661 /* SampleData.csv */; };
 		17C4B3232CE9560900216661 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3222CE9560900216661 /* ProductView.swift */; };
-		17DA99082CEA0E7B00DFD4FB /* Keys.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17DA99072CEA0E7B00DFD4FB /* Keys.txt */; };
 		17DA99102CEA1A8B00DFD4FB /* MotionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA990F2CEA1A8B00DFD4FB /* MotionAnimator.swift */; };
 		C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */; };
 		C4A496132CE92CC70012CB69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496122CE92CC70012CB69 /* ContentView.swift */; };
@@ -42,6 +41,7 @@
 		C4A4964C2CE9AF290012CB69 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4964B2CE9AF290012CB69 /* Search.swift */; };
 		C4D6BEAC2CE9F35A006FD460 /* AnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6BEAB2CE9F35A006FD460 /* AnalysisService.swift */; };
 		C4D6BEAF2CE9F37E006FD460 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = C4D6BEAE2CE9F37E006FD460 /* OpenAI */; };
+		C4D6BEB32CEA26D6006FD460 /* Keys.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4D6BEB22CEA26D6006FD460 /* Keys.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,6 @@
 		17C4B31D2CE94BFA00216661 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		17C4B31F2CE94C2200216661 /* SampleData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleData.csv; sourceTree = "<group>"; };
 		17C4B3222CE9560900216661 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
-		17DA99072CEA0E7B00DFD4FB /* Keys.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Keys.txt; sourceTree = "<group>"; };
 		17DA990F2CEA1A8B00DFD4FB /* MotionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimator.swift; sourceTree = "<group>"; };
 		C4A4960D2CE92CC70012CB69 /* GroceryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryAppApp.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		C4A4964B2CE9AF290012CB69 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		C4D6BEAA2CE9C385006FD460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C4D6BEAB2CE9F35A006FD460 /* AnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisService.swift; sourceTree = "<group>"; };
+		C4D6BEB22CEA26D6006FD460 /* Keys.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Keys.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,7 +228,7 @@
 				C4A496142CE92CC80012CB69 /* Assets.xcassets */,
 				C4A496162CE92CC80012CB69 /* Preview Content */,
 				C4A4963A2CE93FF50012CB69 /* Util.swift */,
-				17DA99072CEA0E7B00DFD4FB /* Keys.txt */,
+				C4D6BEB22CEA26D6006FD460 /* Keys.txt */,
 			);
 			path = GroceryApp;
 			sourceTree = "<group>";
@@ -379,9 +379,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D6BEB32CEA26D6006FD460 /* Keys.txt in Resources */,
 				C4A496182CE92CC80012CB69 /* Preview Assets.xcassets in Resources */,
 				17C4B3202CE94C2200216661 /* SampleData.csv in Resources */,
-				17DA99082CEA0E7B00DFD4FB /* Keys.txt in Resources */,
 				179D4EEF2CEA1F460016E0DD /* InflationData.csv in Resources */,
 				C4A496152CE92CC80012CB69 /* Assets.xcassets in Resources */,
 			);

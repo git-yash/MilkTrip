@@ -14,6 +14,7 @@ public class ViewModel: ObservableObject {
     @Published var stores: [Store]
     @Published var coupons: [Coupon]
     @Published var inflation: [PriceIncrement]
+    @Published var analysisText: String
 
     init() {
         let walmartStore = Store(id: 1, image: Image("walmartLogo"), name: "Walmart", products: [])
@@ -22,6 +23,7 @@ public class ViewModel: ObservableObject {
         let HEBStore = Store(id: 4, image: Image("HEBLogo"), name: "H-E-B", products: [])
         
         self.inflation = readInflationData()
+        self.analysisText = ""
         
         if let product_data = readSampleData(){
             self.products = product_data

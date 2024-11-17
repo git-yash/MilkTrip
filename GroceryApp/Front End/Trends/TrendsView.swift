@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TrendsView: View {
     @EnvironmentObject var viewModel: ViewModel
-    @State var analysis: String = ""
     var analysisService = AnalysisService()
 
     var body: some View {
@@ -29,7 +28,7 @@ struct TrendsView: View {
                             .font(.system(size: 24))
                             .bold()
                         
-                        if analysis == ""{
+                        if viewModel.analysisText == ""{
                             VStack(alignment: .leading) {
                                 Text("Placeholder")
                                     .font(.system(size: 16))
@@ -48,7 +47,7 @@ struct TrendsView: View {
                             .cornerRadius(10)
                         } else {
                             VStack(alignment: .leading, spacing: 20){
-                                Text(analysis)
+                                Text(viewModel.analysisText)
                                     .font(.system(size: 16))
                                 
                                 Text("Powered by OpenAI")
@@ -67,11 +66,15 @@ struct TrendsView: View {
             .navigationBarTitleDisplayMode(.large)
             .withScreenBackground()
             .onAppear {
-                analysisService.sendTextToOpenAI(prompt: generateAnalysisPrompt(shoppingCart: viewModel.localUser.generateShoppingCart(), insights: viewModel.generateInsights())) { result, error in
-                    if error != nil {
-                        analysis = "Failed to fetch analysis."
-                    } else if let result = result {
-                        analysis = result
+                if(viewModel.analysisText.isEmpty) {
+                    analysisService.sendTextToOpenAI(prompt: generateAnalysisPrompt(shoppingCart: viewModel.localUser.generateShoppingCart(), insights: viewModel.generateInsights())) { result, error in
+                        DispatchQueue.main.async {
+                            if error != nil {
+                                viewModel.analysisText = "Failed to fetch analysis."
+                            } else if let result = result {
+                                viewModel.analysisText = result
+                            }
+                        }
                     }
                 }
             }
