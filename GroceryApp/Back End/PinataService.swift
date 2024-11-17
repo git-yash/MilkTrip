@@ -9,14 +9,12 @@ import Foundation
 import SwiftUI
 
 class PinataService {
-    // Replace this with your actual Pinata API key
-
     static func fetchFile(from cid: String, completion: @escaping (Data?) -> Void) {
         if let filePath = Bundle.main.path(forResource: "PinataKey", ofType: "txt"){
             do {
                 let api_key = try String(contentsOfFile: filePath, encoding: .utf8).trimmingCharacters(in: .whitespacesAndNewlines)
                 
-                let urlString = "https://gateway.pinata.cloud/ipfs/\(cid)"
+                let urlString = "https://moccasin-rear-wolf-91.mypinata.cloud/ipfs/\(cid)"
                 guard let url = URL(string: urlString) else {
                     print("Invalid URL.")
                     completion(nil)

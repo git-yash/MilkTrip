@@ -7,45 +7,6 @@
 
 import Foundation
 
-func readSampleData() -> [Product]? {
-    if let filePath = Bundle.main.path(forResource: "SampleData", ofType: "csv"){
-        do {
-            let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
-            let rows = fileContents.split(separator: "\r\n")
-            
-            var products: [Product] = []
-                        
-            // Process each row, assuming the first row is a header and can be ignored
-            for row in rows.dropFirst() {
-                // ID    Name    Brand    Category    Base Price
-                let columns = row.split(separator: ",")
-                
-                // for each store (stores carry the same products)
-                for i in 1...4 {
-                    let product = Product(id: Int(columns[0])! + (i - 1) * 100,
-                                          name: String(columns[1]),
-                                          brand: String(columns[2]),
-                                          category: String(columns[3]),
-                                          store: i,
-                                          image_url: String(columns[5]),
-                                          priceData: generatePriceIncrements(base_price: Double(columns[4]) ?? 5.0, store_index: i))
-
-                    products.append(product)
-                }
-            }
-                        
-            return products
-        } catch {
-            print("Error reading file: \(error.localizedDescription)")
-        }
-    }
-    
-    print("Could not get filepath when reading sample data")
-    
-    return []
-}
-
-
 func readSampleDataFromPinata(data: Data) -> [Product]? {
     if let responseString = String(data: data, encoding: .utf8) {
         let rows = responseString.split(separator: "\r\n")
@@ -112,50 +73,6 @@ func generatePriceIncrements(base_price: Double, store_index: Int) -> [PriceIncr
         
     return increments
 }
-
-
-func readInflationData() -> [PriceIncrement] {
-    if let filePath = Bundle.main.path(forResource: "InflationData", ofType: "csv"){
-        do {
-            let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
-            let rows = fileContents.split(separator: "\r\n")
-            
-            var increments: [PriceIncrement] = []
-            
-            var prev_price = 1.0
-            // Process each row, assuming the first row is a header and can be ignored
-            for row in rows.dropFirst() {
-                // Year    Month    Inflation
-                let columns = row.split(separator: ",")
-                
-                // for each week
-                for i in 1...4 {
-                    var components = DateComponents()
-                    components.year = Int(columns[0])
-                    components.month = Int(columns[1])
-                    components.weekOfMonth = i
-                    
-                    let timestep = Calendar.current.date(from: components) ?? Date()
-                    let current_price = prev_price * (Double(columns[2]) ?? 1.0)
-                    let inflationPoint = PriceIncrement(timestamp: timestep, price: current_price)
-
-                    increments.append(inflationPoint)
-                    
-                    prev_price = current_price
-                }
-            }
-            
-            return increments
-        } catch {
-            print("Error reading inflation: \(error.localizedDescription)")
-        }
-    }
-    
-    print("Could not get filepath when reading inflation data")
-    
-    return []
-}
-
 
 func readInflationDataFromPinata(data: Data) -> [PriceIncrement]? {
     if let responseString = String(data: data, encoding: .utf8) {
