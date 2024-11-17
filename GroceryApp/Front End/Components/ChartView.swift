@@ -45,10 +45,11 @@ struct ChartView: View {
                     )
                     .frame(height: screenWidth * 0.55)
 
-                // Overlay price text above the chart
                 if let selected = selectedDataPoint {
                     let priceIncrement = data[selected.index]
                     let xOffset = CGFloat(selected.index) * (screenWidth - 40) / CGFloat(data.count - 1)
+                    let yOffset = CGFloat(1 - (priceIncrement.price - Double(lowerBound)) / Double(upperBound - lowerBound)) * (screenWidth * 0.55 - 20)
+
                     ZStack {
                         // Price label
                         Text("$\(String(format: "%.2f", priceIncrement.price))")
@@ -57,13 +58,19 @@ struct ChartView: View {
                             .padding(8)
                             .background(Color.black.opacity(0.8))
                             .cornerRadius(8)
-                            .offset(x: xOffset - screenWidth / 2 + 20, y: -screenWidth * 0.25) // Position text above the chart
+                            .offset(x: xOffset - screenWidth / 2 + 20, y: -screenWidth * 0.25)
 
                         // Vertical line
                         Rectangle()
                             .fill(Color.white.opacity(0.6))
                             .frame(width: 1, height: screenWidth * 0.40)
                             .offset(x: xOffset - screenWidth / 2 + 20)
+
+                        // Dot on the line graph
+                        Circle()
+                            .fill(Color.white)
+                            .frame(width: 8, height: 8)
+                            .offset(x: xOffset - screenWidth / 2 + 20, y: yOffset - screenWidth * 0.275)
                     }
                 }
             }
