@@ -54,7 +54,7 @@ func generatePriceIncrements(base_price: Double, store_index: Int) -> [PriceIncr
     
     var prev_price: Double = base_price
 
-    for i in 0..<100 {
+    for i in (0..<100).reversed() {
         if let this_date = Calendar.current.date(byAdding: .day, value: -7 * i, to: currentDate) {
             
             // prices slightly increase over time, so we multiply by a random double, but it is
@@ -62,11 +62,11 @@ func generatePriceIncrements(base_price: Double, store_index: Int) -> [PriceIncr
             var this_price: Double = 0
 
             switch store_index{
-            case 1: this_price = prev_price * Double.random(in: 0.98...1.015) // walmart
-            case 2: this_price = prev_price * Double.random(in: 0.983...1.01) // cvs
-            case 3: this_price = prev_price * Double.random(in: 0.97...1.01) // randalls
-            case 4: this_price = prev_price * Double.random(in: 0.98...1.012) // heb
-            default: this_price = prev_price * Double.random(in: 0.98...1.01)
+            case 1: this_price = prev_price * Double.random(in: 0.98...1.021) // walmart
+            case 2: this_price = prev_price * Double.random(in: 0.98...1.022) // cvs
+            case 3: this_price = prev_price * Double.random(in: 0.98...1.0232) // randalls
+            case 4: this_price = prev_price * Double.random(in: 0.98...1.0215) // heb
+            default: this_price = prev_price * Double.random(in: 0.98...1.02)
             }
             
             increments.append(PriceIncrement(timestamp: this_date, price: this_price))

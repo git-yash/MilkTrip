@@ -104,15 +104,24 @@ public class ViewModel: ObservableObject {
         return subs
     }
     
-    func getMultiLineChartData() -> [MultiLineChartDictKey:[PriceIncrement]]{
+    func getMultiLineChartData() -> [MultiLineChartData]{
         let allAvailableColors: [Color] = [.red, .blue, .green, .orange, .purple, .pink, .yellow]
         
-        var allData: [MultiLineChartDictKey:[PriceIncrement]] = [:]
+        var allData: [MultiLineChartData] = []
+        
+        var lookup: [String: MultiLineChartType] = [
+            "HEB": .heb,
+            "CVS": .cvs,
+            "Randalls": .randalls,
+            "Walmart": .walmart,
+        ]
         
         var ind = 0
         for store in stores {
-            let key = MultiLineChartDictKey(name: store.name, color: allAvailableColors[ind])
-            allData[key] = store.getPriceIncrementData()
+            for datum in store.getPriceIncrementData(){
+                allData.append(MultiLineChartData(date: datum.timestamp, value: datum.price, type: lookup[store.name] ?? .heb))
+
+            }
         }
         return allData
     }
