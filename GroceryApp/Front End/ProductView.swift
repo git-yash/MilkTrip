@@ -41,6 +41,7 @@ struct ProductView: View {
         }
         .navigationTitle(product.name)
         .navigationBarTitleDisplayMode(.large)
+        .withScreenBackground()
     }
 }
 
