@@ -37,9 +37,7 @@ public func generateAnalysisPrompt(shoppingCart: String, insights: String) -> St
             let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
             
             let prompt = "(Talk in 1st person) Provide a brief analysis on what stores the user should be going to based on their shopping cart and recent store price insights. \n\nShopping Cart: \(shoppingCart) \n\nInsights: \(insights)"
-            
-            print(prompt)
-            
+                        
             return prompt
         }
         catch{

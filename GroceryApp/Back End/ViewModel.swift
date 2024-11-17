@@ -17,41 +17,78 @@ public class ViewModel: ObservableObject {
     @Published var analysisText: String
 
     init() {
-        let walmartStore = Store(id: 1, image: Image("walmartLogo"), name: "Walmart", products: [])
-        let cvsStore = Store(id: 2, image: Image("cvsLogo"), name: "CVS", products: [])
-        let randallsStore = Store(id: 3, image: Image("randallsLogo"), name: "Randalls", products: [])
-        let HEBStore = Store(id: 4, image: Image("HEBLogo"), name: "H-E-B", products: [])
-        
-        self.inflation = readInflationData()
+        // Initialize default values for properties
+        self.products = []
+        self.localUser = User(id: 1, grocery_list: [], recent_searches: [])
+        self.inflation = []  // Default empty inflation data
         self.analysisText = ""
-        
-        if let product_data = readSampleData(){
-            self.products = product_data
-            self.localUser = User(id: 1, grocery_list: Array(product_data.shuffled().prefix(20)), recent_searches: [])
-            
-            for product in product_data {
-                switch product.store {
-                case 1:
-                    walmartStore.products.append(product)
-                case 2:
-                    cvsStore.products.append(product)
-                case 3:
-                    randallsStore.products.append(product)
-                case 4:
-                    HEBStore.products.append(product)
-                default:
-                    // nothing
-                    continue
+        self.stores = []
+        self.coupons = []
+
+        // Create initial store objects
+        var walmartStore = Store(id: 1, image: Image("walmartLogo"), name: "Walmart", products: [])
+        var cvsStore = Store(id: 2, image: Image("cvsLogo"), name: "CVS", products: [])
+        var randallsStore = Store(id: 3, image: Image("randallsLogo"), name: "Randalls", products: [])
+        var HEBStore = Store(id: 4, image: Image("HEBLogo"), name: "H-E-B", products: [])
+
+        // Fetch and populate products and inflation data asynchronously
+        PinataService.fetchFile(from: "QmWVEJ5AdJnVvTMjGecWRWbkg6GUchirghcVa7MQdnDtkd") { [weak self] data in
+            guard let self = self else { return } // Prevent retain cycles
+
+            if let product_data = readSampleDataFromPinata(data: data ?? Data()) {
+                // Use local variables to store updated data
+                var products = product_data
+                var localUser = User(id: 1, grocery_list: Array(product_data.shuffled().prefix(20)), recent_searches: [])
+
+                // Populate store products
+                for product in product_data {
+                    switch product.store {
+                    case 1:
+                        walmartStore.products.append(product)
+                    case 2:
+                        cvsStore.products.append(product)
+                    case 3:
+                        randallsStore.products.append(product)
+                    case 4:
+                        HEBStore.products.append(product)
+                    default:
+                        continue
+                    }
+                }
+
+                // Assign the fetched product data and stores after processing
+                DispatchQueue.main.async {
+                    self.products = products
+                    self.localUser = localUser
+                    self.stores = [walmartStore, cvsStore, randallsStore, HEBStore]
+                }
+            } else {
+                // Handle error case for product data on the main thread
+                DispatchQueue.main.async {
+                    self.products = []
+                    self.localUser = User(id: 1, grocery_list: [], recent_searches: [])
                 }
             }
-            
-        } else {
-            self.products = []
-            self.localUser = User(id: 1, grocery_list: [], recent_searches: [])
         }
-        
-        self.stores = [walmartStore, cvsStore, randallsStore, HEBStore]
-        
+
+        // Fetch inflation data asynchronously
+        PinataService.fetchFile(from: "QmVRXUTS1vViPsB2ePWZ9WpYjpxmT46d7GXXpuNya6Rr6X") { [weak self] data in
+            guard let self = self else { return } // Prevent retain cycles
+            
+            if let inflation_data = readInflationDataFromPinata(data: data ?? Data()) {
+                // Assign the inflation data after it's processed
+                DispatchQueue.main.async {
+                    self.inflation = inflation_data
+                }
+            } else {
+                // Handle error case for inflation data on the main thread
+                DispatchQueue.main.async {
+                    self.inflation = []
+                }
+            }
+        }
+
+        // Initialize coupons (static data, does not depend on async loading)
         self.coupons = [
             Coupon(id: 1, store: walmartStore, description: "Get 20% off on electronics!", url: "https://www.walmart.com"),
             Coupon(id: 2, store: cvsStore, description: "Save $10 on your first order!", url: "https://www.cvs.com"),

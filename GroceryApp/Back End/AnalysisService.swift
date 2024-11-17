@@ -14,9 +14,7 @@ class AnalysisService {
         if let filePath = Bundle.main.path(forResource: "Keys", ofType: "txt"){
             do {
                 let api_key = try String(contentsOfFile: filePath, encoding: .utf8).trimmingCharacters(in: .whitespacesAndNewlines)
-                
-                print(api_key)
-                
+                                
                 // Use the correct endpoint for chat-based completions
                 guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
                     return

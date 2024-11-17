@@ -24,6 +24,21 @@ struct TrendsView: View {
                     }
                     
                     VStack(alignment: .leading){
+                        Text("Ranked by Price")
+                            .font(.system(size: 24))
+                            .bold()
+
+                        ForEach(viewModel.stores, id: \.self) { store in
+                            NavigationLink {
+                                StoreView(store: store)
+                            } label: {
+                                StoreSubView(store: store)
+                            }
+                        }
+                    }
+                    .buttonStyle(.plain)
+                    
+                    VStack(alignment: .leading){
                         Text("Analysis")
                             .font(.system(size: 24))
                             .bold()

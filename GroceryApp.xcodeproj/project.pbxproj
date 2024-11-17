@@ -12,6 +12,9 @@
 		173F47A42CE9B0A500A0A295 /* MultiLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F47A32CE9B0A500A0A295 /* MultiLineChartView.swift */; };
 		17552AC42CE9C3FE00BE59F2 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 17552AC32CE9C3FE00BE59F2 /* Shimmer */; };
 		179D4EEF2CEA1F460016E0DD /* InflationData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 179D4EEE2CEA1F460016E0DD /* InflationData.csv */; };
+		179D4EF12CEA26D80016E0DD /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4EF02CEA26D80016E0DD /* StoreView.swift */; };
+		179D4EF32CEA26E10016E0DD /* StoreSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4EF22CEA26E10016E0DD /* StoreSubView.swift */; };
+		179D4EF52CEA386C0016E0DD /* PinataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4EF42CEA386C0016E0DD /* PinataService.swift */; };
 		17C4B3002CE92E2A00216661 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B2FF2CE92E2A00216661 /* ProfileView.swift */; };
 		17C4B3022CE92E3300216661 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3012CE92E3300216661 /* SearchView.swift */; };
 		17C4B3042CE92E3A00216661 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3032CE92E3A00216661 /* TrendsView.swift */; };
@@ -66,6 +69,9 @@
 		173F47A12CE9AE0400A0A295 /* StoreProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductView.swift; sourceTree = "<group>"; };
 		173F47A32CE9B0A500A0A295 /* MultiLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineChartView.swift; sourceTree = "<group>"; };
 		179D4EEE2CEA1F460016E0DD /* InflationData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InflationData.csv; sourceTree = "<group>"; };
+		179D4EF02CEA26D80016E0DD /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		179D4EF22CEA26E10016E0DD /* StoreSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSubView.swift; sourceTree = "<group>"; };
+		179D4EF42CEA386C0016E0DD /* PinataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinataService.swift; sourceTree = "<group>"; };
 		17C4B2FF2CE92E2A00216661 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		17C4B3012CE92E3300216661 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		17C4B3032CE92E3A00216661 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 				17C4B30C2CE9301700216661 /* ViewModel.swift */,
 				17C4B31D2CE94BFA00216661 /* SampleData.swift */,
 				17C4B31F2CE94C2200216661 /* SampleData.csv */,
+				179D4EF42CEA386C0016E0DD /* PinataService.swift */,
 				179D4EEE2CEA1F460016E0DD /* InflationData.csv */,
 				C4A4963C2CE9549E0012CB69 /* Coupon.swift */,
 				C4D6BEAB2CE9F35A006FD460 /* AnalysisService.swift */,
@@ -167,6 +174,7 @@
 				C4A496402CE95FA20012CB69 /* CouponCarousel.swift */,
 				C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */,
 				173F47A12CE9AE0400A0A295 /* StoreProductView.swift */,
+				179D4EF22CEA26E10016E0DD /* StoreSubView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				17C4B3032CE92E3A00216661 /* TrendsView.swift */,
+				179D4EF02CEA26D80016E0DD /* StoreView.swift */,
 			);
 			path = Trends;
 			sourceTree = "<group>";
@@ -424,9 +433,12 @@
 				C4A4963F2CE956CC0012CB69 /* CouponView.swift in Sources */,
 				C4A496412CE95FA20012CB69 /* CouponCarousel.swift in Sources */,
 				17C4B3002CE92E2A00216661 /* ProfileView.swift in Sources */,
+				179D4EF52CEA386C0016E0DD /* PinataService.swift in Sources */,
 				173F47A22CE9AE0400A0A295 /* StoreProductView.swift in Sources */,
 				17C4B3232CE9560900216661 /* ProductView.swift in Sources */,
+				179D4EF12CEA26D80016E0DD /* StoreView.swift in Sources */,
 				C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */,
+				179D4EF32CEA26E10016E0DD /* StoreSubView.swift in Sources */,
 				173F47A02CE9ABB100A0A295 /* CompareStoresView.swift in Sources */,
 				17C4B3072CE92F0C00216661 /* Product.swift in Sources */,
 				C4A4964C2CE9AF290012CB69 /* Search.swift in Sources */,
