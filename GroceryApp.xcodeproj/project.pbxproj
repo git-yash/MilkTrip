@@ -11,6 +11,7 @@
 		173F47A22CE9AE0400A0A295 /* StoreProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F47A12CE9AE0400A0A295 /* StoreProductView.swift */; };
 		173F47A42CE9B0A500A0A295 /* MultiLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F47A32CE9B0A500A0A295 /* MultiLineChartView.swift */; };
 		17552AC42CE9C3FE00BE59F2 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 17552AC32CE9C3FE00BE59F2 /* Shimmer */; };
+		179D4EEF2CEA1F460016E0DD /* InflationData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 179D4EEE2CEA1F460016E0DD /* InflationData.csv */; };
 		179D4EF12CEA26D80016E0DD /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4EF02CEA26D80016E0DD /* StoreView.swift */; };
 		179D4EF32CEA26E10016E0DD /* StoreSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4EF22CEA26E10016E0DD /* StoreSubView.swift */; };
 		179D4EF52CEA386C0016E0DD /* PinataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4EF42CEA386C0016E0DD /* PinataService.swift */; };
@@ -26,6 +27,7 @@
 		17C4B3122CE932F700216661 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3112CE932F700216661 /* ProductListView.swift */; };
 		17C4B3182CE9398200216661 /* PriceIncrement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3172CE9398200216661 /* PriceIncrement.swift */; };
 		17C4B31E2CE94BFA00216661 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B31D2CE94BFA00216661 /* SampleData.swift */; };
+		17C4B3202CE94C2200216661 /* SampleData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 17C4B31F2CE94C2200216661 /* SampleData.csv */; };
 		17C4B3232CE9560900216661 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3222CE9560900216661 /* ProductView.swift */; };
 		17DA99102CEA1A8B00DFD4FB /* MotionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA990F2CEA1A8B00DFD4FB /* MotionAnimator.swift */; };
 		C4A496112CE92CC70012CB69 /* GroceryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */; };
@@ -66,6 +68,7 @@
 		173F479F2CE9ABB100A0A295 /* CompareStoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareStoresView.swift; sourceTree = "<group>"; };
 		173F47A12CE9AE0400A0A295 /* StoreProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductView.swift; sourceTree = "<group>"; };
 		173F47A32CE9B0A500A0A295 /* MultiLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineChartView.swift; sourceTree = "<group>"; };
+		179D4EEE2CEA1F460016E0DD /* InflationData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InflationData.csv; sourceTree = "<group>"; };
 		179D4EF02CEA26D80016E0DD /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		179D4EF22CEA26E10016E0DD /* StoreSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSubView.swift; sourceTree = "<group>"; };
 		179D4EF42CEA386C0016E0DD /* PinataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinataService.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		17C4B3112CE932F700216661 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		17C4B3172CE9398200216661 /* PriceIncrement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceIncrement.swift; sourceTree = "<group>"; };
 		17C4B31D2CE94BFA00216661 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		17C4B31F2CE94C2200216661 /* SampleData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleData.csv; sourceTree = "<group>"; };
 		17C4B3222CE9560900216661 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		17DA990F2CEA1A8B00DFD4FB /* MotionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimator.swift; sourceTree = "<group>"; };
 		C4A4960D2CE92CC70012CB69 /* GroceryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +155,9 @@
 				17C4B30A2CE9300C00216661 /* Store.swift */,
 				17C4B30C2CE9301700216661 /* ViewModel.swift */,
 				17C4B31D2CE94BFA00216661 /* SampleData.swift */,
+				17C4B31F2CE94C2200216661 /* SampleData.csv */,
 				179D4EF42CEA386C0016E0DD /* PinataService.swift */,
+				179D4EEE2CEA1F460016E0DD /* InflationData.csv */,
 				C4A4963C2CE9549E0012CB69 /* Coupon.swift */,
 				C4D6BEAB2CE9F35A006FD460 /* AnalysisService.swift */,
 			);
@@ -384,6 +390,8 @@
 			files = (
 				C4D6BEB32CEA26D6006FD460 /* Keys.txt in Resources */,
 				C4A496182CE92CC80012CB69 /* Preview Assets.xcassets in Resources */,
+				17C4B3202CE94C2200216661 /* SampleData.csv in Resources */,
+				179D4EEF2CEA1F460016E0DD /* InflationData.csv in Resources */,
 				C4A496152CE92CC80012CB69 /* Assets.xcassets in Resources */,
 				179D4EF72CEA3FE90016E0DD /* PinataKey.txt in Resources */,
 			);

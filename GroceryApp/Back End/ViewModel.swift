@@ -24,6 +24,11 @@ public class ViewModel: ObservableObject {
         self.analysisText = ""
         self.stores = []
         self.coupons = []
+        
+        if let product_data = readSampleData(){
+            self.products = product_data
+            self.localUser = User(id: 1, grocery_list: Array(product_data.shuffled().prefix(20)), recent_searches: [])
+        }
 
         // Create initial store objects
         var walmartStore = Store(id: 1, image: Image("walmartLogo"), name: "Walmart", products: [])

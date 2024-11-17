@@ -19,7 +19,26 @@ struct ProfileView: View {
         case amountLowToHigh
     }
 
-    @State var sortedWatchList: [Product] = []
+    var sortedGroups: [Product] {
+            switch sortOption {
+            case .none:
+                return watchlist
+            case .amountHighToLow:
+                return watchlist.sorted {
+                    if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice(){
+                        return price_one > price_two
+                    }
+                    return false
+                }
+            case .amountLowToHigh:
+                return watchlist.sorted {
+                    if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice(){
+                        return price_one < price_two
+                    }
+                    return false
+                }
+            }
+        }
 
     var body: some View {
         NavigationStack{
@@ -67,7 +86,7 @@ struct ProfileView: View {
                         }
 
                         
-                        ForEach(sortedWatchList, id: \.self) { product in
+                        ForEach(sortedGroups, id: \.self) { product in
                             NavigationLink {
                                 ProductView(product: product)
                                     .onDisappear{
@@ -87,28 +106,6 @@ struct ProfileView: View {
             .withScreenBackground()
             .onAppear{
                 watchlist = viewModel.localUser.grocery_list
-                updateWatchList()
-            }
-        }
-    }
-
-    func updateWatchList() {
-        switch sortOption {
-        case .none:
-            sortedWatchList = watchlist
-        case .amountHighToLow:
-            sortedWatchList = watchlist.sorted {
-                if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice(){
-                    return price_one > price_two
-                }
-                return false
-            }
-        case .amountLowToHigh:
-            sortedWatchList = watchlist.sorted {
-                if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice(){
-                    return price_one < price_two
-                }
-                return false
             }
         }
     }

@@ -1,0 +1,82 @@
+﻿ID,Name,Brand,Category,Base Price,Image URL
+1,Potato Chips,Lay's,Snacks,3.5,https://www.webstaurantstore.com/images/products/large/440561/1657011.jpg
+2,Chocolate Bars,Hershey's,Snacks,1,https://justcandy.vtexassets.com/arquivos/ids/176131-800-auto
+3,Popcorn,Orville Redenbacher's,Snacks,4,https://i5.walmartimages.com/seo/Orville-Redenbacher-s-Ultimate-Butter-Popcorn-3-oz-Classic-Bag-18-Count_356d87ed-1601-43ca-87f5-a362a1f12f1a.8615dc9ad5e1886b06a789d60027762c.jpeg
+4,Trail Mix,Planters,Snacks,5.5,https://m.media-amazon.com/images/I/81YlTWKYzfL.jpg
+5,Fuji Apples,Sunkist,Produce,2.99,https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg
+6,Bananas,Chiquita,Produce,1.2,https://upload.wikimedia.org/wikipedia/commons/9/9b/Cavendish_Banana_DS.jpg
+7,Strawberries,Driscoll's,Produce,3.99,https://images.albertsons-media.com/is/image/ABS/970106700-1?$ng-ecom-pdp-desktop$
+8,Artichoke,Ocean Mist,Produce,2.5,https://victoryseeds.com/cdn/shop/files/green-globe.png
+9,Carrots,Bunny-Luv,Produce,1.99,https://cdn11.bigcommerce.com/s-kc25pb94dz/images/stencil/1280x1280/products/197/954/Carrot__41894.1646667854.jpg
+10,Lettuce,Dole,Produce,2.5,https://target.scene7.com/is/image/Target/GUEST_d1f0488f-4659-4164-8c2e-52a0b8abe23e
+11,Oranges,Halos,Produce,4,https://m.media-amazon.com/images/I/7150R1L5s5L.jpg
+12,Broccoli,Green Giant,Produce,2.49,https://domf5oio6qrcr.cloudfront.net/medialibrary/5390/h1218g16207258089583.jpg
+13,Grapes,Welch's,Produce,3.99,https://www.instacart.com/image-server/1864x1864/www.instacart.com/assets/domains/product-image/file/large_e252efaa-131a-436a-a530-af45e9a4830c.png
+14,Peaches,Del Monte,Produce,2.99,https://www.flushinghospital.org/newsletter/wp-content/uploads/2021/07/GettyImages-1200767905.jpg
+15,Spinach,Earthbound Farm,Produce,3.49,https://media.post.rvohealth.io/wp-content/uploads/2019/05/spinach-732x549-thumbnail.jpg
+16,Potatoes,Idahoan,Produce,3.99,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrRTSoFDJAy23BGfKwOF42rrJ6sbLZksoqSw&s
+17,Celery,Pascal,Produce,1.99,https://i5.walmartimages.com/seo/Marketside-Fresh-Celery-Sticks-1-6-oz-4-Pack_090a5a24-e3be-4728-964b-57952404b359.1f02ca476740e5e2d70e0e31dc28058f.jpeg
+18,Watermelon,Sugar Baby,Produce,5,https://www.kroger.com/product/images/xlarge/back/0000000004032
+19,Dog Food,Purina,Pet Supplies,10,https://concordpetfoods.com/cdn/shop/files/C300838-202409122033310540-1_1000x1000.png?v=1726531605
+20,Cat Litter,Arm & Hammer,Pet Supplies,8,https://i5.walmartimages.com/seo/Arm-Hammer-Multi-Cat-Extra-Strength-Unscented-Cat-Litter-20-Lb_c980bfb9-cedb-4092-829c-f9a3d25bc73f.df7d34a20d9222661083248393cba6b9.jpeg
+21,Bird Seed,Kaytee,Pet Supplies,5.99,https://s7d2.scene7.com/is/image/PetSmart/5336579?fmt=webp&wid=1400&hei=1400
+22,Fish Food,Tetra,Pet Supplies,7.5,https://i5.walmartimages.com/seo/Tetra-TetraMin-Tropical-Granules-3-52-oz-Nutritional-Fish-Food_7f6e35d7-a623-4ca2-9a8d-bce1f5560a4d.d9c820f724fba9c552413f93abee00e8.jpeg
+23,Shampoo,Head & Shoulders,Personal Care,4.99,https://m.media-amazon.com/images/I/71RnvqaKDML.jpg
+24,Toothpaste,Colgate,Personal Care,2.5,https://m.media-amazon.com/images/I/61ArbxErj0L.jpg
+25,Soap,Dove,Personal Care,3.5,https://i5.walmartimages.com/asr/4cf618dd-c4f8-4cdb-bdec-58b8a0706aee.55baff299990e9f5b47ff83735765c6e.jpeg
+26,Lotion,Jergens,Personal Care,5,https://m.media-amazon.com/images/I/61-LgaExjOL.jpg
+27,Conditioner,Pantene,Personal Care,4.5,https://i5.walmartimages.com/seo/Pantene-Pro-V-Smooth-and-Sleek-Conditioner-25-1-oz_c031de06-b8eb-4fe0-8675-79000690377b.b4734c28c6679638baa2245a0501fc1f.jpeg
+28,Facial Cleanser,CeraVe,Personal Care,9,https://m.media-amazon.com/images/I/51DbQev1thL.jpg
+29,Deodorant,Old Spice,Personal Care,3,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDrBw6WMnPm8YCnkk7-IOaiZJDwpErjUjebg&s
+30,Shaving Cream,Barbasol,Personal Care,2.5,https://m.media-amazon.com/images/I/61I++R0J7QL.jpg
+31,Chicken Breast,Perdue,Meat,6.99,https://www.perdue.com/product-images/6836_Im1_6836_FV_640.jpg
+32,Ground Beef,Laura's Lean Beef,Meat,5.5,https://dwvy4cg32tv13.cloudfront.net/images/products/lauras-lean-all-natural-96-ground-beef-1000.jpg
+33,Pork Chops,Smithfield,Meat,7,https://s7d5.scene7.com/is/image/CentralMarket/001668666-1
+34,Salmon Filets,Sea Cuisine,Meat,9.99,https://ip.prod.freshop.retail.ncrcloud.com/resize?url=https://images.freshop.ncrcloud.com/00035493014654/cf298cf403e8e51670ae8a30739100e2_large.png&width=512&type=webp&quality=90
+35,Turkey,Butterball,Meat,12,https://www.kroger.com/product/images/large/front/0020005600000
+36,Bacon,Oscar Mayer,Meat,5.99,https://target.scene7.com/is/image/Target/GUEST_8ecd9803-68a4-419f-a622-43f90c7371b4?wid=488&hei=488&fmt=pjpeg
+37,Sausages,Jimmy Dean,Meat,4.99,https://www.kroger.com/product/images/large/front/0007790019206
+38,Lamb Chops,Australian Lamb,Meat,15,https://i5.walmartimages.com/seo/Marketside-Butcher-Lamb-Shoulder-Chop-0-5-1-0-lb-Fresh_67d6b709-395e-4b63-a9fa-861f3ffed1f3.0ec7e5be64f2edbe3997e767bce77b7c.jpeg
+39,Dish Soap,Dawn,Household Items,2,https://m.media-amazon.com/images/I/81PDDopgLCL.jpg
+40,Laundry Detergent,Tide,Household Items,8,https://m.media-amazon.com/images/I/71gtO5FhbzL.jpg
+41,Trash Bags,Hefty,Household Items,6,https://m.media-amazon.com/images/I/81Y+TJnkuCS.jpg
+42,Paper Towels,Bounty,Household Items,6.5,https://m.media-amazon.com/images/I/81OcvnCIH1L.jpg
+43,Light Bulbs,GE,Hardware,4,https://m.media-amazon.com/images/I/71O3PXBUEOL.jpg
+44,Batteries,Duracell,Hardware,5,https://m.media-amazon.com/images/I/712VgtWexFL.jpg
+45,Duct Tape,3M,Hardware,3,https://cdn11.bigcommerce.com/s-qz13ep5fb4/images/stencil/original/products/133310/218066/0df10dd4-9532-4d84-8185-4b55d58daf6b__51890.1674881562.jpg
+46,Extension Cords,Stanley,Hardware,7,"https://m.media-amazon.com/images/I/71-643I+SGL._AC_UF1000,1000_QL80_.jpg"
+47,Rice,Uncle Ben's,Grains,2.5,https://m.media-amazon.com/images/I/81r9GqHVCqL.jpg
+48,Pasta,Barilla,Grains,1.5,https://i5.walmartimages.com/asr/e71187d9-a3e2-443c-9b41-53a1a9f85883.d51bffd5035ed9eb784cfa23912d8a56.jpeg
+49,Oatmeal,Quaker,Grains,3,https://m.media-amazon.com/images/I/91Ts8gUnqNL.jpg
+50,Quinoa,Bob's Red Mill,Grains,4.99,https://m.media-amazon.com/images/I/71eY+dJGHsL.jpg
+51,Cornmeal,Arrowhead Mills,Grains,3.5,"https://m.media-amazon.com/images/I/71YuDodz4vL._AC_UF894,1000_QL80_.jpg"
+52,Couscous,RiceSelect,Grains,3.99,https://m.media-amazon.com/images/I/615NKz+t73L.jpg
+53,Barley,Pearl's,Grains,3,https://www.grainmillers.com/wp-content/uploads/2017/10/2-Pearled-Barley_sq.jpg
+54,Tortillas,Mission,Grains,2.5,https://i5.walmartimages.com/seo/Mission-Medium-Taco-Size-Flour-Tortillas-10ct_43af22b2-6f0e-47ed-bf5e-9b63819d2e3f.d28844f48c00bf2c935580e49521c628.jpeg
+55,Cheddar Cheese,Tillamook,Dairy,5.5,https://i5.walmartimages.com/seo/Tillamook-Medium-Cheddar-Cheese-Block-2-lb_ec1431e4-5f2c-43e4-8115-e67d7ea02844.3d6fc950cbff2c978337a8c41599aeca.png
+56,Milk,Horizon,Dairy,3,https://target.scene7.com/is/image/Target/GUEST_cc3e8c5d-b45f-464d-ae45-f1c142f53d06
+57,Yogurt,Chobani,Dairy,1.25,https://m.media-amazon.com/images/I/71TWGd9YaKL.jpg
+58,Butter,Land O'Lakes,Dairy,4.5,https://m.media-amazon.com/images/I/81eVG2WPk2L.jpg
+59,Cottage Cheese,Daisy,Dairy,2.99,https://m.media-amazon.com/images/I/71LqmP85xjL.jpg
+60,Heavy Cream,Horizon Organic,Dairy,4,https://m.media-amazon.com/images/I/81C3WBQq32L.jpg
+61,Ice Cream,Ben & Jerry's,Dairy,5.99,https://i5.walmartimages.com/seo/Ben-Jerry-s-Strawberry-Cheesecake-Ice-Cream-Cage-Free-Eggs-Kosher-Milk-1-Pint-1-Count_382bfaec-fc4d-40fa-9832-f5a09872f3d0.45ff1cf15ae2d400fccd6ab4d438b4cb.jpeg
+62,Eggs,Eggland's Best,Dairy,3,https://i5.walmartimages.com/asr/1e642278-fe03-4e57-885e-f34ab08efff2.5e5b1760a37c014a7d38519c16316046.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF
+63,Apple Juice,Mott's,Beverage,2.5,https://i5.walmartimages.com/asr/03c64d31-9511-4cd2-9fbd-ca16aa590603.ed9f10c7fd4b6d070fb632e35d2be80a.jpeg
+64,Prime,Prime,Beverage,4,https://i5.walmartimages.com/seo/Prime-Hydration-Sports-Drink-Variety-Pack-Energy-Drink-Electrolyte-Beverage-Lemon-Lime-Tropical-Punch-Meta-Moon-Strawberry-Watermelon-Lemonade-Blue-R_9fa44c7e-3181-4263-9d7c-cc087506272b.a387a7db9e39f700d89ec5918e49d846.png
+65,Red Bull,Red Bull,Beverage,2.5,https://i5.walmartimages.com/seo/Red-Bull-Energy-Drink-12-fl-oz_cc297042-66be-4db1-9ff0-e626f6c43322.d5c5ca669d0978adca72bf0c7504e6ed.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF
+66,Monster,Monster Energy,Beverage,2,https://m.media-amazon.com/images/I/81mIq9VntjL.jpg
+67,Orange Juice,Tropicana,Beverage,3.5,https://i5.walmartimages.com/seo/Tropicana-Pure-Premium-Original-No-Pulp-100-Orange-Juice-46-Fl-Oz-Bottle_6f94bdc3-e12b-4366-bd7c-80001baee01a.b0e55c463b6fb53dd32c9b25df73cd04.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF
+68,Coca-Cola,Coca-Cola,Beverage,1.5,https://www.coca-cola.com/content/dam/onexp/us/en/brands/coca-cola-original/en_coca-cola-original-taste-20-oz_750x750_v1.jpg
+69,Pepsi,Pepsi,Beverage,1.5,https://i5.walmartimages.com/seo/Pepsi-Cola-36-12-Ounce-cans_5b88ab23-8627-451f-ae11-5c9fa5eabdb3.09248a61b540d4de2797a6d35e661a58.jpeg
+70,Gatorade,Gatorade,Beverage,1.25,https://m.media-amazon.com/images/I/81H8TttxVuS.jpg
+71,Coconut Water,Vita Coco,Beverage,2.99,https://m.media-amazon.com/images/I/81R-aAwCKWL.jpg
+72,Sparkling Water,LaCroix,Beverage,3.5,https://m.media-amazon.com/images/I/611kxSw-mZL.jpg
+73,Iced Tea,Lipton,Beverage,2,https://i5.walmartimages.com/asr/55eb66d3-84a1-41d3-887f-3bcd64ad8f4b.42199f6b8e48c05e65c51bda9d6dec9b.jpeg
+74,Energy Shots,5-hour Energy,Beverage,3,https://m.media-amazon.com/images/I/71PbAszrPTL.jpg
+75,Bread,Wonder Bread,Bakery,2,https://i5.walmartimages.com/asr/e9b47a05-ce45-41e0-99a1-6541c0d28426.e927aa7880626777c94505f8ff4937b7.jpeg
+76,Bagels,Thomas',Bakery,3,https://m.media-amazon.com/images/I/71fCBX1+BCL.jpg
+77,Muffins,Hostess,Bakery,2.5,https://i5.walmartimages.com/seo/Hostess-Blueberry-Mini-Muffins-20-Count_f0dc6de9-2f54-4ebf-ab49-1f952640a409.338d673a7b4d884fd6c0b58d78290502.jpeg
+78,Croissants,La Boulangerie,Bakery,3.99,https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/62609ffa9167cc74977d830d_0856564006121-glamor-front-2022-03-28t18-48-26-iphone-x-quality-90-1-29-0-user-5984ad42a967f880524de2c4-hf6t-349564.jpg
+80,Donuts,Krispy Kreme,Bakery,5,https://i5.walmartimages.com/seo/Krispy-Kreme-Original-Glazed-Doughnuts-18-5-oz-12-Count_c3e4a88a-0688-46b0-b3b9-6b3a81c7b14d.7df536bf43f1f82cd52cb2ae6c242b7d.png?odnHeight=768&odnWidth=768&odnBg=FFFFFF
+81,Focaccia,Schiacciata,Bakery,4.5,https://eatingarounditaly.com/wp-content/uploads/2023/07/10_schiacciata-side-500x500.jpg
+82,Pretzels,Snyder's of Hanover,Bakery,2.5,https://images.heb.com/is/image/HEBGrocery/000673351-1
