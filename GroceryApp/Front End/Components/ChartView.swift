@@ -152,6 +152,8 @@ struct ChartView: View {
         }
 
         data.reverse()
+        
+        animateChartDrawing()
     }
 
     private func animateChartDrawing() {
