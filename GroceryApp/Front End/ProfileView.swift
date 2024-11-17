@@ -53,7 +53,7 @@ struct ProfileView: View {
                     
                     VStack(alignment: .leading){
                         Text("Products")
-                            .font(.system(size: 24))
+                            .font(.custom("AsapCondensed-Regular", size: 24))
                             .bold()
                         
                         HStack{
