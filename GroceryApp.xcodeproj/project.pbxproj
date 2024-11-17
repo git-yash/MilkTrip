@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		173F47A02CE9ABB100A0A295 /* CompareStoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F479F2CE9ABB100A0A295 /* CompareStoresView.swift */; };
 		173F47A22CE9AE0400A0A295 /* StoreProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F47A12CE9AE0400A0A295 /* StoreProductView.swift */; };
-		173F47A42CE9B0A500A0A295 /* MultiChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F47A32CE9B0A500A0A295 /* MultiChartView.swift */; };
+		173F47A42CE9B0A500A0A295 /* MultiLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F47A32CE9B0A500A0A295 /* MultiLineChartView.swift */; };
+		17552AC42CE9C3FE00BE59F2 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 17552AC32CE9C3FE00BE59F2 /* Shimmer */; };
 		17C4B3002CE92E2A00216661 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B2FF2CE92E2A00216661 /* ProfileView.swift */; };
 		17C4B3022CE92E3300216661 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3012CE92E3300216661 /* SearchView.swift */; };
 		17C4B3042CE92E3A00216661 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3032CE92E3A00216661 /* TrendsView.swift */; };
@@ -58,7 +59,7 @@
 /* Begin PBXFileReference section */
 		173F479F2CE9ABB100A0A295 /* CompareStoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareStoresView.swift; sourceTree = "<group>"; };
 		173F47A12CE9AE0400A0A295 /* StoreProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductView.swift; sourceTree = "<group>"; };
-		173F47A32CE9B0A500A0A295 /* MultiChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChartView.swift; sourceTree = "<group>"; };
+		173F47A32CE9B0A500A0A295 /* MultiLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineChartView.swift; sourceTree = "<group>"; };
 		17C4B2FF2CE92E2A00216661 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		17C4B3012CE92E3300216661 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		17C4B3032CE92E3A00216661 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17552AC42CE9C3FE00BE59F2 /* Shimmer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				17C4B30F2CE9324600216661 /* ChartView.swift */,
-				173F47A32CE9B0A500A0A295 /* MultiChartView.swift */,
+				173F47A32CE9B0A500A0A295 /* MultiLineChartView.swift */,
 				17C4B3112CE932F700216661 /* ProductListView.swift */,
 				C4A4963E2CE956CC0012CB69 /* CouponView.swift */,
 				C4A496402CE95FA20012CB69 /* CouponCarousel.swift */,
@@ -241,6 +243,9 @@
 			dependencies = (
 			);
 			name = GroceryApp;
+			packageProductDependencies = (
+				17552AC32CE9C3FE00BE59F2 /* Shimmer */,
+			);
 			productName = GroceryApp;
 			productReference = C4A4960D2CE92CC70012CB69 /* GroceryApp.app */;
 			productType = "com.apple.product-type.application";
@@ -313,6 +318,9 @@
 				Base,
 			);
 			mainGroup = C4A496042CE92CC70012CB69;
+			packageReferences = (
+				17552AC22CE9C3FE00BE59F2 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
+			);
 			productRefGroup = C4A4960E2CE92CC70012CB69 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -357,7 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A4963D2CE9549E0012CB69 /* Coupon.swift in Sources */,
-				173F47A42CE9B0A500A0A295 /* MultiChartView.swift in Sources */,
+				173F47A42CE9B0A500A0A295 /* MultiLineChartView.swift in Sources */,
 				17C4B3122CE932F700216661 /* ProductListView.swift in Sources */,
 				17C4B31E2CE94BFA00216661 /* SampleData.swift in Sources */,
 				17C4B3042CE92E3A00216661 /* TrendsView.swift in Sources */,
@@ -710,6 +718,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17552AC22CE9C3FE00BE59F2 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17552AC32CE9C3FE00BE59F2 /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17552AC22CE9C3FE00BE59F2 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C4A496052CE92CC70012CB69 /* Project object */;
 }

@@ -14,6 +14,9 @@ struct TrendsView: View {
         NavigationStack{
             ScrollView{
                 VStack(alignment: .leading, spacing: 20){
+                    
+                    MultiLineChartView(topText: "", allData: viewModel.getMultiLineChartData())
+                    
                     ForEach(viewModel.stores, id: \.self){ store in
                         VStack(alignment: .leading, spacing: 10){
                             Text(store.name)

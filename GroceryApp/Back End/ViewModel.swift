@@ -22,7 +22,7 @@ public class ViewModel: ObservableObject {
         
         if let product_data = readSampleData(){
             self.products = product_data
-            self.localUser = User(id: 1, grocery_list: Array(product_data.shuffled().prefix(5)), recent_searches: ["balls"])
+            self.localUser = User(id: 1, grocery_list: Array(product_data.shuffled().prefix(5)), recent_searches: [])
             
             for product in product_data {
                 switch product.store {
@@ -42,7 +42,7 @@ public class ViewModel: ObservableObject {
             
         } else {
             self.products = []
-            self.localUser = User(id: 1, grocery_list: [], recent_searches: ["balls"])
+            self.localUser = User(id: 1, grocery_list: [], recent_searches: [])
         }
         
         self.stores = [walmartStore, cvsStore, randallsStore, HEBStore]
@@ -102,5 +102,14 @@ public class ViewModel: ObservableObject {
         }
         
         return subs
+    }
+    
+    func getMultiLineChartData() -> [String:[PriceIncrement]]{
+        var allData: [String:[PriceIncrement]] = [:]
+        
+        for store in stores {
+            allData[store.name] = store.getPriceIncrementData()
+        }
+        return allData
     }
 }

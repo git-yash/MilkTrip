@@ -60,9 +60,11 @@ struct StoreProductView: View {
 
             
             Spacer()
-            Text(String(format: "%.2f", product.getOneMonthPriceChangePercent()) + "%")
+            
+            let percentChange = product.getOneMonthPriceChangePercent()
+            Text(String(format: "%.2f", percentChange) + "%")
                 .font(.system(size: 16))
-                .foregroundStyle(.green)
+                .foregroundStyle(percentChange > 0 ? .red : .green)
                 .frame(width: screenWidth * 0.20)
 
         }

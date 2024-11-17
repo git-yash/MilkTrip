@@ -8,11 +8,11 @@
 import SwiftUI
 import Charts
 
-struct MultiChartView: View {
+struct MultiLineChartView: View {
     @State var topText: String
     @State var selectedRange: String = "1M"
-    @State var allData: [PriceIncrement]
-    @State var data: [PriceIncrement] = []
+    @State var allData: [String:[PriceIncrement]]
+    @State var displayedData: [String:[PriceIncrement]] = [:]
     @State var selectedDataPoint: (index: Int, value: Double)? = nil
     @State var lowerBound: Int = 0
     @State var upperBound: Int = 10
@@ -27,19 +27,23 @@ struct MultiChartView: View {
                     .fill(Color(hex: "#494C52"))
                     .overlay(
                         Chart {
-                            ForEach(data.indices, id: \.self) { index in
-                                let priceIncrement = data[index]
-                                LineMark(
-                                    x: .value("Date", priceIncrement.timestamp),
-                                    y: .value("Price", priceIncrement.price)
-                                )
-                                .lineStyle(StrokeStyle(lineWidth: 2))
-                                .foregroundStyle(Color(hex: "#387f7b"))
+                            ForEach(displayedData.keys.sorted(), id: \.self) { line in // Sort for consistency
+                                if let increments = displayedData[line] { // Safely unwrap the value for the key
+                                    ForEach(increments.indices, id: \.self) { index in
+                                        let priceIncrement = increments[index]
+                                        LineMark(
+                                            x: .value("Date", priceIncrement.timestamp),
+                                            y: .value("Price", priceIncrement.price)
+                                        )
+                                        .lineStyle(StrokeStyle(lineWidth: 2))
+                                        .foregroundStyle(Color(hex: "#387f7b"))
+                                    }
+                                }
                             }
                         }
-                        .chartYScale(domain: lowerBound...upperBound)
+                        .chartYScale(domain: 1...500)
                         .padding()
-                        .cornerRadius(15) // Round the edges of the chart
+                        .cornerRadius(15)
                     )
                     .gesture(
                         DragGesture()
@@ -53,17 +57,8 @@ struct MultiChartView: View {
                     .frame(height: screenWidth * 0.55)
 
                 if let selected = selectedDataPoint {
-                    let priceIncrement = data[selected.index]
-                    let xOffset = CGFloat(selected.index) * (screenWidth - 40) / CGFloat(data.count - 1)
+                    let xOffset = CGFloat(selected.index) * (screenWidth - 40) / CGFloat(displayedData.count - 1)
                     VStack {
-                        Text("$\(String(format: "%.2f", priceIncrement.price))")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding(8)
-                            .background(Color.black.opacity(0.8))
-                            .cornerRadius(8)
-                            .offset(x: xOffset - screenWidth / 2 + 20, y: -30)
-
                         Rectangle()
                             .fill(Color.gray)
                             .frame(width: 1, height: screenWidth * 0.50)
@@ -121,44 +116,44 @@ struct MultiChartView: View {
             formatter.dateFormat = "yyyy" // Year format
             days = 100000
         default:
-            data = [] // If an unrecognized range is passed, clear data.
+            displayedData = [:] // If an unrecognized range is passed, clear data.
             return
         }
 
         let now = Date()
 
-        // Filter data based on the calculated range
-        data = allData.filter { price_increment in
-            let date = price_increment.timestamp
-            // Compare if the date is within the specified range
-            return date > calendar.date(byAdding: .day, value: -days, to: now)!
-        }
+        for key in allData.keys {
+            // Filter data based on the calculated range
+            let filtered = allData[key]?.filter { price_increment in
+                let date = price_increment.timestamp
+                // Compare if the date is within the specified range
+                return date > calendar.date(byAdding: .day, value: -days, to: now)!
+            }
 
-        if let minPrice = data.min(by: { $0.price < $1.price }) {
-            lowerBound = Int(minPrice.price) - 2
+            displayedData[key] = filtered?.reversed()
         }
-
-        if let maxPrice = data.max(by: { $0.price < $1.price }) {
-            upperBound = Int(maxPrice.price) + 2
-        }
-
-        data.reverse() // To show the data in chronological order
     }
 
     private func handleDragGesture(value: DragGesture.Value) {
         let location = value.location
         let chartWidth = screenWidth - 40 // Adjust for padding
-        let spacing = chartWidth / CGFloat(data.count - 1)
+        let spacing = chartWidth / CGFloat(getDisplayPointsCount() - 1)
 
         let index = Int((location.x - 20) / spacing) // Adjust for padding
-        if index >= 0 && index < data.count {
-            selectedDataPoint = (index: index, value: data[index].price)
+        if index >= 0 && index < displayedData.count {
+            selectedDataPoint = (index: index, value: 0)
         } else {
             selectedDataPoint = nil
         }
     }
+    
+    func getDisplayPointsCount() -> Int {
+        let anyKey = displayedData.keys.sorted()[0]
+        
+        return displayedData[anyKey]?.count ?? 10
+    }
 }
 
 #Preview {
-    MultiChartView(topText: "Monthly Spending: $123.24", allData: [])
+    MultiLineChartView(topText: "Monthly Spending: $123.24", allData: [:])
 }

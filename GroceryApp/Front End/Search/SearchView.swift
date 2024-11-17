@@ -93,20 +93,21 @@ struct SearchView: View {
                             }
                         }
                     } else {
-                        // Display search results with custom navigation handling
-                        ForEach(getSearchResults(searchText: searchText), id: \.self) { product in
-                            NavigationLink(
-                                destination: ProductView(product: product),
-                                isActive: $isNavigationActive
-                            ) {
-                                ProductListView(product: product)
-                                    .onTapGesture {
-                                        // Append the search text and trigger navigation
-                                        viewModel.localUser.recent_searches.append(searchText)
-                                        isNavigationActive = true  // Trigger the navigation
-                                    }
+                        VStack {
+                            // Display search results with custom navigation handling
+                            ForEach(getSearchResults(searchText: searchText), id: \.self) { product in
+                                NavigationLink {
+                                    ProductView(product: product)
+                                        .onDisappear {
+                                            // Append the search text and trigger navigation
+                                            viewModel.localUser.recent_searches.append(product.name)
+                                            isNavigationActive = true  // Trigger the navigation
+                                        }
+                                } label: {
+                                    ProductListView(product: product)
+                                }
+                                .buttonStyle(.plain)
                             }
-                            .buttonStyle(.plain) // Prevents default button style
                         }
                     }
                 }

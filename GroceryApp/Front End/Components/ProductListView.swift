@@ -1,4 +1,12 @@
+//
+//  ProductListView.swift
+//  GroceryApp
+//
+//  Created by Aiden Seibel on 11/16/24.
+//
+
 import SwiftUI
+import Shimmer
 
 struct ProductListView: View {
     var product: Product
@@ -12,30 +20,38 @@ struct ProductListView: View {
                 AsyncImage(url: url) { phase in
                     switch phase {
                     case .empty:
-                        // Placeholder: Gray square of size 50x50 pixels
+                        // Placeholder: Gray square with shimmer effect
                         Color.gray
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(5)
+                            .shimmering()
                     case .success(let image):
                         // Loaded image
                         image
                             .resizable()
-                            .scaledToFit()
+                            .scaledToFill()
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(5)
                     case .failure:
                         // Placeholder for failure case (optional)
-                        Color.red
+                        Color.gray
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(5)
+                            .shimmering()
                     @unknown default:
                         Color.gray
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(5)
+                            .shimmering()
                     }
                 }
-                .frame(width: 50, height: 50)
-                .cornerRadius(5)
-
             } else {
-                // If the URL is invalid, show a placeholder
+                // If the URL is invalid, show a placeholder with shimmer
                 Color.gray
                     .frame(width: 50, height: 50)
                     .cornerRadius(5)
+                    .shimmering()
             }
-
             // Product Info Section
             VStack(alignment: .leading, spacing: 2) {
                 Text(product.name)

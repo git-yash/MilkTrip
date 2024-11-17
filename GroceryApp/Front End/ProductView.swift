@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Shimmer
 
 struct ProductView: View {
     @EnvironmentObject var viewModel: ViewModel
@@ -19,28 +20,37 @@ struct ProductView: View {
                         AsyncImage(url: url) { phase in
                             switch phase {
                             case .empty:
-                                // Placeholder: Gray square of size 50x50 pixels
+                                // Placeholder: Gray square with shimmer effect
                                 Color.gray
+                                    .frame(width: 100, height: 100)
+                                    .cornerRadius(50)
+                                    .shimmering()
                             case .success(let image):
                                 // Loaded image
                                 image
                                     .resizable()
-                                    .scaledToFit()
+                                    .scaledToFill()
+                                    .frame(width: 100, height: 100)
+                                    .cornerRadius(50)
                             case .failure:
-                                // Placeholder for failure case (optional)
-                                Color.red
+                                // Placeholder for failure case (optional) with shimmer
+                                Color.gray
+                                    .frame(width: 100, height: 100)
+                                    .cornerRadius(50)
+                                    .shimmering()
                             @unknown default:
                                 Color.gray
+                                    .frame(width: 100, height: 100)
+                                    .cornerRadius(50)
+                                    .shimmering()
                             }
                         }
-                        .frame(width: 100, height: 100)
-                        .cornerRadius(50)
-
                     } else {
-                        // If the URL is invalid, show a placeholder
+                        // If the URL is invalid, show a placeholder with shimmer
                         Color.gray
                             .frame(width: 100, height: 100)
                             .cornerRadius(50)
+                            .shimmering()
                     }
                     
                     VStack(alignment: .leading){
@@ -130,8 +140,7 @@ struct ProductView: View {
                     if subs.isEmpty{
                         HStack{
                             Text("We couldn't find any substitutes for this product.")
-                                .font(.system(size: 16))
-                                .bold()
+                                .font(.system(size: 14))
                             Spacer()
                         }
                         .padding(EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))

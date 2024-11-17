@@ -86,6 +86,6 @@ class Product: Identifiable, Hashable {
         let current_price: Double = getMostRecentPrice() ?? 1.0
         let one_month_price: Double = getOneMonthPriceChange() ?? 1.0
 
-        return (one_month_price - current_price) / (current_price) * 100
+        return (one_month_price - current_price) / (current_price)
     }
 }

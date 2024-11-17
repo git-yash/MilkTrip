@@ -98,7 +98,7 @@ struct ProfileView: View {
                 }
                 .padding()
             }
-            .navigationTitle("My Profile")
+            .navigationTitle("My Watchlist")
             .navigationBarTitleDisplayMode(.large)
             .withScreenBackground()
             .onAppear{
