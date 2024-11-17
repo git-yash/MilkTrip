@@ -10,7 +10,10 @@ import SwiftUI
 struct ScreenBackground: ViewModifier {
     func body(content: Content) -> some View {
         ZStack {
-            Color(hex: "#222831") // Background color
+            Color(hex: "#13171c") // Background color
+                .ignoresSafeArea()
+            SharedViews.motionAnimator
+                .blur(radius: 100)
                 .ignoresSafeArea()
             content
         }

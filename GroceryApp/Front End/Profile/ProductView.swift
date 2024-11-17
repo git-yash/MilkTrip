@@ -64,30 +64,41 @@ struct ProductView: View {
                         Spacer()
                         VStack(alignment: .center){
                             Text("Category")
-                                .font(.system(size: 14))
+                                .font(.system(size: 12))
                                 .opacity(0.70)
                             Text("\(product.category)")
                                 .font(.system(size: 16))
                                 .bold()
+                                .multilineTextAlignment(.center)
                         }
+                        .frame(width: 100)
+                        
                         Spacer()
                         VStack(alignment: .center){
                             Text("Distributed by")
-                                .font(.system(size: 14))
+                                .font(.system(size: 12))
                                 .opacity(0.70)
                             Text("\(product.brand)")
                                 .font(.system(size: 16))
                                 .bold()
+                                .multilineTextAlignment(.center)
+
                         }
+                        .frame(width: 100)
+
                         Spacer()
                         VStack(alignment: .center){
                             Text("Store")
-                                .font(.system(size: 14))
+                                .font(.system(size: 12))
                                 .opacity(0.70)
                             Text("\(product.getStore())")
                                 .font(.system(size: 16))
                                 .bold()
+                                .multilineTextAlignment(.center)
+
                         }
+                        .frame(width: 100)
+
                         Spacer()
                     }
                     .padding()
@@ -148,7 +159,7 @@ struct ProductView: View {
                     } label: {
                         let isIdealProduct = viewModel.isIdealProduct(product: product)
                         if isIdealProduct {
-                            HStack{
+                            HStack(spacing: 10){
                                 Image(systemName: "checkmark.circle")
                                     .resizable()
                                     .scaledToFit()
@@ -220,7 +231,7 @@ struct ProductView: View {
                     }
                 }
             }
-            .padding()
+            .padding(15)
         }
         .navigationTitle(product.name)
         .navigationBarTitleDisplayMode(.large)

@@ -69,4 +69,14 @@ class User {
             grocery_list.append(product)
         }
     }
+    
+    func generateShoppingCart() -> String {
+        var shoppingCartNames: [String] = []
+        
+        for item in grocery_list {
+            shoppingCartNames.append(item.name)
+        }
+        
+        return shoppingCartNames.joined(separator: ", ")
+    }
 }

@@ -21,7 +21,7 @@ struct SearchView: View {
                     TextField("Search Products...", text: $searchText)
                         .padding(8)
                         .padding(.horizontal, 24)
-                        .background(Color(.systemGray6))
+                        .background(Color(hex: "#393e46"))
                         .cornerRadius(8)
                         .focused($searchFieldIsFocused)
                         .overlay(

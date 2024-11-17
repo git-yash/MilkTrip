@@ -14,34 +14,11 @@ struct StoreProductView: View {
 
     var body: some View {
         HStack {
-            // Image Section
-            if let url = URL(string: product.image_url) {
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                    case .empty:
-                        // Placeholder: Gray square of size 50x50 pixels
-                        Color.gray
-                    case .success(let image):
-                        // Loaded image
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    case .failure:
-                        // Placeholder for failure case (optional)
-                        Color.red
-                    @unknown default:
-                        Color.gray
-                    }
-                }
+            Image(product.getStoreImage())
+                .resizable()
+                .scaledToFit()
                 .frame(width: 50, height: 50)
                 .cornerRadius(5)
-
-            } else {
-                // If the URL is invalid, show a placeholder
-                Color.gray
-                    .frame(width: 50, height: 50)
-                    .cornerRadius(5)
-            }
 
             // Product Info Section
             Text(product.getStore())

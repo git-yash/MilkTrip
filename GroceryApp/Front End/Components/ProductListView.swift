@@ -24,6 +24,7 @@ struct ProductListView: View {
                         Color.gray
                             .frame(width: 50, height: 50)
                             .cornerRadius(5)
+                            .opacity(0.50)
                             .shimmering()
                     case .success(let image):
                         // Loaded image
@@ -37,11 +38,13 @@ struct ProductListView: View {
                         Color.gray
                             .frame(width: 50, height: 50)
                             .cornerRadius(5)
+                            .opacity(0.50)
                             .shimmering()
                     @unknown default:
                         Color.gray
                             .frame(width: 50, height: 50)
                             .cornerRadius(5)
+                            .opacity(0.50)
                             .shimmering()
                     }
                 }
@@ -50,6 +53,7 @@ struct ProductListView: View {
                 Color.gray
                     .frame(width: 50, height: 50)
                     .cornerRadius(5)
+                    .opacity(0.50)
                     .shimmering()
             }
             // Product Info Section

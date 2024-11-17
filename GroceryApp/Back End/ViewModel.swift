@@ -13,12 +13,15 @@ public class ViewModel: ObservableObject {
     @Published var products: [Product]
     @Published var stores: [Store]
     @Published var coupons: [Coupon]
+    @Published var inflation: [PriceIncrement]
 
     init() {
         let walmartStore = Store(id: 1, image: Image("walmartLogo"), name: "Walmart", products: [])
         let cvsStore = Store(id: 2, image: Image("cvsLogo"), name: "CVS", products: [])
         let randallsStore = Store(id: 3, image: Image("randallsLogo"), name: "Randalls", products: [])
         let HEBStore = Store(id: 4, image: Image("HEBLogo"), name: "H-E-B", products: [])
+        
+        self.inflation = readInflationData()
         
         if let product_data = readSampleData(){
             self.products = product_data
@@ -116,7 +119,6 @@ public class ViewModel: ObservableObject {
             "Walmart": .walmart,
         ]
         
-        var ind = 0
         for store in stores {
             for datum in store.getPriceIncrementData(){
                 allData.append(MultiLineChartData(date: datum.timestamp, value: datum.price, type: lookup[store.name] ?? .heb))
@@ -124,5 +126,40 @@ public class ViewModel: ObservableObject {
             }
         }
         return allData
+    }
+    
+    func generateInsights() -> String {
+        var allInsights: [String] = []
+        
+        for store in stores{
+            var storeInsights: [String] = []
+            let allCategories = ["Snacks", "Produce", "Pet", "Supplies", "Personal Care", "Meat", "Household Items", "Hardware", "Grains", "Dairy", "Beverage", "Bakery"]
+            
+            for category in allCategories {
+                let insight = getCategoryInsights(store: store, category: category)
+                if insight > 1 {
+                    storeInsights.append(category + " prices have risen by " + String(format: "%.1f", insight) + " percent")
+                } else if insight < -1 {
+                    storeInsights.append(category + " prices have lowered by " + String(format: "%.1f", insight) + " percent")
+                }
+            }
+
+            allInsights.append(store.name+" reports the following price fluctuations: "+storeInsights.joined(separator: ", "))
+        }
+        
+        let ans = allInsights.joined(separator: "\n\n")
+        
+        return ans
+    }
+    
+    func getCategoryInsights(store: Store, category: String) -> Double {
+        let filtered = store.products.filter { product in
+            let prod_category = product.category
+            return category == prod_category
+        }
+        
+        let analyzed = filtered.map { $0.getOneMonthPriceChangePercent() }
+        
+        return analyzed.reduce(0.0, { $0 + Double($1) }) / Double(analyzed.count)
     }
 }

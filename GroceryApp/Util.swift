@@ -31,12 +31,16 @@ private func getProductIDsString() -> String {
     return productIDsString
 }
 
-public func generateAnalysisPrompt() -> String {
+public func generateAnalysisPrompt(shoppingCart: String, insights: String) -> String {
     if let filePath = Bundle.main.path(forResource: "SampleData", ofType: "csv"){
         do {
             let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
             
-            return "(Talk in 1st person) Provide a brief analysis report on what stores the user should be going to based on prices of the products in their cart with IDs: \(getProductIDsString()) Only provide analysis which should be 2-3 sentences, no other details \(fileContents))"
+            let prompt = "(Talk in 1st person) Provide a brief analysis on what stores the user should be going to based on their shopping cart and recent store price insights. \n\nShopping Cart: \(shoppingCart) \n\nInsights: \(insights)"
+            
+            print(prompt)
+            
+            return prompt
         }
         catch{
             print("error")

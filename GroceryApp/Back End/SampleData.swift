@@ -78,3 +78,48 @@ func generatePriceIncrements(base_price: Double, store_index: Int) -> [PriceIncr
         
     return increments
 }
+
+
+func readInflationData() -> [PriceIncrement] {
+    if let filePath = Bundle.main.path(forResource: "InflationData", ofType: "csv"){
+        do {
+            let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
+            let rows = fileContents.split(separator: "\r\n")
+            
+            var increments: [PriceIncrement] = []
+            
+            var prev_price = 1.0
+            // Process each row, assuming the first row is a header and can be ignored
+            for row in rows.dropFirst() {
+                // Year    Month    Inflation
+                let columns = row.split(separator: ",")
+                
+                // for each week
+                for i in 1...4 {
+                    var components = DateComponents()
+                    components.year = Int(columns[0])
+                    components.month = Int(columns[1])
+                    components.weekOfMonth = i
+                    
+                    let timestep = Calendar.current.date(from: components) ?? Date()
+                    let current_price = prev_price * (Double(columns[2]) ?? 1.0)
+                    let inflationPoint = PriceIncrement(timestamp: timestep, price: current_price)
+
+                    increments.append(inflationPoint)
+                    
+                    prev_price = current_price
+                }
+            }
+             
+            print(increments)
+            
+            return increments
+        } catch {
+            print("Error reading inflation: \(error.localizedDescription)")
+        }
+    }
+    
+    print("Could not get filepath when reading inflation data")
+    
+    return []
+}

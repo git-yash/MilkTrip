@@ -33,7 +33,6 @@ struct MultiLineChartData: Hashable {
 }
 
 struct MultiLineChartView: View {
-    @State var topText: String = "Average Inflation"
     @State var selectedRange: String = "1M"
     @State var allData: [MultiLineChartData]
     @State var displayedData: [MultiLineChartData] = []
@@ -49,9 +48,10 @@ struct MultiLineChartView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(topText)
-                    .padding(.leading, 5)
-                    .font(.system(size: 28)).bold()
+                Text("Average Inflation")
+                    .font(.system(size: 18))
+                    .foregroundStyle(.white)
+                    .bold()
                 Spacer()
                 Text(String(format: "%.2f", percentageChange)+"%")
                     .foregroundColor(percentageChange >= 0 ? .red : .green)
@@ -307,5 +307,5 @@ struct MultiLineChartView: View {
 }
 
 #Preview {
-    MultiLineChartView(topText: "Monthly Spending: $123.24", allData: [])
+    MultiLineChartView(allData: [])
 }
