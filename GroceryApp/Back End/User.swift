@@ -10,7 +10,7 @@ import Foundation
 class User {
     var id: Int
     var grocery_list: [Product] = []
-    var recent_searches: [String] = []
+    @Published var recent_searches: [String] = []
     
     init(id: Int, grocery_list: [Product], recent_searches: [String]) {
         self.id = id

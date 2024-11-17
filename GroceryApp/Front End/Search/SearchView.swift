@@ -11,11 +11,12 @@ struct SearchView: View {
     @EnvironmentObject var viewModel: ViewModel
     @State private var searchText: String = ""
     @FocusState private var searchFieldIsFocused: Bool
+    @ObservedObject var reloadViewHelper = ReloadViewHelper()
 
     var body: some View {
-        NavigationStack{
-            ScrollView{
-                VStack(alignment: .leading, spacing: 50){
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 50) {
                     TextField("Search Products...", text: $searchText)
                         .padding(8)
                         .padding(.horizontal, 24)
@@ -42,7 +43,7 @@ struct SearchView: View {
                         )
                     
                     if !searchFieldIsFocused && searchText.isEmpty {
-                        VStack(alignment: .leading){
+                        VStack(alignment: .leading) {
                             Text("Coupons")
                                 .font(.system(size: 24))
                                 .bold()
@@ -50,8 +51,7 @@ struct SearchView: View {
                             CouponCarousel(coupons: viewModel.coupons)
                         }
                         
-                        
-                        VStack(alignment: .leading){
+                        VStack(alignment: .leading) {
                             Text("Previous Searches")
                                 .font(.system(size: 24))
                                 .bold()
@@ -60,6 +60,7 @@ struct SearchView: View {
                             if recent_searches.isEmpty {
                                 Text("No recent searches")
                                     .font(.system(size: 12))
+                                    .padding()
                             } else {
                                 ForEach(recent_searches, id: \.self) { search in
                                     HStack {
@@ -68,9 +69,21 @@ struct SearchView: View {
                                         
                                         Spacer()
                                         
-                                        Image(systemName: "xmark")
-                                            .resizable()
-                                            .frame(width: 10, height: 10)
+                                        Button(action: {
+                                            // Remove the search from the list of recent searches
+                                            print(viewModel.localUser.recent_searches)
+                                            if let index = viewModel.localUser.recent_searches.firstIndex(of: search) {
+                                                viewModel.localUser.recent_searches.remove(at: index)
+                                            }
+                                            reloadViewHelper.reloadView()
+                                            print("removed:")
+                                            print(viewModel.localUser.recent_searches)
+                                        }) {
+                                            Image(systemName: "xmark")
+                                                .resizable()
+                                                .frame(width: 10, height: 10)
+                                        }
+                                        .buttonStyle(PlainButtonStyle())
                                     }
                                     .padding()
                                     .background(Color(hex: "#393e46"))
@@ -79,10 +92,23 @@ struct SearchView: View {
                             }
                         }
                     } else {
-                        Text("Search Results")
-                            .font(.system(size: 24))
-                            .bold()
-                        
+//                        Text("Search Results")
+//                            .font(.system(size: 24))
+//                            .bold()
+                        ForEach(getSearchResults(searchText: searchText), id: \.self) { product in
+                            NavigationLink {
+                                ProductView(product: product)
+                            } label: {
+                                ProductListView(product: product)
+                                    .simultaneousGesture(
+                                        TapGesture().onEnded {
+                                            viewModel.localUser.recent_searches.append(searchText)
+                                        }
+                                    )
+                            }
+                            .buttonStyle(.plain)
+                        }
+
                     }
                 }
                 .padding()
@@ -92,6 +118,13 @@ struct SearchView: View {
             .withScreenBackground()
         }
     }
+}
+
+class ReloadViewHelper: ObservableObject {
+    func reloadView() {
+        objectWillChange.send()
+    }
+    
 }
 
 #Preview {
