@@ -41,7 +41,7 @@ struct MultiLineChartView: View {
                                 }
                             }
                         }
-                        .chartYScale(domain: 1...500)
+                        .chartYScale(domain: lowerBound...upperBound)
                         .padding()
                         .cornerRadius(15)
                     )
@@ -57,13 +57,11 @@ struct MultiLineChartView: View {
                     .frame(height: screenWidth * 0.55)
 
                 if let selected = selectedDataPoint {
-                    let xOffset = CGFloat(selected.index) * (screenWidth - 40) / CGFloat(displayedData.count - 1)
-                    VStack {
-                        Rectangle()
-                            .fill(Color.gray)
-                            .frame(width: 1, height: screenWidth * 0.50)
-                            .offset(x: xOffset - screenWidth / 2 + 20, y: -screenWidth * 0.1)
-                    }
+                    let xOffset = CGFloat(selected.index) * (screenWidth - 40) / CGFloat(getDisplayPointsCount() - 1) - (screenWidth - 40) / 2
+                    Rectangle()
+                        .fill(Color.gray)
+                        .frame(width: 1, height: screenWidth * 0.50)
+                        .offset(x: xOffset + 20, y: 0)
                 }
             }
 
@@ -121,17 +119,30 @@ struct MultiLineChartView: View {
         }
 
         let now = Date()
+        
+        var tmp_lower_bound = 1000000
+        var tmp_upper_bound = 0
 
         for key in allData.keys {
             // Filter data based on the calculated range
             let filtered = allData[key]?.filter { price_increment in
                 let date = price_increment.timestamp
-                // Compare if the date is within the specified range
                 return date > calendar.date(byAdding: .day, value: -days, to: now)!
+            }
+
+            if let minPrice = filtered?.min(by: { $0.price < $1.price }) {
+                tmp_lower_bound = min(tmp_lower_bound, Int(minPrice.price) - 2)
+            }
+
+            if let maxPrice = filtered?.max(by: { $0.price < $1.price }) {
+                tmp_upper_bound = max(tmp_upper_bound, Int(maxPrice.price) + 2)
             }
 
             displayedData[key] = filtered?.reversed()
         }
+        
+        lowerBound = tmp_lower_bound
+        upperBound = tmp_upper_bound
     }
 
     private func handleDragGesture(value: DragGesture.Value) {
@@ -139,14 +150,20 @@ struct MultiLineChartView: View {
         let chartWidth = screenWidth - 40 // Adjust for padding
         let spacing = chartWidth / CGFloat(getDisplayPointsCount() - 1)
 
+        // Calculate index based on the x-coordinate of the drag location
         let index = Int((location.x - 20) / spacing) // Adjust for padding
-        if index >= 0 && index < displayedData.count {
-            selectedDataPoint = (index: index, value: 0)
+
+        // Ensure index is within the valid range
+        if index >= 0, let anyKey = displayedData.keys.first,
+           index < (displayedData[anyKey]?.count ?? 0) {
+            if let increments = displayedData[anyKey] {
+                let dataPoint = increments[index]
+                selectedDataPoint = (index: index, value: dataPoint.price)
+            }
         } else {
             selectedDataPoint = nil
         }
     }
-    
     func getDisplayPointsCount() -> Int {
         let anyKey = displayedData.keys.sorted()[0]
         

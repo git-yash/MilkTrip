@@ -13,17 +13,28 @@ struct TrendsView: View {
     var body: some View {
         NavigationStack{
             ScrollView{
-                VStack(alignment: .leading, spacing: 20){
-                    
-                    MultiLineChartView(topText: "", allData: viewModel.getMultiLineChartData())
-                    
-                    ForEach(viewModel.stores, id: \.self){ store in
-                        VStack(alignment: .leading, spacing: 10){
-                            Text(store.name)
-                                .font(.system(size: 18))
-                                .bold()
-                            ChartView(topText: "Welome", allData: store.getPriceIncrementData())
+                VStack(alignment: .leading, spacing: 50){
+                    VStack(alignment: .leading){
+                        Text("Stores Nearby")
+                            .font(.system(size: 24))
+                            .bold()
+                        
+                        MultiLineChartView(topText: "", allData: viewModel.getMultiLineChartData())
+                    }
+
+                    VStack(alignment: .leading){
+                        Text("Analysis")
+                            .font(.system(size: 24))
+                            .bold()
+                        
+                        HStack{
+                            Text("Analysis failed to load")
+                                .font(.system(size: 14))
+                            Spacer()
                         }
+                        .padding(EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))
+                        .background(Color(hex: "#494C52"))
+                        .cornerRadius(10)
                     }
                 }
                 .padding()
