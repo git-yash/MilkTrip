@@ -12,6 +12,9 @@ struct ProfileView: View {
     @State private var watchlist: [Product] = []
     @State private var sortOption = SortOption.none
     @ObservedObject var reloadViewHelper = ReloadViewHelper()
+    @State private var isShowingScanner = false
+    @State private var scannedBarcode = ""
+
 
     enum SortOption {
         case none
@@ -44,6 +47,38 @@ struct ProfileView: View {
         NavigationStack{
             ScrollView{
                 VStack(alignment: .leading, spacing: 50){
+                    // Barcode Scanner Section
+                    VStack(spacing: 20) {
+                        Button {
+                            isShowingScanner = true
+                        } label: {
+                            Text("Scan Barcode")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                        }
+                    }
+                    .sheet(isPresented: $isShowingScanner) {
+                        BarcodeScannerView { barcode in
+                            isShowingScanner = false
+                            fetchBarcodeProductDetails(for: barcode) { result in
+                                switch result {
+                                case .success(let product):
+                                    print("Product Details:")
+                                    print("Name: \(product.name)")
+                                    print("Brand: \(product.brand)")
+                                    print("Description: \(product.description)")
+                                    if let imageURL = product.imageURL {
+                                        print("Image URL: \(imageURL)")
+                                    }
+                                case .failure(let error):
+                                    print("Error fetching product: \(error.localizedDescription)")
+                                }
+                            }
+                        }
+                    }
+                    
                     VStack(alignment: .leading){
                         ChartView(
                             topText: String(format: "$%.2f", viewModel.localUser.getCurrentPrice()),
@@ -114,3 +149,4 @@ struct ProfileView: View {
 #Preview {
     ProfileView()
 }
+
