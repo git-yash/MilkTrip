@@ -93,6 +93,7 @@ struct ChartView: View {
                     Button(action: {
                         selectedRange = range
                         updateData(for: range)
+                        updatePercentageChange()
                     }) {
                         Text(range)
                             .fontWeight(selectedRange == range ? .bold : .regular)
