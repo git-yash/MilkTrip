@@ -22,7 +22,6 @@ struct TrendsView: View {
                             ChartView(allData: store.getPriceIncrementData())
                         }
                         .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(.gray, lineWidth: 1))
                     }
                 }
                 .padding()

@@ -9,44 +9,49 @@ import SwiftUI
 import Charts
 
 struct ChartView: View {
+    @State var topText: String
     @State var selectedRange: String = "1M"
     @State var allData: [PriceIncrement]
     @State var data: [PriceIncrement] = []
     @State var selectedDataPoint: (index: Int, value: Double)? = nil
     @State var lowerBound: Int = 0
     @State var upperBound: Int = 10
-    
+
     var screenWidth = UIScreen.main.bounds.width
     let ranges = ["1M", "6M", "YTD", "1Y", "All"]
-        
+
     var body: some View {
         VStack {
             ZStack {
-                Chart {
-                    ForEach(data.indices, id: \.self) { index in
-                        let priceIncrement = data[index]
-                        LineMark(
-                            x: .value("Date", priceIncrement.timestamp),
-                            y: .value("Price", priceIncrement.price)
-                        )
-                        .lineStyle(StrokeStyle(lineWidth: 2))
-                        .foregroundStyle(Color(hex: "#387f7b"))
-                    }
-                }
-                .chartYScale(domain: lowerBound...upperBound)
-                .frame(height: screenWidth * 0.50)
-                .padding()
-                .cornerRadius(10)
-                .gesture(
-                    DragGesture()
-                        .onChanged { value in
-                            handleDragGesture(value: value)
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color(hex: "#494C52"))
+                    .overlay(
+                        Chart {
+                            ForEach(data.indices, id: \.self) { index in
+                                let priceIncrement = data[index]
+                                LineMark(
+                                    x: .value("Date", priceIncrement.timestamp),
+                                    y: .value("Price", priceIncrement.price)
+                                )
+                                .lineStyle(StrokeStyle(lineWidth: 2))
+                                .foregroundStyle(Color(hex: "#387f7b"))
+                            }
                         }
-                        .onEnded { _ in
-                            selectedDataPoint = nil
-                        }
-                )
-                
+                        .chartYScale(domain: lowerBound...upperBound)
+                        .padding()
+                        .cornerRadius(15) // Round the edges of the chart
+                    )
+                    .gesture(
+                        DragGesture()
+                            .onChanged { value in
+                                handleDragGesture(value: value)
+                            }
+                            .onEnded { _ in
+                                selectedDataPoint = nil
+                            }
+                    )
+                    .frame(height: screenWidth * 0.55)
+
                 if let selected = selectedDataPoint {
                     let priceIncrement = data[selected.index]
                     let xOffset = CGFloat(selected.index) * (screenWidth - 40) / CGFloat(data.count - 1)
@@ -66,7 +71,7 @@ struct ChartView: View {
                     }
                 }
             }
-            
+
             HStack {
                 ForEach(ranges, id: \.self) { range in
                     Button(action: {
@@ -82,19 +87,24 @@ struct ChartView: View {
                 }
                 Spacer()
             }
-            .padding(.vertical)
+            .padding()
         }
         .onAppear {
             updateData(for: selectedRange)
         }
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color(hex: "#393E46"))
+        )
+        .padding() // Add padding to the entire view
     }
-    
+
     private func updateData(for range: String) {
         let calendar = Calendar.current
         let formatter = DateFormatter()
 
         var days = 0
-        
+
         switch range {
         case "1M":
             formatter.dateFormat = "MMM dd" // Short month names with day, e.g., Oct 18
@@ -117,18 +127,18 @@ struct ChartView: View {
         }
 
         let now = Date()
-        
+
         // Filter data based on the calculated range
         data = allData.filter { price_increment in
             let date = price_increment.timestamp
             // Compare if the date is within the specified range
             return date > calendar.date(byAdding: .day, value: -days, to: now)!
         }
-        
+
         if let minPrice = data.min(by: { $0.price < $1.price }) {
             lowerBound = Int(minPrice.price) - 2
         }
-        
+
         if let maxPrice = data.max(by: { $0.price < $1.price }) {
             upperBound = Int(maxPrice.price) + 2
         }
@@ -136,12 +146,11 @@ struct ChartView: View {
         data.reverse() // To show the data in chronological order
     }
 
-    
     private func handleDragGesture(value: DragGesture.Value) {
         let location = value.location
         let chartWidth = screenWidth - 40 // Adjust for padding
         let spacing = chartWidth / CGFloat(data.count - 1)
-        
+
         let index = Int((location.x - 20) / spacing) // Adjust for padding
         if index >= 0 && index < data.count {
             selectedDataPoint = (index: index, value: data[index].price)
@@ -150,6 +159,7 @@ struct ChartView: View {
         }
     }
 }
+
 #Preview {
-    ChartView(allData: [])
+    ChartView(topText: "Monthly Spending: $123.24", allData: [])
 }
