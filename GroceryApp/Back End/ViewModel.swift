@@ -75,6 +75,32 @@ public class ViewModel: ObservableObject {
     }
     
     func isIdealProduct(product: Product) -> Bool {
-        return false
+        let product_name = product.name
+        let product_store = product.store
+        
+        if let price = product.getMostRecentPrice(){
+            for possible in self.products {
+                if possible.name == product_name, possible.store != product_store {
+                    if let possible_price = possible.getMostRecentPrice(), possible_price < price {
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
+    
+    func getProductsAcrossStores(product: Product) -> [Product] {
+        let product_name = product.name
+        
+        var subs: [Product] = []
+        
+        for possible in self.products {
+            if possible.name == product_name {
+                subs.append(possible)
+            }
+        }
+        
+        return subs
     }
 }

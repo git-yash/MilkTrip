@@ -10,7 +10,6 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var viewModel: ViewModel
     @State private var watchlist: [Product] = []
-    @State private var isLoading = true
     @State private var sortOption = SortOption.none
 
     enum SortOption {

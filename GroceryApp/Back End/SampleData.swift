@@ -22,7 +22,7 @@ func readSampleData() -> [Product]? {
                 
                 // for each store (stores carry the same products)
                 for i in 1...4 {
-                    let product = Product(id: Int(columns[0])!,
+                    let product = Product(id: Int(columns[0])! + (i - 1) * 100,
                                           name: String(columns[1]),
                                           brand: String(columns[2]),
                                           category: String(columns[3]),

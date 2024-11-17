@@ -70,4 +70,22 @@ class Product: Identifiable, Hashable {
             return "HEB"
         }
     }    
+    
+    func getOneMonthPriceChange() -> Double? {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let oneMonthAgo = calendar.date(byAdding: .month, value: -1, to: currentDate)!
+
+        let filtered = priceData.filter { $0.timestamp >= oneMonthAgo }
+        var relevant = filtered.sorted { $0.timestamp > $1.timestamp }
+        
+        return relevant[0].price - (relevant.last?.price ?? 0.0)
+    }
+    
+    func getOneMonthPriceChangePercent() -> Double {
+        let current_price: Double = getMostRecentPrice() ?? 1.0
+        let one_month_price: Double = getOneMonthPriceChange() ?? 1.0
+
+        return (one_month_price - current_price) / (current_price) * 100
+    }
 }
