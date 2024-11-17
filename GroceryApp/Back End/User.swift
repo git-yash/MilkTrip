@@ -33,14 +33,14 @@ class User {
         let calendar = Calendar.current
         let now = Date()
         
-        for i_day in 0..<99{
+        for i_week in 0..<99{
             var current_price: Double = 0
             
             for product in grocery_list {
-                current_price += product.priceData[i_day].price
+                current_price += product.priceData[i_week].price
             }
             
-            let i_date = calendar.date(byAdding: .day, value: -i_day, to: now)!
+            let i_date = calendar.date(byAdding: .day, value: -7 * i_week, to: now)!
             increments.append(PriceIncrement(timestamp: i_date, price: current_price))
         }
         
