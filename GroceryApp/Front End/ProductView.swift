@@ -18,7 +18,7 @@ struct ProductView: View {
                         .font(.system(size: 32))
                         .bold()
                     
-                    ChartView(allData: product.priceData)
+                    ChartView(topText: "Welcome", allData: product.priceData)
                 }
                 
                 VStack(alignment: .leading){

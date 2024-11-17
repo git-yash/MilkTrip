@@ -19,7 +19,7 @@ struct ProfileView: View {
                             .font(.system(size: 32))
                             .bold()
                         
-                        ChartView(allData: viewModel.localUser.getPriceIncrementData())
+                        ChartView(topText: "Welcome", allData: viewModel.localUser.getPriceIncrementData())
                     }
                     
                     VStack(alignment: .leading){

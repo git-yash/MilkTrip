@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @EnvironmentObject var viewModel: ViewModel
     @State private var searchText: String = ""
+    @FocusState private var searchFieldIsFocused: Bool
 
     var body: some View {
         NavigationStack{
@@ -20,6 +21,7 @@ struct SearchView: View {
                         .padding(.horizontal, 24)
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
+                        .focused($searchFieldIsFocused)
                         .overlay(
                             HStack {
                                 Image(systemName: "magnifyingglass")
@@ -39,23 +41,30 @@ struct SearchView: View {
                             }
                         )
                     
-                    VStack(alignment: .leading){
-                        Text("Coupons")
-                            .font(.system(size: 24))
-                            .bold()
-                        
-                        CouponCarousel(coupons: viewModel.coupons)
-                    }
-                    
-                    
-                    VStack(alignment: .leading){
-                        Text("Previous Searches")
-                            .font(.system(size: 24))
-                            .bold()
-                        
-                        ForEach(1...3, id: \.self) { _ in
-                            ProductListView(product: Product())
+                    if !searchFieldIsFocused {
+                        VStack(alignment: .leading){
+                            Text("Coupons")
+                                .font(.system(size: 24))
+                                .bold()
+                            
+                            CouponCarousel(coupons: viewModel.coupons)
                         }
+                        
+                        
+                        VStack(alignment: .leading){
+                            Text("Previous Searches")
+                                .font(.system(size: 24))
+                                .bold()
+                            
+                            ForEach(1...3, id: \.self) { _ in
+                                ProductListView(product: Product())
+                            }
+                        }
+                    } else {
+                        Text("Search Results")
+                            .font(.system(size: 24))
+                            .bold()
+                        
                     }
                 }
                 .padding()

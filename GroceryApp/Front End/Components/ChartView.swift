@@ -87,16 +87,15 @@ struct ChartView: View {
                 }
                 Spacer()
             }
-            .padding()
         }
         .onAppear {
             updateData(for: selectedRange)
         }
+        .padding()
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color(hex: "#393E46"))
         )
-        .padding() // Add padding to the entire view
     }
 
     private func updateData(for range: String) {

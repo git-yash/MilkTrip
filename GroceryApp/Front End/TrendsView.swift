@@ -19,9 +19,8 @@ struct TrendsView: View {
                             Text(store.name)
                                 .font(.system(size: 18))
                                 .bold()
-                            ChartView(allData: store.getPriceIncrementData())
+                            ChartView(topText: "Welome", allData: store.getPriceIncrementData())
                         }
-                        .padding()
                     }
                 }
                 .padding()
