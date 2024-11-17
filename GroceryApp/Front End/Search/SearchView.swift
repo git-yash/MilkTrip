@@ -11,6 +11,7 @@ struct SearchView: View {
     @EnvironmentObject var viewModel: ViewModel
     @State private var searchText: String = ""
     @FocusState private var searchFieldIsFocused: Bool
+    @State private var isNavigationActive = false
     @ObservedObject var reloadViewHelper = ReloadViewHelper()
 
     var body: some View {
@@ -92,23 +93,21 @@ struct SearchView: View {
                             }
                         }
                     } else {
-//                        Text("Search Results")
-//                            .font(.system(size: 24))
-//                            .bold()
+                        // Display search results with custom navigation handling
                         ForEach(getSearchResults(searchText: searchText), id: \.self) { product in
-                            NavigationLink {
-                                ProductView(product: product)
-                            } label: {
+                            NavigationLink(
+                                destination: ProductView(product: product),
+                                isActive: $isNavigationActive
+                            ) {
                                 ProductListView(product: product)
-                                    .simultaneousGesture(
-                                        TapGesture().onEnded {
-                                            viewModel.localUser.recent_searches.append(searchText)
-                                        }
-                                    )
+                                    .onTapGesture {
+                                        // Append the search text and trigger navigation
+                                        viewModel.localUser.recent_searches.append(searchText)
+                                        isNavigationActive = true  // Trigger the navigation
+                                    }
                             }
-                            .buttonStyle(.plain)
+                            .buttonStyle(.plain) // Prevents default button style
                         }
-
                     }
                 }
                 .padding()
@@ -119,6 +118,7 @@ struct SearchView: View {
         }
     }
 }
+
 
 class ReloadViewHelper: ObservableObject {
     func reloadView() {
