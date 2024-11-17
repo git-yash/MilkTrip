@@ -60,8 +60,8 @@ struct SearchView: View {
                             let recent_searches = viewModel.localUser.recent_searches
                             if recent_searches.isEmpty {
                                 Text("No recent searches")
-                                    .font(.system(size: 12))
-                                    .padding()
+                                    .font(.system(size: 18))
+                                    .padding(.top)
                             } else {
                                 ForEach(recent_searches, id: \.self) { search in
                                     HStack {
