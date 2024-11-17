@@ -36,23 +36,6 @@
 		C4A496412CE95FA20012CB69 /* CouponCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496402CE95FA20012CB69 /* CouponCarousel.swift */; };
 		C4A496492CE982890012CB69 /* CustomBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */; };
 		C4A4964C2CE9AF290012CB69 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4964B2CE9AF290012CB69 /* Search.swift */; };
-		C4A4965F2CE9C1040012CB69 /* AsapCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A4964E2CE9C1040012CB69 /* AsapCondensed-Light.ttf */; };
-		C4A496602CE9C1040012CB69 /* AsapCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A4964F2CE9C1040012CB69 /* AsapCondensed-LightItalic.ttf */; };
-		C4A496612CE9C1040012CB69 /* AsapCondensed-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496502CE9C1040012CB69 /* AsapCondensed-ExtraLightItalic.ttf */; };
-		C4A496622CE9C1040012CB69 /* AsapCondensed-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496512CE9C1040012CB69 /* AsapCondensed-MediumItalic.ttf */; };
-		C4A496632CE9C1040012CB69 /* AsapCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496522CE9C1040012CB69 /* AsapCondensed-ExtraBold.ttf */; };
-		C4A496642CE9C1040012CB69 /* AsapCondensed-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496532CE9C1040012CB69 /* AsapCondensed-SemiBoldItalic.ttf */; };
-		C4A496652CE9C1040012CB69 /* AsapCondensed-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496542CE9C1040012CB69 /* AsapCondensed-SemiBold.ttf */; };
-		C4A496662CE9C1040012CB69 /* AsapCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496552CE9C1040012CB69 /* AsapCondensed-BoldItalic.ttf */; };
-		C4A496672CE9C1040012CB69 /* AsapCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496562CE9C1040012CB69 /* AsapCondensed-Regular.ttf */; };
-		C4A496682CE9C1040012CB69 /* AsapCondensed-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496572CE9C1040012CB69 /* AsapCondensed-BlackItalic.ttf */; };
-		C4A496692CE9C1040012CB69 /* AsapCondensed-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496582CE9C1040012CB69 /* AsapCondensed-ExtraLight.ttf */; };
-		C4A4966A2CE9C1040012CB69 /* AsapCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A496592CE9C1040012CB69 /* AsapCondensed-Italic.ttf */; };
-		C4A4966B2CE9C1040012CB69 /* AsapCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A4965A2CE9C1040012CB69 /* AsapCondensed-Medium.ttf */; };
-		C4A4966C2CE9C1040012CB69 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4A4965B2CE9C1040012CB69 /* OFL.txt */; };
-		C4A4966D2CE9C1040012CB69 /* AsapCondensed-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A4965C2CE9C1040012CB69 /* AsapCondensed-ExtraBoldItalic.ttf */; };
-		C4A4966E2CE9C1040012CB69 /* AsapCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A4965D2CE9C1040012CB69 /* AsapCondensed-Bold.ttf */; };
-		C4A4966F2CE9C1040012CB69 /* AsapCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A4965E2CE9C1040012CB69 /* AsapCondensed-Black.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,23 +88,6 @@
 		C4A496402CE95FA20012CB69 /* CouponCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCarousel.swift; sourceTree = "<group>"; };
 		C4A496482CE982890012CB69 /* CustomBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundModifier.swift; sourceTree = "<group>"; };
 		C4A4964B2CE9AF290012CB69 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
-		C4A4964E2CE9C1040012CB69 /* AsapCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Light.ttf"; sourceTree = "<group>"; };
-		C4A4964F2CE9C1040012CB69 /* AsapCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
-		C4A496502CE9C1040012CB69 /* AsapCondensed-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		C4A496512CE9C1040012CB69 /* AsapCondensed-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-MediumItalic.ttf"; sourceTree = "<group>"; };
-		C4A496522CE9C1040012CB69 /* AsapCondensed-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-ExtraBold.ttf"; sourceTree = "<group>"; };
-		C4A496532CE9C1040012CB69 /* AsapCondensed-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		C4A496542CE9C1040012CB69 /* AsapCondensed-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-SemiBold.ttf"; sourceTree = "<group>"; };
-		C4A496552CE9C1040012CB69 /* AsapCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
-		C4A496562CE9C1040012CB69 /* AsapCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Regular.ttf"; sourceTree = "<group>"; };
-		C4A496572CE9C1040012CB69 /* AsapCondensed-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-BlackItalic.ttf"; sourceTree = "<group>"; };
-		C4A496582CE9C1040012CB69 /* AsapCondensed-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-ExtraLight.ttf"; sourceTree = "<group>"; };
-		C4A496592CE9C1040012CB69 /* AsapCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Italic.ttf"; sourceTree = "<group>"; };
-		C4A4965A2CE9C1040012CB69 /* AsapCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Medium.ttf"; sourceTree = "<group>"; };
-		C4A4965B2CE9C1040012CB69 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		C4A4965C2CE9C1040012CB69 /* AsapCondensed-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		C4A4965D2CE9C1040012CB69 /* AsapCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Bold.ttf"; sourceTree = "<group>"; };
-		C4A4965E2CE9C1040012CB69 /* AsapCondensed-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Black.ttf"; sourceTree = "<group>"; };
 		C4D6BEAA2CE9C385006FD460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				C4D6BEAA2CE9C385006FD460 /* Info.plist */,
-				C4A4964D2CE9C1040012CB69 /* Asap_Condensed */,
 				17C4B3052CE92F0400216661 /* Back End */,
 				C4A496102CE92CC70012CB69 /* GroceryAppApp.swift */,
 				17C4B2FE2CE92E1500216661 /* Front End */,
@@ -260,30 +225,6 @@
 				C4A4964B2CE9AF290012CB69 /* Search.swift */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		C4A4964D2CE9C1040012CB69 /* Asap_Condensed */ = {
-			isa = PBXGroup;
-			children = (
-				C4A4964E2CE9C1040012CB69 /* AsapCondensed-Light.ttf */,
-				C4A4964F2CE9C1040012CB69 /* AsapCondensed-LightItalic.ttf */,
-				C4A496502CE9C1040012CB69 /* AsapCondensed-ExtraLightItalic.ttf */,
-				C4A496512CE9C1040012CB69 /* AsapCondensed-MediumItalic.ttf */,
-				C4A496522CE9C1040012CB69 /* AsapCondensed-ExtraBold.ttf */,
-				C4A496532CE9C1040012CB69 /* AsapCondensed-SemiBoldItalic.ttf */,
-				C4A496542CE9C1040012CB69 /* AsapCondensed-SemiBold.ttf */,
-				C4A496552CE9C1040012CB69 /* AsapCondensed-BoldItalic.ttf */,
-				C4A496562CE9C1040012CB69 /* AsapCondensed-Regular.ttf */,
-				C4A496572CE9C1040012CB69 /* AsapCondensed-BlackItalic.ttf */,
-				C4A496582CE9C1040012CB69 /* AsapCondensed-ExtraLight.ttf */,
-				C4A496592CE9C1040012CB69 /* AsapCondensed-Italic.ttf */,
-				C4A4965A2CE9C1040012CB69 /* AsapCondensed-Medium.ttf */,
-				C4A4965B2CE9C1040012CB69 /* OFL.txt */,
-				C4A4965C2CE9C1040012CB69 /* AsapCondensed-ExtraBoldItalic.ttf */,
-				C4A4965D2CE9C1040012CB69 /* AsapCondensed-Bold.ttf */,
-				C4A4965E2CE9C1040012CB69 /* AsapCondensed-Black.ttf */,
-			);
-			path = Asap_Condensed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,26 +331,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4A4966C2CE9C1040012CB69 /* OFL.txt in Resources */,
-				C4A496652CE9C1040012CB69 /* AsapCondensed-SemiBold.ttf in Resources */,
-				C4A496692CE9C1040012CB69 /* AsapCondensed-ExtraLight.ttf in Resources */,
-				C4A496662CE9C1040012CB69 /* AsapCondensed-BoldItalic.ttf in Resources */,
-				C4A4966A2CE9C1040012CB69 /* AsapCondensed-Italic.ttf in Resources */,
-				C4A4966F2CE9C1040012CB69 /* AsapCondensed-Black.ttf in Resources */,
-				C4A4965F2CE9C1040012CB69 /* AsapCondensed-Light.ttf in Resources */,
-				C4A496632CE9C1040012CB69 /* AsapCondensed-ExtraBold.ttf in Resources */,
-				C4A496612CE9C1040012CB69 /* AsapCondensed-ExtraLightItalic.ttf in Resources */,
-				C4A496642CE9C1040012CB69 /* AsapCondensed-SemiBoldItalic.ttf in Resources */,
 				C4A496182CE92CC80012CB69 /* Preview Assets.xcassets in Resources */,
-				C4A496602CE9C1040012CB69 /* AsapCondensed-LightItalic.ttf in Resources */,
-				C4A4966B2CE9C1040012CB69 /* AsapCondensed-Medium.ttf in Resources */,
-				C4A496672CE9C1040012CB69 /* AsapCondensed-Regular.ttf in Resources */,
 				17C4B3202CE94C2200216661 /* SampleData.csv in Resources */,
-				C4A496682CE9C1040012CB69 /* AsapCondensed-BlackItalic.ttf in Resources */,
-				C4A4966D2CE9C1040012CB69 /* AsapCondensed-ExtraBoldItalic.ttf in Resources */,
 				C4A496152CE92CC80012CB69 /* Assets.xcassets in Resources */,
-				C4A4966E2CE9C1040012CB69 /* AsapCondensed-Bold.ttf in Resources */,
-				C4A496622CE9C1040012CB69 /* AsapCondensed-MediumItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
