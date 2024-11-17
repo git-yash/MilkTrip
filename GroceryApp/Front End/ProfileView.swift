@@ -9,6 +9,36 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var viewModel: ViewModel
+    @State private var watchlist: [Product] = []
+    @State private var isLoading = true
+    @State private var sortOption = SortOption.none
+
+    enum SortOption {
+        case none
+        case amountHighToLow
+        case amountLowToHigh
+    }
+
+    var sortedGroups: [Product] {
+        switch sortOption {
+        case .none:
+            return watchlist
+        case .amountHighToLow:
+            return watchlist.sorted {
+                if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice(){
+                    return price_one > price_two
+                }
+                return false
+            }
+        case .amountLowToHigh:
+            return watchlist.sorted {
+                if let price_one = $0.getMostRecentPrice(), let price_two = $1.getMostRecentPrice(){
+                    return price_one < price_two
+                }
+                return false
+            }
+        }
+    }
 
     var body: some View {
         NavigationStack{
@@ -27,7 +57,37 @@ struct ProfileView: View {
                             .font(.system(size: 24))
                             .bold()
                         
-                        ForEach(viewModel.localUser.grocery_list, id: \.self) { product in
+                        HStack{
+                            Menu {
+                                Button("Default") {
+                                    sortOption = .none
+                                }
+                                Button("Highest Amount") {
+                                    sortOption = .amountHighToLow
+                                }
+                                Button("Lowest Amount") {
+                                    sortOption = .amountLowToHigh
+                                }
+                            } label: {
+                                HStack {
+                                    Text(sortOption == .none ? "Default" :
+                                            sortOption == .amountHighToLow ? "Highest Amount" : "Lowest Amount")
+                                    .fontWeight(.semibold)
+                                    Image(systemName: "chevron.down")
+                                }
+                                .foregroundColor(.primary)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .fill(Color(hex: "#393e46"))
+                                )
+                            }
+                            Spacer()
+                        }
+
+                        
+                        ForEach(sortedGroups, id: \.self) { product in
                             NavigationLink {
                                 ProductView(product: product)
                             } label: {
@@ -42,6 +102,9 @@ struct ProfileView: View {
             .navigationTitle("My Profile")
             .navigationBarTitleDisplayMode(.large)
             .withScreenBackground()
+            .onAppear{
+                watchlist = viewModel.localUser.grocery_list
+            }
         }
     }
 }

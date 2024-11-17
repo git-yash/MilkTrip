@@ -10,10 +10,12 @@ import Foundation
 class User {
     var id: Int
     var grocery_list: [Product] = []
+    var recent_searches: [String] = []
     
-    init(id: Int, grocery_list: [Product]) {
+    init(id: Int, grocery_list: [Product], recent_searches: [String]) {
         self.id = id
         self.grocery_list = grocery_list
+        self.recent_searches = recent_searches
     }
     
     func getCurrentPrice() -> Double {

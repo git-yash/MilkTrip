@@ -60,7 +60,7 @@ class Product: Identifiable, Hashable {
         return mostRecentPriceDatum?.price
     }
     
-    func getBrand() -> String {
+    func getStore() -> String {
         switch self.store{
         case 1: return "HEB"
         case 2: return "Randalls"
@@ -69,9 +69,5 @@ class Product: Identifiable, Hashable {
         default:
             return "HEB"
         }
-    }
-    
-    func getSubstitutes() -> [Product] {
-        return [Product(), Product(), Product()]
-    }
+    }    
 }

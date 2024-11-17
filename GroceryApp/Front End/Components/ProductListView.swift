@@ -42,7 +42,7 @@ struct ProductListView: View {
                     .bold()
 
                 HStack(alignment: .center, spacing: 5) {
-                    Text("from \(product.getBrand())")
+                    Text("from \(product.getStore())")
                         .font(.system(size: 12))
                     Circle()
                         .frame(width: 2, height: 2)

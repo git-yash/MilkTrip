@@ -56,8 +56,26 @@ struct SearchView: View {
                                 .font(.system(size: 24))
                                 .bold()
                             
-                            ForEach(1...3, id: \.self) { _ in
-                                ProductListView(product: Product())
+                            let recent_searches = viewModel.localUser.recent_searches
+                            if recent_searches.isEmpty {
+                                Text("No recent searches")
+                                    .font(.system(size: 12))
+                            } else {
+                                ForEach(recent_searches, id: \.self) { search in
+                                    HStack {
+                                        Text(search)
+                                            .font(.system(size: 14))
+                                        
+                                        Spacer()
+                                        
+//                                        Image("xmark")
+//                                            .resizable()
+//                                            .frame(width: 15, height: 15)
+                                    }
+                                    .padding()
+                                    .background(Color(hex: "#393e46"))
+                                    .cornerRadius(5)
+                                }
                             }
                         }
                     } else {
