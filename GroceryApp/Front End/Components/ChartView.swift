@@ -16,6 +16,12 @@ struct ChartView: View {
 
     var body: some View {
         VStack {
+            HStack {
+                Text(topText)
+                    .padding(.leading, 5)
+                    .font(.system(size: 28)).bold()
+                Spacer()
+            }
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color(hex: "#494C52"))

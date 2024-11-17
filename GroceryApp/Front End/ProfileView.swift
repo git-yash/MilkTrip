@@ -44,11 +44,11 @@ struct ProfileView: View {
             ScrollView{
                 VStack(alignment: .leading, spacing: 50){
                     VStack(alignment: .leading){
-                        Text("$"+String(format: "%.2f", viewModel.localUser.getCurrentPrice()))
-                            .font(.system(size: 32))
-                            .bold()
-                        
-                        ChartView(topText: "Welcome", allData: viewModel.localUser.getPriceIncrementData())
+                        ChartView(
+                            topText: String(format: "$%.2f", viewModel.localUser.getCurrentPrice()),
+                            allData: viewModel.localUser.getPriceIncrementData()
+                        )
+
                     }
                     
                     VStack(alignment: .leading){
