@@ -17,9 +17,12 @@ struct TrendsView: View {
                     ForEach(viewModel.stores, id: \.self){ store in
                         VStack(alignment: .leading, spacing: 10){
                             Text(store.name)
+                                .font(.system(size: 18))
+                                .bold()
                             ChartView(allData: store.getPriceIncrementData())
                         }
-                        .background(.gray)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(.gray, lineWidth: 1))
                     }
                 }
                 .padding()

@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 class Store: Identifiable, Hashable {
-    var id: UUID
+    var id: Int
     var image: Image
     var name: String
     var products: [Product]
     
     // Initializer to set up 'Store' object with an image
-    init(id: UUID = UUID(), image: Image, name: String, products: [Product]) {
+    init(id: Int, image: Image, name: String, products: [Product]) {
         self.id = id
         self.image = image
         self.name = name

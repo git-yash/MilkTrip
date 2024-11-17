@@ -7,23 +7,6 @@
 
 import SwiftUI
 
-let walmartStore = Store(id: UUID(), image: Image("walmartLogo"), name: "Walmart", products: [])
-let cvsStore = Store(id: UUID(), image: Image("cvsLogo"), name: "CVS", products: [])
-let randallsStore = Store(id: UUID(), image: Image("randallsLogo"), name: "Randalls", products: [])
-let HEBStore = Store(id: UUID(), image: Image("HEBLogo"), name: "H-E-B", products: [])
-
-let sampleCoupons: [Coupon] = [
-    Coupon(id: 1, store: walmartStore, description: "Get 20% off on electronics!", url: "https://www.walmart.com"),
-    Coupon(id: 2, store: cvsStore, description: "Save $10 on your first order!", url: "https://www.walmart.com"),
-    Coupon(id: 3, store: randallsStore, description: "Buy one, get one free on toys!", url: "https://www.walmart.com"),
-    Coupon(id: 4, store: HEBStore, description: "Free shipping on orders over $50!", url: "https://www.walmart.com")
-]
-
-// CouponCarousel View
-import SwiftUI
-
-import SwiftUI
-
 struct CouponCarousel: View {
     var coupons: [Coupon]
     
@@ -34,7 +17,7 @@ struct CouponCarousel: View {
             LazyHStack(spacing: 10) {
                 ForEach(coupons, id: \.id) { coupon in
                     CouponView(coupon: coupon)
-                        .frame(width: 300, height: 150)
+                        .frame(width: 300)
                         .cornerRadius(15)
                         .shadow(radius: 5)
                 }
@@ -50,5 +33,5 @@ struct CouponCarousel: View {
 
 
 #Preview {
-    CouponCarousel(coupons: sampleCoupons)
+    CouponCarousel(coupons: [])
 }

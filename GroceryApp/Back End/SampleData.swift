@@ -28,8 +28,8 @@ func readSampleData() -> [Product]? {
                                           category: String(columns[3]),
                                           store: i,
                                           image_url: String(columns[5]),
-                                          priceData: generatePriceIncrements(base_price: Double(columns[4]) ?? 5.0))
-                    
+                                          priceData: generatePriceIncrements(base_price: Double(columns[4]) ?? 5.0, store_index: i))
+
                     products.append(product)
                 }
             }
@@ -46,19 +46,28 @@ func readSampleData() -> [Product]? {
 }
 
 // to create trends (randomly generated)
-func generatePriceIncrements(base_price: Double) -> [PriceIncrement] {
+func generatePriceIncrements(base_price: Double, store_index: Int) -> [PriceIncrement] {
     var increments: [PriceIncrement] = []
     var prices: [Double] = []
 
     let currentDate = Date()
     
     var prev_price: Double = base_price
+
     for i in 0..<100 {
         if let this_date = Calendar.current.date(byAdding: .day, value: -7 * i, to: currentDate) {
             
             // prices slightly increase over time, so we multiply by a random double, but it is
             // slightly more likely to be greater than 1 than less than 1
-            let this_price = prev_price * Double.random(in: 0.98...1.01)
+            var this_price: Double = 0
+
+            switch store_index{
+            case 1: this_price = prev_price * Double.random(in: 0.98...1.015) // walmart
+            case 2: this_price = prev_price * Double.random(in: 0.983...1.01) // cvs
+            case 3: this_price = prev_price * Double.random(in: 0.97...1.01) // randalls
+            case 4: this_price = prev_price * Double.random(in: 0.98...1.012) // heb
+            default: this_price = prev_price * Double.random(in: 0.98...1.01)
+            }
             
             increments.append(PriceIncrement(timestamp: this_date, price: this_price))
             prices.append(this_price)

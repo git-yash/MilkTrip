@@ -44,7 +44,7 @@ struct SearchView: View {
                             .font(.system(size: 24))
                             .bold()
                         
-                        CouponCarousel(coupons: sampleCoupons)
+                        CouponCarousel(coupons: viewModel.coupons)
                     }
                     
                     
