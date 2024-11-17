@@ -15,6 +15,7 @@
 		179D4EF12CEA26D80016E0DD /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4EF02CEA26D80016E0DD /* StoreView.swift */; };
 		179D4EF32CEA26E10016E0DD /* StoreSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4EF22CEA26E10016E0DD /* StoreSubView.swift */; };
 		179D4EF52CEA386C0016E0DD /* PinataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4EF42CEA386C0016E0DD /* PinataService.swift */; };
+		179D4EF72CEA3FE90016E0DD /* PinataKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 179D4EF62CEA3FE90016E0DD /* PinataKey.txt */; };
 		17C4B3002CE92E2A00216661 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B2FF2CE92E2A00216661 /* ProfileView.swift */; };
 		17C4B3022CE92E3300216661 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3012CE92E3300216661 /* SearchView.swift */; };
 		17C4B3042CE92E3A00216661 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4B3032CE92E3A00216661 /* TrendsView.swift */; };
@@ -72,6 +73,7 @@
 		179D4EF02CEA26D80016E0DD /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		179D4EF22CEA26E10016E0DD /* StoreSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSubView.swift; sourceTree = "<group>"; };
 		179D4EF42CEA386C0016E0DD /* PinataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinataService.swift; sourceTree = "<group>"; };
+		179D4EF62CEA3FE90016E0DD /* PinataKey.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PinataKey.txt; sourceTree = "<group>"; };
 		17C4B2FF2CE92E2A00216661 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		17C4B3012CE92E3300216661 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		17C4B3032CE92E3A00216661 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				C4A496162CE92CC80012CB69 /* Preview Content */,
 				C4A4963A2CE93FF50012CB69 /* Util.swift */,
 				C4D6BEB22CEA26D6006FD460 /* Keys.txt */,
+				179D4EF62CEA3FE90016E0DD /* PinataKey.txt */,
 			);
 			path = GroceryApp;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				17C4B3202CE94C2200216661 /* SampleData.csv in Resources */,
 				179D4EEF2CEA1F460016E0DD /* InflationData.csv in Resources */,
 				C4A496152CE92CC80012CB69 /* Assets.xcassets in Resources */,
+				179D4EF72CEA3FE90016E0DD /* PinataKey.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
